@@ -3,6 +3,20 @@ import './Home.css';
 
 const Home = () => {
   // Initialize context that controls state of how to life progressive form
+    // if formStatus === "home", show home component step 0
+    // if formStatus === "question", show question component step 1
+    // if formStatus === "skill", show skill component step 2
+    // if formStatus === "objective", show objective component step 3
+    // if formStatus === "answer", show answer component step 4
+  
+  // Initialize context that controls the next and back button
+    // if stepStatus === 0, show question component
+    // if stepStatus === 1, show question component
+    // if stepStatus === 2, show question component
+    // if stepStatus === 3, show question component
+
+    // if next is clicked, go to the next step
+    // if back is clicked, go to the previous step
 
   // For mobile view, there should be a contatiner 
     // h1
