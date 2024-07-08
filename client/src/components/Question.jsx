@@ -1,7 +1,6 @@
 import React from 'react';
-import './Home.css'; 
 
-const Home = () => {
+export default function Question () {
   // Initialize context that controls state of how to life progressive form
     // if formStatus === "home", show home component step 0
     // if formStatus === "question", show question component step 1
@@ -54,5 +53,3 @@ const Home = () => {
     </div>
   );
 }
-
-export default Home;
