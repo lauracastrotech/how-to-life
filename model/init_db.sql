@@ -1,19 +1,20 @@
 -- Drop Tables
 SET foreign_key_checks = 0;
-DROP TABLE if exists items;
+DROP TABLE if exists users;
+DROP TABLE if exists history;
 SET foreign_key_checks = 1;
 
 /* Step 1: Create the database */
-CREATE DATABASE how_to_life;
+-- CREATE DATABASE how_to_life;
 
 /* Step 2: Navigate to the database */
-USE how_to_life;
+-- USE how_to_life;
 
 /* Step 3: Create users table */
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
+    first_name VARCHAR(50) not null,
+    last_name VARCHAR(50) not null,
     username VARCHAR(50) UNIQUE,
     password VARCHAR(255)
 );
