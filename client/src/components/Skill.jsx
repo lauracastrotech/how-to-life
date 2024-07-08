@@ -6,17 +6,17 @@ export default function Question () {
   const {formStatus, setFormStatus, step, setStep} = useContext(FormStateContext);
    
   const handleBack = () => {
-    setFormStatus('home');
+    setFormStatus('how-to');
     setStep(1);
   }
   
   const handleNext = () => {
-    setFormStatus('skill');
+    setFormStatus('objective');
     setStep(3);
   }
 
   return (
-    <div className="question">
+    <div className="skill">
       <div className="container col">
         <div className="row">
             <h2>Tell us more about the skill that you want to learn. <br /> Here are some ideas if you&apos;re not sure</h2>

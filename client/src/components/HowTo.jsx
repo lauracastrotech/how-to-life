@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 
-export default function Question () {
+export default function HowTo () {
   const {formStatus, setFormStatus, step, setStep} = useContext(FormStateContext);
    
   const handleBack = () => {
@@ -16,14 +16,14 @@ export default function Question () {
   }
 
   return (
-    <div className="question">
+    <div className="how-to">
       <div className="container col bg-primary">
         <div className="row bg-warning m-2">
             <h1>How to...</h1>
         </div>
         <div className="row bg-success m-2">
-            <p className="card col-lg-6">Health</p>
-            <p className="card col-lg-6">Career</p>
+            <p className="card col-6">Health</p>
+            <p className="card col-6">Career</p>
         </div>
         <div className="row bg-success m-2">
             <p className="card col-6">Technology</p>

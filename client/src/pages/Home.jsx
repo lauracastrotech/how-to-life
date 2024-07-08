@@ -5,29 +5,15 @@ import { FormStateContext } from '../helpers/FormContext';
 import './Home.css'; 
 
 export default function Home () {
-  // Initialize context that controls state of how to life progressive form
-    // if formStatus === "home", show home component step 0
     const {formStatus, setFormStatus, step, setStep} = useContext(FormStateContext);
    
   const handleGetStarted = () => {
-    setFormStatus('question');
+    setFormStatus('how-to');
     setStep(1);
     console.log(step);
     console.log('in click event function');
   }
-    
-    // if next is clicked, go to the next step
-    // if back is clicked, go to the previous step
-
-  // For mobile view, there should be a contatiner 
-    // h1
-    // paragraph
-    // card 1 choose a topic
-    // card 2 pick or add a skill
-    // card 3 context or objective - this answers the why of what they want to learn
-    // button next (no border, text decoration underline)
-
-
+  
   return (
     <div className="progressive-form">
       <div className="container bg-warning">

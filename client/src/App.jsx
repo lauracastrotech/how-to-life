@@ -9,9 +9,9 @@ import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
 import Home from './pages/Home';
 import { FormStateContext } from './helpers/FormContext';
-import Question from './components/Question';
+import HowTo from './components/HowTo';
 import Skill from './components/Skill';
-// import Objective from './components/Objective';
+import Objective from './components/Objective';
 // import Answer from './components/Answer';
 
 function App() {
@@ -28,9 +28,9 @@ function App() {
       setStep,
     }}>
         { formStatus === "home" && step === 0 && <Home />}
-        { formStatus === "question" && step === 1 && <Question />}
+        { formStatus === "how-to" && step === 1 && <HowTo />}
         { formStatus === "skill" && step === 2 && <Skill />}
-        {/* { formStatus === "objective" && <Objective />} */}
+        { formStatus === "objective" && step === 3 && <Objective />}
         {/* { formStatus === "answer" && <Answer />}  */}
       {/* <Routes> */}
         {/* NEED TO CREATE NAV LINKS TO PATH, IF I UNCOMMENT BELOW HOME COMPONENT RENDERS TWICE */}
