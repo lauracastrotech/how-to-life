@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
-import { useContext } from 'react';
+import Suggestions from '../components/Suggestions';
+import { useState, useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import './Home.css'; 
 
