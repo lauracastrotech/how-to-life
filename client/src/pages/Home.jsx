@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="container">
-        <h1>Welcome!</h1>
+        <h1 className='text-primary'>Welcome!</h1>
         <p>How to life helps you get the best resources for all those life skills that they didn't teach you in high school. Here's how it works</p>
         <p className='card'>Step 1: Choose a category. There can be many different ways to learn something. Help us narrow down your search.</p>
         <p className='card'>Step 2: Select a skill. In a few words, you can tell us the skill that you would like to learn.</p>
