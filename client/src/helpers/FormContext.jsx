@@ -1,24 +1,27 @@
-import { createContext, useContext, useState } from "react";
+import { createContext } from "react";
 
-//Create context AuthContext
-const FormContext = createContext(null);
+export const FormStateContext = createContext("");
+// import { createContext, useContext, useState } from "react";
 
-//Create context provider AuthProvider
-const FormProvider = ({children}) => {
+// //Create context AuthContext
+// const FormContext = createContext(null);
 
-    //initialize state isLoggedIn
-    const [formStatus, setFormStatus] = useState("");
-    const [stepStatus, setStepStatus] = useState(0)
+// //Create context provider AuthProvider
+// const FormProvider = ({children}) => {
 
-    //return Provider
-    return (
-       <FormContext.Provider value = {{formStatus, setFormStatus, stepStatus, setStepStatus}}>
-           {children}
-       </FormContext.Provider>
-    )
-};
-// Custom hook to access context in child components of parent App.jsx
-const useFormContext = () => useContext(FormContext);
+//     //initialize state isLoggedIn
+//     const [formStatus, setFormStatus] = useState("");
+//     const [stepStatus, setStepStatus] = useState(0)
 
-//Export Provider and hook
-export {FormProvider, useFormContext}
+//     //return Provider
+//     return (
+//        <FormContext.Provider value = {{formStatus, setFormStatus, stepStatus, setStepStatus}}>
+//            {children}
+//        </FormContext.Provider>
+//     )
+// };
+// // Custom hook to access context in child components of parent App.jsx
+// const useFormContext = () => useContext(FormContext);
+
+// //Export Provider and hook
+// export {FormProvider, useFormContext}
