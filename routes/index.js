@@ -4,7 +4,7 @@ const db = require("../model/helper");
 const { OpenAI } = require('openai');
 
 const openai = new OpenAI ({
-  apiKey:"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",
+  apiKey:"sk-proj-0QmeEPXo2fy0186I8kj0T3BlbkFJEYY3Z3X8GaQ6Wxgsa7GG",
   // dangerouslyAllowBrowser: true 
 })
 
