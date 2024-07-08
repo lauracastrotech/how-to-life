@@ -34,8 +34,8 @@ const Home = () => {
             <h1>How to...</h1>
         </div>
         <div className="row">
-            <p className="card col-6">Health</p>
-            <p className="card col-6">Career</p>
+            <p className="card col-lg-6">Health</p>
+            <p className="card col-lg-6">Career</p>
         </div>
         <div className="row">
             <p className="card col-6">Technology</p>
