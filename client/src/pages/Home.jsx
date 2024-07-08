@@ -28,6 +28,9 @@ export default function Home () {
             <p className='card bg-success'>Step 2: Select a skill. In a few words, you can tell us the skill that you would like to learn.</p>
             <p className='card bg-success'>Step 3: Share your objective. The more details that you give us, the better your answers will be.</p>
           </div>
+          
+          < hr />
+
           <button onClick = {() => handleGetStarted()}>Get started</button>
         </div> 
       </div>

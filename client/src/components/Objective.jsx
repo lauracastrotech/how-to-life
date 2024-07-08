@@ -33,7 +33,7 @@ export default function Objective () {
         </div>
         <div className="row">
             <button className='col-4' onClick={handleBack}>Back</button>
-            <p className='col-4'>2</p>
+            <p className='col-4'>3</p>
             <button className='col-4' onClick={handleNext}>Next</button>
         </div>
       </div>
