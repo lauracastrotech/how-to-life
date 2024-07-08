@@ -1,3 +1,4 @@
+const mysql = require('mysql');
 require("dotenv").config();
 const mysql = require("mysql");
 const fs = require("fs");
@@ -8,9 +9,21 @@ const DB_HOST = process.env.DB_HOST;
 const DB_USER = process.env.DB_USER;
 const DB_PASS = process.env.DB_PASS;
 const DB_NAME = process.env.DB_NAME;
+const DB_PORT = process.env.DB_PORT:
+
 
 // Database config
 const dbConfig = {
+  
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+};
+
+function db() {
+  const connection = mysql.createConnection(dbConfig);
   host: DB_HOST || "127.0.0.1",
   user: DB_USER || "root",
   password: DB_PASS || "root",
@@ -46,4 +59,5 @@ con.connect(function(err) {
 
 const pool = mysql.createPool(dbConfig);
 
-module.exports = pool;
+
+module.exports = db;
