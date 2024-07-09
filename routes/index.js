@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 /* GET history entries */
 router.get("/history", async function(req, res) {
   try {
-    const results = await db("SELECT * FROM history");
+    const results = await db("SELECT * FROM history"); 
     res.status(200).send(results.data);
   } catch (e) {
     res.status(500).send({ error: e.message });
@@ -24,7 +24,7 @@ router.get("/history", async function(req, res) {
 })
 
 /*POST ai answers*/
-router.post("/ai-answer", async function(req, res) {
+router.post("/ai-answer", async function(req, res) { // this api send prompt from frontend - prompt should be string datatype that includes category name, custom skill or popular question, objective with more context, this string will be stored in history table
   const { prompt, user_id } = req.body;
   if(!prompt) {
     return res.status(400).send({ error: "Prompt is required!" });
