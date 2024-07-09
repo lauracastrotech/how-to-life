@@ -20,6 +20,9 @@ function App() {
   const [step, setStep] = useState(0);
   console.log('in app.jsx', step, formStatus);
 
+  // sylwia: may need to add handleSelected() when a link is clicked
+  // don't worry about conditional rendering at the moment, there will be a context to control that
+
   return (
     <FormStateContext.Provider value = {{
       formStatus,
@@ -34,6 +37,7 @@ function App() {
         {/* { formStatus === "answer" && <Answer />*/} 
       <Routes> 
         {/* NEED TO CREATE NAV LINKS TO PATH, IF I UNCOMMENT BELOW HOME COMPONENT RENDERS TWICE */}
+        {/* ADD NAVBAR CODE AND LOGIC HERE */}
         <Route exact path="/" element={<Home />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
