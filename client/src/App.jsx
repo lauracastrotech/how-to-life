@@ -30,19 +30,15 @@ function App() {
         { formStatus === "home" && step === 0 && <Home />}
         { formStatus === "how-to" && step === 1 && <HowTo />}
         { formStatus === "skill" && step === 2 && <Skill />}
-        { formStatus === "objective" && step === 3 && <Objective />}
-        {/* { formStatus === "answer" && <Answer />}  */}
-      {/* <Routes> */}
+        { formStatus === "objective" && step === 3 && <Objective />} 
+        {/* { formStatus === "answer" && <Answer />*/} 
+      <Routes> 
         {/* NEED TO CREATE NAV LINKS TO PATH, IF I UNCOMMENT BELOW HOME COMPONENT RENDERS TWICE */}
-        {/* <Route exact path="/" element={<Home />} /> 
-        <Route path="/question" element={<Question />} />  */}
-        {/* <Route exact path="/skill" element={<Skill />} /> 
-        <Route exact path="/objective" element={<Objective />} /> 
-        <Route exact path="/answer" element={<Answer />} />  */}
-        {/* <Route path="/login" element={<Login />} />
+        <Route exact path="/" element={<Home />} /> 
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/profile" element={<Profile />} /> */}
-      {/* </Routes> */}
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
     </FormStateContext.Provider>
   );
 }
