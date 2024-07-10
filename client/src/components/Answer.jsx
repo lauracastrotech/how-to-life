@@ -18,39 +18,37 @@ user clicks submit - onClick send prompt to POST api and the reqponse to this re
 import React from 'react';
 import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
+import regenerate from '../assets/regenerate.png';
+import textTospeech from '../assets/text_to_speech.png';
 
 export default function Objective () {
+
+  // Need a use affect cb that will display the answer to a section/tag to
+
   const {formStatus, setFormStatus, step, setStep} = useContext(FormStateContext);
    
-  const handleBack = () => {
-    setFormStatus('skill');
-    setStep(2);
-  }
-  
-  const handleNext = () => {
-    setFormStatus('answer');
-    setStep(4);
-  }
+  // const handleRegenerate ()
+  // Resend prompt to api
+
+  // const handleTextToSpeech ()
+  // send request to Whisper api - Add comment/ question to Jira for Sylwia, what method do i need to use?
 
   return (
     <div className="objective">
       <div className="container col">
-        <div className="row">
-            <h2>Wonderful! Now, for the best response tell us more about you. Why is this skill important to you? What is your objective?</h2>
-        </div>
-        <hr />
-        <div className="row">
-            <form>
-              <div className="form-floating">
-                <textarea className="form-control" placeholder="In your own words, describe the skill that you want to learn about today" id="custom-skill"></textarea>
-              <label htmlFor="custom-skill">Comments</label>
-              </div>
-            </form>
+        <div className="row m-2">
+          <h1>Answer</h1>
         </div>
         <div className="row">
-            <button className='col-4' onClick={handleBack}>Back</button>
-            <p className='col-4'>3</p>
-            <button className='col-4' onClick={handleNext}>Next</button>
+            <h2>Here's your How To Life step-by-step guide in the world of [value of category state goes here] </h2>
+        </div>
+        <div className='row m-2'>
+          <button className='col-4'>
+            <img className = "icon-group" src={regenerate} alt="regenrate button" />
+          </button>
+          <button className='col-4'>
+            <img className = "icon-group" src={textTospeech} alt="text to speech button" />
+          </button>
         </div>
       </div>
     </div>

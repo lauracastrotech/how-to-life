@@ -5,6 +5,7 @@ import { FormStateContext } from '../helpers/FormContext';
 export default function HowTo () {
   const {formStatus, setFormStatus, step, setStep, prompt, setPrompt, category, setCategory} = useContext(FormStateContext);
 
+  // Bug
   // function handleChange(event) {
   //   const value = event.target.value;
   //   const name = event.target.name;
@@ -35,14 +36,12 @@ export default function HowTo () {
             <button className="btn-group btn col-6">Career</button>
         </div>
         <div className="row bg-success m-2">
-            <p className="card col-6">Technology</p>
-            <p className="card col-6">Relationships</p>
-            <button className="btn-group btn col-6">Health</button>
-            <button className="btn-group btn col-6">Career</button>
+            <button className="btn-group btn col-6">Technology</button>
+            <button className="btn-group btn col-6">Relationships</button>
         </div>
         <div className="row bg-success m-2">
-            <p className="card col-6">Finance</p>
-            <p className="card col-6">Education</p>
+            <button className="btn-group btn col-6">Finance</button>
+            <button className="btn-group btn col-6">Education</button>
         </div>
         <div className="row bg-success m-2">
             <button className='col-4' onClick={handleBack}>Back</button>

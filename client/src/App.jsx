@@ -12,7 +12,7 @@ import { FormStateContext } from './helpers/FormContext';
 import HowTo from './components/HowTo';
 import Skill from './components/Skill';
 import Objective from './components/Objective';
-// import Answer from './components/Answer';
+import Answer from './components/Answer';
 
 function App() {
 
@@ -37,11 +37,11 @@ function App() {
       category,
       setCategory
     }}>
-        {/* { formStatus === "home" && step === 0 && <Home />} => commenting this out fixed the how to page width*/}
+        { formStatus === "home" && step === 0 && <Home />} {/*}=> commenting this out fixed the how to page width*/}
         { formStatus === "how-to" && step === 1 && <HowTo />}
         { formStatus === "skill" && step === 2 && <Skill />}
         { formStatus === "objective" && step === 3 && <Objective />} 
-        {/* { formStatus === "answer" && <Answer />*/} 
+        { formStatus === "answer" && <Answer /> }
       <Routes> 
         {/* NEED TO CREATE NAV LINKS TO PATH, HOME COMPONENT RENDERS TWICE */}
         {/* ADD NAVBAR CODE AND LOGIC HERE */}
