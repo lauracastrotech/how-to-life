@@ -3,14 +3,23 @@ import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 
 export default function HowTo () {
-  const {formStatus, setFormStatus, step, setStep} = useContext(FormStateContext);
-   
+  const {formStatus, setFormStatus, step, setStep, prompt, setPrompt, category, setCategory} = useContext(FormStateContext);
+
+  // function handleChange(event) {
+  //   const value = event.target.value;
+  //   const name = event.target.name;
+  //   setCategory([...value]);
+  //   console.log('name => ', name, 'value => ', value);
+  //   console.log('prompt => ', prompt, "category => ", category);
+  // }
+
   const handleBack = () => {
     setFormStatus('home');
     setStep(0);
   }
   
   const handleNext = () => {
+    setPrompt(category);
     setFormStatus('skill');
     setStep(2);
   }
@@ -22,12 +31,14 @@ export default function HowTo () {
             <h1>How to...</h1>
         </div>
         <div className="row bg-success m-2">
-            <p className="card col-6">Health</p>
-            <p className="card col-6">Career</p>
+            <button className="btn-group btn col-6">Health</button>
+            <button className="btn-group btn col-6">Career</button>
         </div>
         <div className="row bg-success m-2">
             <p className="card col-6">Technology</p>
             <p className="card col-6">Relationships</p>
+            <button className="btn-group btn col-6">Health</button>
+            <button className="btn-group btn col-6">Career</button>
         </div>
         <div className="row bg-success m-2">
             <p className="card col-6">Finance</p>

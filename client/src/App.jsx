@@ -18,8 +18,10 @@ function App() {
 
   const [formStatus, setFormStatus] = useState("home");
   const [step, setStep] = useState(0);
-  
-  console.log('in app.jsx', step, formStatus);
+  const [prompt, setPrompt] = useState("Ready...");
+  const [category, setCategory] = useState([]);
+
+  console.log('in app.jsx', step, formStatus, prompt);
 
   // sylwia: may need to add handleSelected() when a link is clicked
   // don't worry about conditional rendering at the moment, there will be a context to control that
@@ -30,14 +32,18 @@ function App() {
       setFormStatus,
       step,
       setStep,
+      prompt,
+      setPrompt,
+      category,
+      setCategory
     }}>
-        { formStatus === "home" && step === 0 && <Home />}
+        {/* { formStatus === "home" && step === 0 && <Home />} => commenting this out fixed the how to page width*/}
         { formStatus === "how-to" && step === 1 && <HowTo />}
         { formStatus === "skill" && step === 2 && <Skill />}
         { formStatus === "objective" && step === 3 && <Objective />} 
         {/* { formStatus === "answer" && <Answer />*/} 
       <Routes> 
-        {/* NEED TO CREATE NAV LINKS TO PATH, IF I UNCOMMENT BELOW HOME COMPONENT RENDERS TWICE */}
+        {/* NEED TO CREATE NAV LINKS TO PATH, HOME COMPONENT RENDERS TWICE */}
         {/* ADD NAVBAR CODE AND LOGIC HERE */}
         <Route exact path="/" element={<Home />} /> 
         <Route path="/login" element={<Login />} />

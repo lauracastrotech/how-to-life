@@ -11,6 +11,7 @@ export default function Objective () {
     setStep(2);
   }
   
+  // Add prompt state here to send data to api -  axios.post
   const handleNext = () => {
     setFormStatus('answer');
     setStep(4);
@@ -20,7 +21,7 @@ export default function Objective () {
     <div className="objective">
       <div className="container col">
         <div className="row">
-            <h2>Wonderful! Now, for the best response tell us more about you. Why is this skill important to you? What is your objective?</h2>
+            <h2>Here's your How To Life step-by-step guide in the world of ${category} </h2>
         </div>
         <hr />
         <div className="row">

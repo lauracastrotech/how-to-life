@@ -5,6 +5,7 @@ import { FormStateContext } from '../helpers/FormContext';
 export default function Question () {
   const {formStatus, setFormStatus, step, setStep} = useContext(FormStateContext);
    
+  // use effect to run callback function that assigns categoryChosen to category which should be added to pompt + skills input
   const handleBack = () => {
     setFormStatus('how-to');
     setStep(1);
