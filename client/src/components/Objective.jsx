@@ -2,9 +2,10 @@
 import React from 'react';
 import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
+import axios from 'axios';
 
 export default function Objective () {
-  const {formStatus, setFormStatus, step, setStep, prompt, setPrompt} = useContext(FormStateContext);
+  const {formStatus, setFormStatus, step, setStep, prompt, setPrompt, asnwer, setAnswer} = useContext(FormStateContext);
    
 function handleChange(event) {
     const value = event.target.value;
@@ -19,17 +20,19 @@ function handleChange(event) {
     setStep(2);
   }
   
-  // Add prompt state here to send data to api -  axios.post
-  const handleSubmit = () => {
+  // Send prompt to api
+  const handleSubmit = async () => {
     // POST api method to send prompt 
     try {
-      const {data} = await axios('/index/ai-answer',{
-
-      })
+      const {data} = await axios('api/index/ai-answer', {
+        method: "POST",
+        data: prompt
+      });
+      console.log("data response from prompt post method");
     } 
     
     catch (error) {
-      
+      console.log(`That didn't work \n${error}`);
     }
     setFormStatus('answer');
     setStep(4);

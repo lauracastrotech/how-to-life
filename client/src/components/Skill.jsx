@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 
 export default function Question () {
-  const {formStatus, setFormStatus, step, setStep} = useContext(FormStateContext);
+  const {formStatus, setFormStatus, step, setStep, prompt, setPrompt} = useContext(FormStateContext);
    
   // use effect to run callback function that assigns categoryChosen to category which should be added to pompt + skills input
   const handleBack = () => {

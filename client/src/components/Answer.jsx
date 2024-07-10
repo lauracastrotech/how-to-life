@@ -25,7 +25,7 @@ export default function Objective () {
 
   // Need a use affect cb that will display the answer to a section/tag to
 
-  const {formStatus, setFormStatus, step, setStep} = useContext(FormStateContext);
+  const {formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer} = useContext(FormStateContext);
    
   // const handleRegenerate ()
   // Resend prompt to api
@@ -41,6 +41,9 @@ export default function Objective () {
         </div>
         <div className="row">
             <h2>Here's your How To Life step-by-step guide in the world of [value of category state goes here] </h2>
+        </div>
+        <div className="row">
+            <h2>[The value of answer state should go here] </h2>
         </div>
         <div className='row m-2'>
           <button className='col-4'>

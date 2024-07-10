@@ -18,8 +18,9 @@ function App() {
 
   const [formStatus, setFormStatus] = useState("home");
   const [step, setStep] = useState(0);
-  const [prompt, setPrompt] = useState("Ready...");
+  const [prompt, setPrompt] = useState("");
   const [category, setCategory] = useState([]);
+  const [answer, setAnswer] = useState("")
 
   console.log('in app.jsx', step, formStatus, prompt);
 
@@ -35,7 +36,9 @@ function App() {
       prompt,
       setPrompt,
       category,
-      setCategory
+      setCategory, 
+      answer,
+      setAnswer
     }}>
         { formStatus === "home" && step === 0 && <Home />} {/*}=> commenting this out fixed the how to page width*/}
         { formStatus === "how-to" && step === 1 && <HowTo />}
