@@ -18,6 +18,7 @@ function App() {
 
   const [formStatus, setFormStatus] = useState("home");
   const [step, setStep] = useState(0);
+  
   console.log('in app.jsx', step, formStatus);
 
   // sylwia: may need to add handleSelected() when a link is clicked
