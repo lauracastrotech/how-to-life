@@ -28,8 +28,9 @@ router.get('/', async function(req, res) {
     }
 });
 
+
 // Endpoint to fetch top 10 questions based on category
-router.get('/top10', async function(req, res) {
+router.get('/top10/:category', async function(req, res) {
     const { category } = req.query;
     const sql = `
         SELECT category, question, click_count
