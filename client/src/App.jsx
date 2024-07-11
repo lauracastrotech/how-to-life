@@ -22,7 +22,7 @@ function App() {
   const [category, setCategory] = useState([]);
   const [answer, setAnswer] = useState("")
 
-  console.log('in app.jsx', step, formStatus, prompt);
+  //console.log('in app.jsx', step, formStatus, prompt);
 
   // sylwia: may need to add handleSelected() when a link is clicked
   // don't worry about conditional rendering at the moment, there will be a context to control that

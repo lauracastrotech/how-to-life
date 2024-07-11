@@ -6,13 +6,13 @@ import axios from 'axios';
 
 export default function Objective () {
   const {formStatus, setFormStatus, step, setStep, prompt, setPrompt, asnwer, setAnswer} = useContext(FormStateContext);
+
+  // Create temporary user id variable to test axios post, once login authentication complete you will need to update
    
 function handleChange(event) {
     const value = event.target.value;
     const name = event.target.name;
     setPrompt(value);
-    console.log('name => ', name, 'value => ', value);
-    console.log('prompt => ', prompt);
   }
 
   const handleBack = () => {
@@ -26,9 +26,9 @@ function handleChange(event) {
     try {
       const {data} = await axios('api/index/ai-answer', {
         method: "POST",
-        data: prompt
+        data: {prompt}
       });
-      console.log("data response from prompt post method");
+      console.log("data response from prompt post method", data);
     } 
     
     catch (error) {
@@ -42,7 +42,7 @@ function handleChange(event) {
     <div className="objective">
       <div className="container col">
         <div className="row">
-            <h2>Here's your How To Life step-by-step guide in the world of [value of category state goes here] </h2>
+            <h2>Objective </h2>
         </div>
         <hr />
         <div className="row">

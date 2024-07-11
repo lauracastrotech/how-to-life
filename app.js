@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/index', indexRouter);
-app.use('/suggestions', suggestionsRouter);
+app.use('/api/index', indexRouter);
+app.use('/api/suggestions', suggestionsRouter);
 
 module.exports = app;
