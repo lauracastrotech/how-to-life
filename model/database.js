@@ -1,7 +1,7 @@
 require("dotenv").config();
 const mysql = require("mysql");
 const fs = require("fs");
-const path = require("path");
+// const path = require("path");
 
 // Load environment variables
 const DB_HOST = process.env.DB_HOST;
@@ -23,7 +23,7 @@ const con = mysql.createConnection(
   {
       host: DB_HOST || "127.0.0.1",
       user: DB_USER || "root",
-      password: DB_PASS || "root",
+      password: DB_PASS,
       database: DB_NAME || "how_to_life",
       //port: DB_PORT || "3307",
       multipleStatements: true
@@ -53,7 +53,7 @@ con.connect(function(err) {
   //});
   });
 
-//const pool = mysql.createPool(dbConfig);
+// const pool = mysql.createPool(dbConfig);
 
 
-//module.exports = db;
+// module.exports = db;

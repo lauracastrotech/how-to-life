@@ -25,13 +25,12 @@ router.get("/history", async function(req, res) {
 
 /*POST ai answers*/
 router.post("/ai-answer", async function(req, res) { // this api send prompt from frontend - prompt should be string datatype that includes category name, custom skill or popular question, objective with more context, this string will be stored in history table
-  
   console.log('beginning of backend api');
   console.log(req.body);
 
   // Removed user_id destructure for testing purposes
-  const { prompt} = req.body;
-  console.log(prompt);
+  const {prompt} = req.body;
+  // console.log(prompt);
   if(!prompt) {
     return res.status(400).send({ error: "Prompt is required!" });
   }
@@ -56,7 +55,7 @@ router.post("/ai-answer", async function(req, res) { // this api send prompt fro
     // This is the response from OpenAI api/chatGPT
     console.log('AI Answer:', answer)
 
-    await db(`INSERT INTO history (question, answer) VALUES ('${prompt}', '${answer}')`);
+    await db(`INSERT INTO history (question, answer) VALUES ("${prompt}", "${answer}")`);
 
     res.status(200).send({ answer });
   } catch (e) {

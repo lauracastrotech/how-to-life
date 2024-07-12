@@ -23,16 +23,16 @@ CREATE TABLE users (
 -- Add sample users for testing
 INSERT INTO users (first_name, last_name, username, password) VALUES ('Laura', 'Castro', 'lauracastro', 123);
 
--- /* Step 4: Create history table */
+-- Step 4: Create history table
 CREATE TABLE history (
     history_id INT AUTO_INCREMENT PRIMARY KEY,
     -- user_id INT,
-    question TEXT,
-    answer TEXT
+    question TEXT NOT NULL,
+    answer TEXT NOT NULL
     -- FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
--- /* Step 5 : Create questions table */
+-- Step 5 : Create questions table
 CREATE TABLE suggestions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     category ENUM('Health', 'Relationships', 'Technology', 'Finance', 'Education', 'Career') NOT NULL,
