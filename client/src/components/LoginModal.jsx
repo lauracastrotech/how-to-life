@@ -3,13 +3,7 @@ import LoginForm from './LoginForm';
 
 const LoginModal = () => {
   return (
-    <div
-      className="modal fade"
-      id="loginModal"
-      tabIndex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-    >
+    <div className="modal fade" id="loginModal" tabIndex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">

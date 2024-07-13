@@ -1,5 +1,3 @@
-// LoginForm.jsx
-
 import React from 'react';
 
 const LoginForm = () => {

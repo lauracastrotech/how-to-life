@@ -3,13 +3,7 @@ import SignUpForm from './SignUpForm';
 
 const SignUpModal = () => {
   return (
-    <div
-      className="modal fade"
-      id="signupModal"
-      tabIndex="-1"
-      aria-labelledby="signupModalLabel"
-      aria-hidden="true"
-    >
+    <div className="modal fade" id="signupModal" tabIndex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
@@ -26,3 +20,4 @@ const SignUpModal = () => {
 };
 
 export default SignUpModal;
+
