@@ -12,6 +12,9 @@ import { FormStateContext } from './helpers/FormContext';
 import HowTo from './components/HowTo';
 import Skill from './components/Skill';
 import Objective from './components/Objective';
+import NavBar from './components/NavBar';
+import LoginModal from './components/LoginModal';
+import SignUpModal from './components/SignUpModal';
 import Answer from './components/Answer';
 
 function App() {
@@ -28,19 +31,29 @@ function App() {
   // don't worry about conditional rendering at the moment, there will be a context to control that
 
   return (
-    <FormStateContext.Provider value = {{
-      formStatus,
-      setFormStatus,
-      step,
-      setStep,
-      prompt,
-      setPrompt,
-      category,
-      setCategory, 
-      answer,
-      setAnswer
-    }}>
-        { formStatus === "home" && step === 0 && <Home />} {/*}=> commenting this out fixed the how to page width*/}
+    <FormStateContext.Provider value = {{formStatus,setFormStatus,step,setStep,}}>
+      <div>
+      <NavBar />
+  
+        { formStatus === "home" && step === 0 && (
+          <Routes>
+            <Route exact path="/" element={<Home />} /> 
+        </Routes>
+        )}
+
+//     <FormStateContext.Provider value = {{
+//       formStatus,
+//       setFormStatus,
+//       step,
+//       setStep,
+//       prompt,
+//       setPrompt,
+//       category,
+//       setCategory, 
+//       answer,
+//       setAnswer
+//     }}>
+        
         { formStatus === "how-to" && step === 1 && <HowTo />}
         { formStatus === "skill" && step === 2 && <Skill />}
         { formStatus === "objective" && step === 3 && <Objective />} 
@@ -48,11 +61,14 @@ function App() {
       <Routes> 
         {/* NEED TO CREATE NAV LINKS TO PATH, HOME COMPONENT RENDERS TWICE */}
         {/* ADD NAVBAR CODE AND LOGIC HERE */}
-        <Route exact path="/" element={<Home />} /> 
+        {/* <Route exact path="/" element={<Home />} />  */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+      <LoginModal/>
+      <SignUpModal/>
+      </div>
     </FormStateContext.Provider>
   );
 }
