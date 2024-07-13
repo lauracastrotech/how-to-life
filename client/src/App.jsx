@@ -12,6 +12,9 @@ import { FormStateContext } from './helpers/FormContext';
 import HowTo from './components/HowTo';
 import Skill from './components/Skill';
 import Objective from './components/Objective';
+import NavBar from './components/NavBar';
+import LoginModal from './components/LoginModal';
+import SignUpModal from './components/SignUpModal';
 // import Answer from './components/Answer';
 
 function App() {
@@ -24,12 +27,10 @@ function App() {
   // don't worry about conditional rendering at the moment, there will be a context to control that
 
   return (
-    <FormStateContext.Provider value = {{
-      formStatus,
-      setFormStatus,
-      step,
-      setStep,
-    }}>
+    <FormStateContext.Provider value = {{formStatus,setFormStatus,step,setStep,}}>
+      <div>
+      <NavBar />
+  
         { formStatus === "home" && step === 0 && <Home />}
         { formStatus === "how-to" && step === 1 && <HowTo />}
         { formStatus === "skill" && step === 2 && <Skill />}
@@ -43,6 +44,9 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+      <LoginModal/>
+      <SignUpModal/>
+      </div>
     </FormStateContext.Provider>
   );
 }
