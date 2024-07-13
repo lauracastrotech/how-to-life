@@ -31,7 +31,12 @@ function App() {
       <div>
       <NavBar />
   
-        { formStatus === "home" && step === 0 && <Home />}
+        { formStatus === "home" && step === 0 && (
+          <Routes>
+            <Route exact path="/" element={<Home />} /> 
+        </Routes>
+        )}
+    
         { formStatus === "how-to" && step === 1 && <HowTo />}
         { formStatus === "skill" && step === 2 && <Skill />}
         { formStatus === "objective" && step === 3 && <Objective />} 
@@ -39,7 +44,7 @@ function App() {
       <Routes> 
         {/* NEED TO CREATE NAV LINKS TO PATH, IF I UNCOMMENT BELOW HOME COMPONENT RENDERS TWICE */}
         {/* ADD NAVBAR CODE AND LOGIC HERE */}
-        <Route exact path="/" element={<Home />} /> 
+        {/* <Route exact path="/" element={<Home />} />  */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
