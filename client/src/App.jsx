@@ -41,7 +41,7 @@ function App() {
         </Routes>
         )}
 
-//     <FormStateContext.Provider value = {{
+{/* //     <FormStateContext.Provider value = {{
 //       formStatus,
 //       setFormStatus,
 //       step,
@@ -52,7 +52,7 @@ function App() {
 //       setCategory, 
 //       answer,
 //       setAnswer
-//     }}>
+//     }}> */}
         
         { formStatus === "how-to" && step === 1 && <HowTo />}
         { formStatus === "skill" && step === 2 && <Skill />}
