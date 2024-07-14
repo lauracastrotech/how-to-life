@@ -6,6 +6,7 @@ const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var suggestionsRouter = require('./routes/suggestions');
+var authRouter = require('./routes/auth');
 
 var app = express();
 
@@ -18,5 +19,6 @@ app.use(cookieParser());
 
 app.use('/api/index', indexRouter);
 app.use('/api/suggestions', suggestionsRouter);
+app.use('/api/auth', authRouter);
 
 module.exports = app;

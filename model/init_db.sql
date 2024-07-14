@@ -15,13 +15,12 @@ SET foreign_key_checks = 1;
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) not null,
-    last_name VARCHAR(50) not null,
-    username VARCHAR(50) UNIQUE,
+    email VARCHAR(50) UNIQUE,
     password VARCHAR(255)
 );
 
 -- Add sample users for testing
-INSERT INTO users (first_name, last_name, username, password) VALUES ('Laura', 'Castro', 'lauracastro', 123);
+INSERT INTO users (first_name, email, password) VALUES ('Laura', 'lauracastro@gmail.com', 123);
 
 -- Step 4: Create history table
 CREATE TABLE history (
