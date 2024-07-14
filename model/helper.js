@@ -1,29 +1,3 @@
-// const mysql = require('mysql');
-// require('dotenv').config();
-
-// const db = () => {
-//     return new Promise((resolve, reject) => {
-//         const connection = mysql.createConnection({
-//             host: process.env.DB_HOST,
-//             port: process.env.DB_PORT,
-//             user: process.env.DB_USER,
-//             password: process.env.DB_PASS,
-//             database: process.env.DB_NAME
-//         });
-        
-
-//         connection.connect(err => {
-//             if (err) {
-//                 reject(err);
-//             } else {
-//                 resolve(connection);
-//             }
-//         });
-//     });
-// };
-
-// module.exports = db;
-
 require("dotenv").config();
 const mysql = require("mysql");
 
@@ -84,3 +58,48 @@ module.exports = async function db(query) {
 
   return promise;
 };
+
+
+//for bianca connection to DB
+// require('dotenv').config();
+// const mysql = require('mysql');
+
+// const pool = mysql.createPool({
+//   connectionLimit: 10, // Adjust this number as per your application's needs
+//   host: process.env.DB_HOST || '127.0.0.1',
+//   user: process.env.DB_USER || 'root',
+//   password: process.env.DB_PASS || '',
+//   database: process.env.DB_NAME || 'how_to_life',
+//   port: process.env.DB_PORT || '3307',
+//   multipleStatements: true
+// });
+
+// module.exports = function db(query, params) {
+//   return new Promise((resolve, reject) => {
+//     pool.getConnection((err, connection) => {
+//       if (err) {
+//         console.error('Error getting MySQL connection:', err);
+//         reject(err);
+//         return;
+//       }
+
+//       connection.query(query, params, (error, results) => {
+//         connection.release(); // Release the connection back to the pool
+
+//         if (error) {
+//           console.error('Error executing query:', error.message);
+//           reject(error);
+//           return;
+//         }
+
+//         const response = {
+//           data: results,
+//           affectedRows: results.affectedRows,
+//           changedRows: results.changedRows
+//         };
+
+//         resolve(response);
+//       });
+//     });
+//   });
+// };
