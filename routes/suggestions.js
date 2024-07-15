@@ -8,7 +8,7 @@ router.get('/', async function(req, res) {
         SELECT category, question, click_count
         FROM suggestions
         ORDER BY click_count DESC
-        LIMIT 10;`;
+        LIMIT 5;`;
 
     try {
         const connection = await db();
@@ -37,7 +37,7 @@ router.get('/top10/:category', async function(req, res) {
         FROM suggestions
         WHERE category = ?
         ORDER BY click_count DESC
-        LIMIT 10;`;
+        LIMIT 5;`;
 
     try {
         const connection = await db();
