@@ -3,16 +3,7 @@ import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 
 export default function HowTo () {
-  const {formStatus, setFormStatus, step, setStep, prompt, setPrompt, category, setCategory} = useContext(FormStateContext);
-
-  // Bug
-  // function handleChange(event) {
-  //   const value = event.target.value;
-  //   const name = event.target.name;
-  //   setCategory([...value]);
-  //   console.log('name => ', name, 'value => ', value);
-  //   console.log('prompt => ', prompt, "category => ", category);
-  // }
+  const {setFormStatus, setStep,} = useContext(FormStateContext);
 
   const handleBack = () => {
     setFormStatus('home');
@@ -20,7 +11,6 @@ export default function HowTo () {
   }
   
   const handleNext = () => {
-    //setPrompt(category);
     setFormStatus('skill');
     setStep(2);
   }
