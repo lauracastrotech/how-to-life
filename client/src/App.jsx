@@ -1,3 +1,4 @@
+// IF YOU NEED LOGIN STATE, YOU CAN ADD THE PROVIDER HERE
 /* eslint-disable no-unused-vars */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -19,13 +20,12 @@ import Answer from './components/Answer';
 
 function App() {
 
+  // Initialize states for progressive form
   const [formStatus, setFormStatus] = useState("home");
   const [step, setStep] = useState(0);
   const [prompt, setPrompt] = useState("");
   const [category, setCategory] = useState([]);
   const [answer, setAnswer] = useState("")
-
-  //console.log('in app.jsx', step, formStatus, prompt);
 
   // sylwia: may need to add handleSelected() when a link is clicked
   // don't worry about conditional rendering at the moment, there will be a context to control that
@@ -34,12 +34,12 @@ function App() {
     <FormStateContext.Provider value = {{formStatus,setFormStatus,step,setStep,}}>
       <div>
       <NavBar />
-  
-        { formStatus === "home" && step === 0 && (
+        {/* By conditionally rendering this route, it cannot be found when the formStatus and stepChange */}
+        { formStatus === "home" && step === 0 && 
           <Routes>
             <Route exact path="/" element={<Home />} /> 
         </Routes>
-        )}
+        }  
 
 {/* //     <FormStateContext.Provider value = {{
 //       formStatus,
@@ -59,9 +59,8 @@ function App() {
         { formStatus === "objective" && step === 3 && <Objective />} 
         { formStatus === "answer" && <Answer /> }
       <Routes> 
-        {/* NEED TO CREATE NAV LINKS TO PATH, HOME COMPONENT RENDERS TWICE */}
-        {/* ADD NAVBAR CODE AND LOGIC HERE */}
-        {/* <Route exact path="/" element={<Home />} />  */}
+       
+        <Route exact path="/" element={<Home />} />  
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />

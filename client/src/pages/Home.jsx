@@ -1,3 +1,5 @@
+// ADD FORMSTATE CONTEXT PROVIDER TO THIS PAGE SO THAT ALL OF THE STEPS OF THE FORM WILL CONDITIONALLY RENDER HERE BASED ON STATE, THERE DO NOT NEED TO BE ANY ROUTE PATHS
+
 import React from 'react';
 import Suggestions from '../components/Suggestions';
 import { useState, useContext } from 'react';
