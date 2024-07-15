@@ -20,7 +20,7 @@ export default function HowTo () {
   }
   
   const handleNext = () => {
-    setPrompt(category);
+    //setPrompt(category);
     setFormStatus('skill');
     setStep(2);
   }
