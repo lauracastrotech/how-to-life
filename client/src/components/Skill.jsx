@@ -6,11 +6,14 @@ export default function Question () {
   const {formStatus, setFormStatus, step, setStep, prompt, setPrompt} = useContext(FormStateContext);
    
   // use effect to run callback function that assigns categoryChosen to category which should be added to pompt + skills input
+  
+  // Return to previous section on click
   const handleBack = () => {
     setFormStatus('how-to');
     setStep(1);
   }
   
+  // Continue to next section on click
   const handleNext = () => {
     setFormStatus('objective');
     setStep(3);
