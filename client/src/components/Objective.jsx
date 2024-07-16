@@ -4,9 +4,8 @@ import { useContext, useState } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import axios from 'axios';
 
-export default function Objective ({answer, setAnswer}) {
-  const {formStatus, setFormStatus, step, setStep} = useContext(FormStateContext); //removed prompt and setPrompt for testing
-  const [prompt, setPrompt] = useState('');
+export default function Objective () {
+  const {setFormStatus, setStep, prompt, setPrompt} = useContext(FormStateContext);
 
   // Create temporary user id variable to test axios post, once login authentication complete you will need to update
    

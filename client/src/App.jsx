@@ -14,9 +14,15 @@ import LoginModal from './components/LoginModal';
 import SignUpModal from './components/SignUpModal';
 
 function App() {
-  
+
+  // Initialize states for progressive form
+  const [formStatus, setFormStatus] = useState("home");
+  const [step, setStep] = useState(0);
+  const [prompt, setPrompt] = useState("");
+  const [answer, setAnswer] = useState("");
+
   return (
-    <FormStateContext.Provider>
+    <FormStateContext.Provider value={{ formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer}}>
       <div>
         <NavBar />
         <Routes>
