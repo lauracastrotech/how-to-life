@@ -14,13 +14,9 @@ import LoginModal from './components/LoginModal';
 import SignUpModal from './components/SignUpModal';
 
 function App() {
-
-  // Initialize states for progressive form
-  const [formStatus, setFormStatus] = useState("home");
-  const [step, setStep] = useState(0);
-
+  
   return (
-    <FormStateContext.Provider value={{ formStatus, setFormStatus, step, setStep }}>
+    <FormStateContext.Provider>
       <div>
         <NavBar />
         <Routes>
@@ -30,23 +26,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Routes>
 
-//         )}
-        
-//         { formStatus === "how-to" && step === 1 && <HowTo />}
-//         { formStatus === "skill" && step === 2 && <Skill />}
-//         { formStatus === "objective" && step === 3 && <Objective answer={answer} setAnswer={setAnswer} />} 
-//         { formStatus === "answer" && <Answer answer={answer} setAnswer={setAnswer} /> }
-//       <Routes> 
-//         {/* NEED TO CREATE NAV LINKS TO PATH, HOME COMPONENT RENDERS TWICE */}
-//         {/* ADD NAVBAR CODE AND LOGIC HERE */}
-//         {/* <Route exact path="/" element={<Home />} />  */}
-//         <Route path="/login" element={<Login />} />
-//         <Route path="/signup" element={<SignUp />} />
-//         <Route path="/profile" element={<Profile />} />
-//       </Routes>
-//       <LoginModal/>
-//       <SignUpModal/>
-=======
+        <LoginModal/>
+        <SignUpModal/>
 
       </div>
     </FormStateContext.Provider>
