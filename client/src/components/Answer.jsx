@@ -16,22 +16,40 @@ user clicks submit - onClick send prompt to POST api and the reqponse to this re
 */
 
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import regenerate from '../assets/regenerate.png';
 import textTospeech from '../assets/text_to_speech.png';
+import axios from 'axios';
 
-export default function Objective () {
+export default function Answer ({answer, setAnswer} ) {
 
   // Need a use affect cb that will display the answer to a section/tag to
 
-  const {formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer} = useContext(FormStateContext);
-   
+  // const {formStatus, setFormStatus, step, setStep, prompt, answer} = useContext(FormStateContext); 
+  // const {answer} = useContext(FormStateContext); 
+  const [audioUrl, setAudioUrl] = useState('');
+
+
+  const handleTextToSpeech = async (text) => {
+    try {
+      const { data } = await axios.post('/api/index/text-to-speech', { text }, { headers: { 'Content-Type': 'application/json' } });
+      const audioUrl = `data:audio/mp3;base64,${data.audioContent}`;
+      setAudioUrl(audioUrl);
+    } catch (error) {
+      console.error('Error generating text to speech:', error);
+    }
+  };
+  // generate text-to-speech when the answer changes
+  useEffect(() => {
+    if (answer) {
+      handleTextToSpeech(answer);
+    }
+  }, [answer]);
+
+
   // const handleRegenerate ()
   // Resend prompt to api
-
-  // const handleTextToSpeech ()
-  // send request to Whisper api - Add comment/ question to Jira for Sylwia, what method do i need to use?
 
   return (
     <div className="objective">
@@ -43,16 +61,21 @@ export default function Objective () {
             <h2>Here's your How To Life step-by-step guide in the world of [value of category state goes here] </h2>
         </div>
         <div className="row">
-            <h2>[The value of answer state should go here] </h2>
+            <h2>To be added later</h2>
         </div>
         <div className='row m-2'>
           <button className='col-4'>
             <img className = "icon-group" src={regenerate} alt="regenrate button" />
           </button>
-          <button className='col-4'>
+          <button className='col-4' onClick={() => handleTextToSpeech(answer)}>
             <img className = "icon-group" src={textTospeech} alt="text to speech button" />
           </button>
         </div>
+        {audioUrl && (
+                    <div className="row">
+                        <audio controls src={audioUrl} />
+                    </div>
+        )}
       </div>
     </div>
   );

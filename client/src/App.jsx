@@ -56,8 +56,8 @@ function App() {
         
         { formStatus === "how-to" && step === 1 && <HowTo />}
         { formStatus === "skill" && step === 2 && <Skill />}
-        { formStatus === "objective" && step === 3 && <Objective />} 
-        { formStatus === "answer" && <Answer /> }
+        { formStatus === "objective" && step === 3 && <Objective answer={answer} setAnswer={setAnswer} />} 
+        { formStatus === "answer" && <Answer answer={answer} setAnswer={setAnswer} /> }
       <Routes> 
         {/* NEED TO CREATE NAV LINKS TO PATH, HOME COMPONENT RENDERS TWICE */}
         {/* ADD NAVBAR CODE AND LOGIC HERE */}
