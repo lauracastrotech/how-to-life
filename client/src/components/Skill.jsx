@@ -26,6 +26,7 @@ export default function Question () {
             <h2>Tell us more about the skill that you want to learn. <br /> Here are some ideas if you&apos;re not sure</h2>
         </div>
         <hr />
+        {/* This is where Bianca debugs to pull questions */}
         <div className="row">
             <p className="card col">Popular Question placeholder</p>
         </div>
