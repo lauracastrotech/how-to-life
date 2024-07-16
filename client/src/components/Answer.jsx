@@ -1,7 +1,5 @@
 // This is the component where chatGpt response renders
-
 // GET method for history => this is tied to backend, create list of cards where each card has text that is a question that the user previously asked
-
 // This is where the text-to-speech icon will live
 
 /*
@@ -22,12 +20,11 @@ import regenerate from '../assets/regenerate.png';
 import textTospeech from '../assets/text_to_speech.png';
 import axios from 'axios';
 
-export default function Answer ({answer, setAnswer} ) {
+export default function Answer (){
 
   // Need a use affect cb that will display the answer to a section/tag to
 
-  // const {formStatus, setFormStatus, step, setStep, prompt, answer} = useContext(FormStateContext); 
-  // const {answer} = useContext(FormStateContext); 
+  const {formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer} = useContext(FormStateContext); 
   const [audioUrl, setAudioUrl] = useState('');
 
 
