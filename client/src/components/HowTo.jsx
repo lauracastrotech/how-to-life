@@ -1,9 +1,8 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 
-export default function HowTo () {
-  const {setFormStatus, setStep,} = useContext(FormStateContext);
+export default function HowTo() {
+    const { setFormStatus, setStep, setPrompt } = useContext(FormStateContext);
 
   const handleBack = () => {
     setFormStatus('home');
@@ -12,11 +11,16 @@ export default function HowTo () {
   
   const handleNext = () => {
 
-    // setPrompt(category);
-
     setFormStatus('skill');
     setStep(2);
   }
+
+  const handleCategorySelect = (category) => {
+    setPrompt(category); 
+    setFormStatus('skill'); 
+    setStep(2); 
+};
+
 
   return (
     <div className="how-to">
@@ -25,16 +29,16 @@ export default function HowTo () {
             <h1>How to...</h1>
         </div>
         <div className="row bg-success m-2">
-            <button className="btn-group btn col-6">Health</button>
-            <button className="btn-group btn col-6">Career</button>
+        <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Health')}>Health</button>
+        <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Career')}>Career</button>
         </div>
         <div className="row bg-success m-2">
-            <button className="btn-group btn col-6">Technology</button>
-            <button className="btn-group btn col-6">Relationships</button>
+        <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Technology')}>Technology</button>
+        <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Relationships')}>Relationships</button>
         </div>
         <div className="row bg-success m-2">
-            <button className="btn-group btn col-6">Finance</button>
-            <button className="btn-group btn col-6">Education</button>
+        <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Finance')}>Finance</button>
+        <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Education')}>Education</button>
         </div>
         <div className="row bg-success m-2">
             <button className='col-4' onClick={handleBack}>Back</button>

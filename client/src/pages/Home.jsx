@@ -7,7 +7,7 @@ import Answer from '../components/Answer';
 import './Home.css'; 
 
 export default function Home() {
-  const { formStatus, setFormStatus, step, setStep } = useContext(FormStateContext);
+  const { formStatus, setFormStatus, step, setStep, prompt, setPrompt } = useContext(FormStateContext);
 
   const handleGetStarted = () => {
     setFormStatus('how-to');
