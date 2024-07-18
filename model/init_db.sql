@@ -152,4 +152,25 @@ CREATE TABLE suggestions (
 -- INSERT INTO suggestions (category, question, click_count) VALUES ('Education', 'How to prepare for a successful career in STEM?', 0);
 -- INSERT INTO suggestions (category, question, click_count) VALUES ('Education', 'How to apply for financial aid?', 0);
 
+-- Career:
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to write a professional resume?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to prepare for a job interview?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to negotiate your salary?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to build a strong LinkedIn profile?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to find job opportunities?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to switch careers successfully?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to develop leadership skills?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to network effectively?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to balance work and personal life?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to handle workplace conflicts?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to ask for a promotion?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to improve time management at work?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to build a personal brand?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to start a freelance career?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to stay productive while working remotely?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to enhance your professional skills?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to handle job rejection?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to create a career development plan?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to maintain job satisfaction?', 0);
+-- INSERT INTO suggestions (category, question, click_count) VALUES ('Career', 'How to prepare for a performance review?', 0);
 
