@@ -30,8 +30,8 @@ export default function Question () {
         <div className="row">
             <form>
               <div className="form-floating">
-                <textarea className="form-control animate__animated animate__fadeInLeft" placeholder="How do I..." id="custom-skill"></textarea>
-              <label htmlFor="custom-skill">How do I...</label>
+                <textarea className="form-control animate__animated animate__fadeInLeft" id="custom-skill"></textarea>
+              <label className="animate__animated animate__fadeInLeft" htmlFor="custom-skill">How do I...</label>
               </div>
             </form>
         </div>
@@ -43,7 +43,7 @@ export default function Question () {
             <p className="card col animate__animated animate__fadeInLeft">Popular Question placeholder</p>
         </div>
         <div className="progress">
-          <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+          <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <div className="row">
             <button className='col btn btn-sm' onClick={handleBack}>Back</button>
