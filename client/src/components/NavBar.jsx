@@ -1,7 +1,11 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Navbar, Nav, Image} from 'react-bootstrap';
+import Login from '../pages/Login';
+import SignUp from '../pages/SignUp';
+import Profile from '../pages/Profile';
+import Home from '../pages/Home';
 import './NavBar.css'; 
 
 const NavBar = () => {
@@ -18,8 +22,8 @@ const NavBar = () => {
     setNavToggle(false);
   };
   return (
-    <div>
-      <Navbar id="NavBar" expand="lg" expanded={navToggle}>
+      <div>
+        <Navbar id="NavBar" expand="lg" expanded={navToggle}>
             <Navbar.Brand as={Link} to="/" className='nav-custom'>
               <Image id="logo" src="/howtolifeb&w.png" alt="how to life logo" style={{ height: '50px' }}/> 
             </Navbar.Brand>
@@ -35,8 +39,10 @@ const NavBar = () => {
                 {/* <Nav.Link as={Link} to="/profile"  className='nav-custom' onClick={handleSelect}>Profile</Nav.Link> */}
                 </Nav>
               </Navbar.Collapse>
-          </Navbar>
-    </div>
+        </Navbar>
+      
+      </div>
+  
     // <div>
     //   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     //   <div className="container-fluid">
