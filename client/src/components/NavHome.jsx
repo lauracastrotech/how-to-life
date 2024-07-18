@@ -1,42 +1,19 @@
 // THIS COMPONENT PROVIDES A BRIEF DESCRIPTION OF THE FORM
 
-import React, { useContext, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
-import HowTo from '../components/HowTo';
-import Skill from '../components/Skill';
-import Objective from '../components/Objective';
-import Answer from '../components/Answer';
 import '../styles/Home.css'; 
 
 export default function Home() {
   const { formStatus, setFormStatus, step, setStep } = useContext(FormStateContext);
-  const {formView, stepView} = useParams();
-  console.log(formView, stepView);
-  
-  useEffect(() => {
-    if(formView && stepView){
-      setFormStatus(formView);
-      setStep(Number(stepView));
-    }
-    else{
-      setFormStatus("home");
-      setStep(0);
-    }
-  }, [formView, stepView])
-  
-  const navigate = useNavigate();
-  
+
   const handleGetStarted = () => {
-    navigate('/howto/1');
-    // setFormStatus('how-to');
-    // setStep(1);
+    setFormStatus('how-to');
+    setStep(1);
   };
 
   return (
     <div>
-      {(formStatus === "home" && step === 0) && (
-        <div className="home">
           <div className='row'>
             <div className='col-md-6'>
               <h1 id='welcome'>Welcome!</h1>
@@ -58,13 +35,7 @@ export default function Home() {
               <hr />
               <button className="btn btn-sm" id='get-started' onClick={handleGetStarted}>Get started</button> 
             </div>
-          </div> 
         </div>
-      )}
-      {formStatus === "howto" && step === 1 && <HowTo />}
-      {formStatus === "skill" && step === 2 && <Skill />}
-      {formStatus === "objective" && step === 3 && <Objective />}
-      {formStatus === "answer" && <Answer />}
     </div>
   );
 }
