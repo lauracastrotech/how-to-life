@@ -42,7 +42,7 @@ router.post("/ai-answer", async function(req, res) { // this api send prompt fro
   const messages = [
     {
         role: 'system',
-        content: 'You are assisting users with practical and helpful life advice. Max 200 words'
+        content: 'You are assisting users with practical and helpful life advice. Max 200 words. Give step by step instructions/guidance.'
     },
     {
         role: 'user',
@@ -91,5 +91,6 @@ router.post('/text-to-speech', async (req, res) => {
     res.status(500).send('Error');
   }
 });
+
 
 module.exports = router;

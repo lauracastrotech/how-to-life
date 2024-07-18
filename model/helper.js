@@ -65,7 +65,7 @@ module.exports = async function db(query) {
 // const mysql = require('mysql');
 
 // const pool = mysql.createPool({
-//   connectionLimit: 10, // Adjust this number as per your application's needs
+//   connectionLimit: 1000, // Adjust this number as per your application's needs
 //   host: process.env.DB_HOST || '127.0.0.1',
 //   user: process.env.DB_USER || 'root',
 //   password: process.env.DB_PASS || '',

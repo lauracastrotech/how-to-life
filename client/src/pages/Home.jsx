@@ -26,6 +26,7 @@ export default function Home() {
   }, [formView, stepView])
   
   const navigate = useNavigate();
+  
   const handleGetStarted = () => {
     navigate('/howto/1');
     // setFormStatus('how-to');
