@@ -15,21 +15,30 @@ export default function Home() {
   };
 
   return (
-    <div className="progressive-form">
+    <div className="container">
       {formStatus === "home" && step === 0 && (
-        <div className="container bg-warning">
-          <div className='home row'>
-            <div className='col-6'>
-              <h1 className='bg-primary'>Welcome!</h1>
-              <p className='bg-light'>How to life helps you get the best resources for all those life skills that they didn&apos;t teach you in high school. Here&apos;s how it works</p>
+        <div className="home">
+          <div className='row'>
+            <div className='col-md-6'>
+              <h1 id='welcome'>Welcome!</h1>
+              <p id="description">How to life is a tool that helps you create a prompt for all those life skills that they didn&apos;t teach you in high school. Here&apos;s how it works.</p>
             </div>
-            <div className='col-6'>
-              <p className='card bg-success'>Step 1: Choose a category. There can be many different ways to learn something. Help us narrow down your search.</p>
-              <p className='card bg-success'>Step 2: Select a skill. In a few words, you can tell us the skill that you would like to learn.</p>
-              <p className='card bg-success'>Step 3: Share your objective. The more details that you give us, the better your answers will be.</p>
+            <div className='col-md-6'>
+              <div className="card">
+                <p className='card-title'>1 | Category</p>
+                <p className='card-body'>Setup your prompt by selecting an area of interest.</p>
+              </div>
+              <div className="card">
+                <p className='card-title'>2 | Skill</p>
+                <p className='card-body'>Tell us about what you want to learn.</p>
+              </div>
+              <div className="card">
+                <p className='card-title'>3 | Objective</p>
+                <p className='card-body'>Give us some context. The more details the better.</p>
+              </div>
+              <hr />
+              <button className="btn btn-sm" id='get-started' onClick={handleGetStarted}>Get started</button> 
             </div>
-            <hr />
-            <button onClick={handleGetStarted}>Get started</button>
           </div> 
         </div>
       )}

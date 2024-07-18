@@ -20,7 +20,7 @@ export default function HowTo () {
 
   return (
     <div className="how-to">
-      <div className="container col bg-primary">
+      <div className="col bg-primary">
         <div className="row bg-warning m-2">
             <h1>How to...</h1>
         </div>
@@ -37,8 +37,8 @@ export default function HowTo () {
             <button className="btn-group btn col-6">Education</button>
         </div>
         <div className="row bg-success m-2">
-            <button className='col-4' onClick={handleBack}>Back</button>
-            <p className='col-4 bg-danger'>1</p>
+            <button className='col' onClick={handleBack}>Back</button>
+            <p className='col bg-danger'>1</p>
             <button className='col-4' onClick={handleNext}>Next</button>
         </div>
       </div>

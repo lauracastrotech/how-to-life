@@ -1,0 +1,49 @@
+
+/*Welcome styles*/
+.home {
+    background-color: rgba(229,237,255,255);
+    color: rgba(62,71,114,255);
+}
+#welcome {
+    padding: 15px;
+    text-align: left;
+    margin: 0px;
+    
+}
+#description {
+    padding: 15px;
+    text-align: justify;
+    margin: 0px;
+    font-weight: 500;
+}
+
+/*Card styles*/
+.card {
+    padding: 15px;
+    margin: 0 10px 10px;
+}
+
+.card-title {
+    font-size: 20px;
+    text-align: left;
+    color: rgba(62,71,114,255);
+    padding: 0px;
+}
+
+.card-body {
+    font-size: 15px;
+    text-align: justify;
+    color: rgba(62,71,114,255);
+    padding: 0px;
+}
+
+/*Button styles*/
+.btn {
+    color: rgba(62,71,114,255);
+    background-color: rgba(183,198,231,255);
+    border: solid 0.5px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
