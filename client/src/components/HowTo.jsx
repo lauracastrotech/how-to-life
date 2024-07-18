@@ -70,19 +70,19 @@ export default function HowTo () {
         <div className="progress">
           <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 
-//         <div className="row bg-success m-2">
-//         <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Health')}>Health</button>
-//         <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Career')}>Career</button>
-//         </div>
-//         <div className="row bg-success m-2">
-//         <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Technology')}>Technology</button>
-//         <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Relationships')}>Relationships</button>
-//         </div>
-//         <div className="row bg-success m-2">
-//         <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Finance')}>Finance</button>
-//         <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Education')}>Education</button>
+{/* <div className="row bg-success m-2">
+<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Health')}>Health</button>
+<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Career')}>Career</button>
+</div>
+<div className="row bg-success m-2">
+ <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Technology')}>Technology</button>
+<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Relationships')}>Relationships</button>
+</div>
+<div className="row bg-success m-2">
+<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Finance')}>Finance</button>
+<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Education')}>Education</button> */}
 
-//         </div>
+       </div>
         <div className="row">
             <button className='col btn btn-sm' onClick={handleBack}>Back</button>
             <p className='col d-flex justify-content-center align-items-center' id='step1'>1</p>
