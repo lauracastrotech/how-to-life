@@ -9,7 +9,7 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
 import Home from './pages/Home';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 import { Navbar, Nav, Image} from 'react-bootstrap';
 import LoginModal from './components/LoginModal';
 import SignUpModal from './components/SignUpModal';

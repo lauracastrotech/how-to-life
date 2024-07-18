@@ -12,6 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@google-cloud/text-to-speech": "^5.3.0",
+    "animate.css": "^4.1.1",
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
@@ -26,6 +27,7 @@
     "mysql": "^2.18.1",
     "nodemon": "^3.1.4",
     "openai": "^4.52.3",
+    "react-bootstrap": "^2.10.4",
     "react-router-dom": "^6.24.1"
   }
 }
