@@ -23,7 +23,7 @@ function App() {
 
   return (
     <FormStateContext.Provider value={{ formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer}}>
-      <div>
+      <div className="container">
         <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />

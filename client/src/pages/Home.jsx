@@ -1,10 +1,12 @@
+// THIS COMPONENT PROVIDES A BRIEF DESCRIPTION OF THE FORM
+
 import React, { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import HowTo from '../components/HowTo';
 import Skill from '../components/Skill';
 import Objective from '../components/Objective';
 import Answer from '../components/Answer';
-import './Home.css'; 
+import '../styles/Home.css'; 
 
 export default function Home() {
   const { formStatus, setFormStatus, step, setStep } = useContext(FormStateContext);
@@ -15,7 +17,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
+    <div>
       {formStatus === "home" && step === 0 && (
         <div className="home">
           <div className='row'>
