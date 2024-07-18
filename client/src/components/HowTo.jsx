@@ -3,14 +3,17 @@
 import React from 'react';
 import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
+import { useNavigate } from 'react-router-dom';
 import '../styles/HowTo.css'; 
 
 export default function HowTo () {
   const {setFormStatus, setStep,} = useContext(FormStateContext);
-
+  const navigate = useNavigate();
+  console.log("anything");
   const handleBack = () => {
     setFormStatus('home');
     setStep(0);
+    navigate("/");
   }
   
   const handleNext = () => {
@@ -19,6 +22,7 @@ export default function HowTo () {
 
     setFormStatus('skill');
     setStep(2);
+    navigate("/skill/2");
   }
 
   return (

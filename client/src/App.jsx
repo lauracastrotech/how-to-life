@@ -57,6 +57,7 @@ function App() {
         </Navbar>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route path="/:formView/:stepView" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/profile" element={<Profile />} />

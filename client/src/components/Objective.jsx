@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+
+//Objectitve > This section of the form collects more context and has the submit button to send the prompt to the API
+
 import 'animate.css';
 import React from 'react';
 import { useContext, useState } from 'react';

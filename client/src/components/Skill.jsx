@@ -1,3 +1,4 @@
+// Here the user asks a question or selects a suggestion about a specific skill that the user wants to learn
 import 'animate.css';
 import React from 'react';
 import { useContext } from 'react';
