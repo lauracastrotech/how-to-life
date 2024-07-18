@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import 'animate.css';
 import React from 'react';
 import { useContext, useState } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
@@ -58,10 +59,10 @@ function handleChange(event) {
   return (
     <div className="objective">
       <div className="container col">
-        <div className="row">
+        <div className="row animate__animated animate__fadeInLeft">
             <h2>How do you best learn, why do you need to learn this skill now, what outcome do you hope that you will have, when do you need to do this by.</h2>
         </div>
-        <div className="row">
+        <div className="row animate__animated animate__fadeInLeft">
             <form>
               <div className="form-floating">
                 <textarea
@@ -71,7 +72,7 @@ function handleChange(event) {
                 onChange={handleChange}
                 id="custom-skill"
                 ></textarea>
-              <label htmlFor="custom-skill">In your own words...</label>
+             
               </div>
             </form>
         </div>

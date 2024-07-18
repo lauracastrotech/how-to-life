@@ -51,12 +51,9 @@ export default function Answer (){
   return (
     <div className="objective">
       <div className="container col">
-        <div className="row m-2">
-          <h1>Answer</h1>
-        </div>
         {/* This div will be boiler plate */}
         <div className="row">
-            <h2>Here's your How To Life step-by-step guide in the world of [value of category state goes here] </h2>
+            <h2>[What do we put here]</h2>
         </div>
         {/* This div is where to render renspone */}
         <div className="row">

@@ -31,13 +31,12 @@ export default function Question () {
             <form>
               <div className="form-floating">
                 <textarea className="form-control animate__animated animate__fadeInLeft" id="custom-skill"></textarea>
-              <label className="animate__animated animate__fadeInLeft" htmlFor="custom-skill">How do I...</label>
               </div>
             </form>
         </div>
         {/* This is where Bianca debugs to pull questions */}
         <div className="row">
-            <p className="card col animate__animated animate__fadeInLeft">Popular Question placeholder</p>
+            <p className="card colanimate__animated animate__fadeInLeft ">Popular Question placeholder</p>
         </div>
         <div className="row">
             <p className="card col animate__animated animate__fadeInLeft">Popular Question placeholder</p>
