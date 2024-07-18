@@ -37,7 +37,7 @@ export default function Skill() {
 //             <button className='col btn btn-sm' onClick={handleNext}>Next</button>
     useEffect(() => {
       const fetchSuggestions = async (category) => {
-          const url = `http://localhost:3000/api/suggestions/${category}`;
+          const url = `http://127.0.0.1:3000/api/suggestions/${category}`;
           console.log('Fetching suggestions from:', url);
           try {
               const response = await fetch(url);
