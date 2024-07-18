@@ -1,6 +1,8 @@
+@import 'animate.css';
 h2 {
     text-align: justify;
     padding: 10px;
+    
 }
 /*Text area styles*/
 #custom-skill {
@@ -10,4 +12,20 @@ h2 {
 
 #step2 {
     margin: 15px 10px;
+}
+
+/*Animation*/
+.animate__animated.animate__fadeInLeft{
+    --animate-duration: 1.5s;
+}
+
+/*Progress bar*/
+.progress {
+    height: 2px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background-color: rgba(62,71,114,255);
 }

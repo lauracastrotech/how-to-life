@@ -61,7 +61,6 @@ export default function HowTo () {
         <div className="progress">
           <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <hr />
         <div className="row">
             <button className='col btn btn-sm' onClick={handleBack}>Back</button>
             <p className='col d-flex justify-content-center align-items-center' id='step1'>1</p>
