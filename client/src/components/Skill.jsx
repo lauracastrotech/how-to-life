@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
+import '../styles/Skill.css'; 
 
 export default function Question () {
   const {formStatus, setFormStatus, step, setStep, prompt, setPrompt} = useContext(FormStateContext);
@@ -23,9 +24,16 @@ export default function Question () {
     <div className="skill">
       <div className="container col">
         <div className="row">
-            <h2>Tell us more about the skill that you want to learn. <br /> Here are some ideas if you&apos;re not sure</h2>
+            <h2>Awesome! In your own words, describe a skill that you want to learn today</h2>
         </div>
-        <hr />
+        <div className="row">
+            <form>
+              <div className="form-floating">
+                <textarea className="form-control" placeholder="How do I..." id="custom-skill"></textarea>
+              <label htmlFor="custom-skill">How do I...</label>
+              </div>
+            </form>
+        </div>
         {/* This is where Bianca debugs to pull questions */}
         <div className="row">
             <p className="card col">Popular Question placeholder</p>
@@ -33,18 +41,14 @@ export default function Question () {
         <div className="row">
             <p className="card col">Popular Question placeholder</p>
         </div>
-        <div className="row">
-            <form>
-              <div className="form-floating">
-                <textarea className="form-control" placeholder="In your own words, describe the skill that you want to learn about today" id="custom-skill"></textarea>
-              <label htmlFor="custom-skill">Comments</label>
-              </div>
-            </form>
+        <div className="progress">
+          <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
+        <hr />
         <div className="row">
-            <button className='col-4' onClick={handleBack}>Back</button>
-            <p className='col-4'>2</p>
-            <button className='col-4' onClick={handleNext}>Next</button>
+            <button className='col btn btn-sm' onClick={handleBack}>Back</button>
+            <p className='col d-flex justify-content-center align-items-center' id='step2'>2</p>
+            <button className='col btn btn-sm' onClick={handleNext}>Next</button>
         </div>
       </div>
     </div>

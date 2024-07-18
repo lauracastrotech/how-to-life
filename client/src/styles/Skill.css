@@ -1,0 +1,13 @@
+h2 {
+    text-align: justify;
+    padding: 10px;
+}
+/*Text area styles*/
+#custom-skill {
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+#step2 {
+    margin: 15px 10px;
+}
