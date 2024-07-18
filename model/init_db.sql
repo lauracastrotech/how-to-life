@@ -43,26 +43,26 @@ CREATE TABLE suggestions (
 -- I also used dummy data to populate the table. To start with 100 questions beggining with how to.
 
 -- Health
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to boost my immune system naturally?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to lose weight effectively?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to improve sleep quality?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to reduce stress and anxiety?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to lower blood pressure without medication?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to prevent common cold and flu?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to maintain a healthy diet on a budget?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to improve digestion naturally?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to manage chronic pain?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to start a workout routine at home?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to quit smoking for good?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to manage diabetes through diet?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to improve heart health?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to stay hydrated throughout the day?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to recognize signs of dehydration?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to reduce cholesterol levels?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to relieve back pain quickly?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to overcome insomnia?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to achieve mental clarity?', 0);
--- INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to deal with seasonal allergies?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to boost my immune system naturally?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to lose weight effectively?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to improve sleep quality?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to reduce stress and anxiety?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to lower blood pressure without medication?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to prevent common cold and flu?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to maintain a healthy diet on a budget?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to improve digestion naturally?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to manage chronic pain?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to start a workout routine at home?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to quit smoking for good?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to manage diabetes through diet?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to improve heart health?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to stay hydrated throughout the day?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to recognize signs of dehydration?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to reduce cholesterol levels?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to relieve back pain quickly?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to overcome insomnia?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to achieve mental clarity?', 0);
+INSERT INTO suggestions (category, question, click_count) VALUES ('Health', 'How to deal with seasonal allergies?', 0);
 
 -- Relationships
 -- INSERT INTO suggestions (category, question, click_count) VALUES ('Relationships', 'How to build trust in a relationship?', 0);
