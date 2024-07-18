@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 
 export default function Skill() {
-    const { formStatus, setFormStatus, setStep, prompt } = useContext(FormStateContext);
+    const { formStatus, setFormStatus, setStep, setPrompt, prompt } = useContext(FormStateContext);
     const [suggestions, setSuggestions] = useState([]);
 
     useEffect(() => {
@@ -36,6 +36,13 @@ export default function Skill() {
         setStep(3);
     };
 
+    //handle suggestionsonclick
+    const handleSuggestionClick = (question) => {
+      setPrompt(question); 
+      setFormStatus('objective'); 
+      setStep(3); 
+  };
+
     return (
         <div className="skill">
             <div className="container col">
@@ -45,13 +52,24 @@ export default function Skill() {
                 <hr />
                 {suggestions.map((suggestion, index) => (
                     <div className="row" key={index}>
-                        <p className="card col">{suggestion.question}</p>
+                        <p
+                            className="card col suggestion"
+                            onClick={() => handleSuggestionClick(suggestion.question)}
+                        >
+                            {suggestion.question}
+                        </p>
                     </div>
                 ))}
                 <div className="row">
-                    <form>
+                <form>
                         <div className="form-floating">
-                            <textarea className="form-control" placeholder="Describe the skill you want to learn" id="custom-skill"></textarea>
+                            <textarea
+                                className="form-control"
+                                placeholder="Describe the skill you want to learn"
+                                id="custom-skill"
+                                value={prompt}
+                                onChange={(e) => setPrompt(e.target.value)}
+                            ></textarea>
                             <label htmlFor="custom-skill">Comments</label>
                         </div>
                     </form>
