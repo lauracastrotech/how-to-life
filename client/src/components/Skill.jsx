@@ -10,34 +10,7 @@ export default function Skill() {
     const { formStatus, setFormStatus, setStep, setPrompt, prompt } = useContext(FormStateContext);
     const [suggestions, setSuggestions] = useState([]);
     const navigate = useNavigate();
-  
-//   return (
-//     <div className="skill">
-//       <div className="container col">
-//         <div className="row">
-//             <h2 className='animate__animated animate__fadeInLeft'>Awesome! Describe a skill that you want to learn.</h2>
-//         </div>
-//         <div className="row">
-//             <form>
-//               <div className="form-floating">
-//                 <textarea className="form-control animate__animated animate__fadeInLeft" id="custom-skill"></textarea>
-//               </div>
-//             </form>
-//         </div>
-//         {/* This is where Bianca debugs to pull questions */}
-//         <div className="row">
-//             <p className="card colanimate__animated animate__fadeInLeft ">Popular Question placeholder</p>
-//         </div>
-//         <div className="row">
-//             <p className="card col animate__animated animate__fadeInLeft">Popular Question placeholder</p>
-//         </div>
-//         <div className="progress">
-//           <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-//         </div>
-//         <div className="row">
-//             <button className='col btn btn-sm' onClick={handleBack}>Back</button>
-//             <p className='col d-flex justify-content-center align-items-center' id='step2'>2</p>
-//             <button className='col btn btn-sm' onClick={handleNext}>Next</button>
+
     useEffect(() => {
       const fetchSuggestions = async (category) => {
           const url = `http://127.0.0.1:3000/api/suggestions/${category}`;
@@ -59,7 +32,7 @@ export default function Skill() {
         }
     }, [formStatus, prompt]);
 
-    const handleBack = () => { // when you click a category and then click back it doesn't work
+    const handleBack = () => { 
         setFormStatus('how-to');
         setStep(1);
         navigate('/howto/1');
@@ -71,7 +44,6 @@ export default function Skill() {
         navigate('/objective/3');
     };
 
-    //handle suggestionsonclick
     const handleSuggestionClick = (question) => {
       setPrompt(question); 
       setFormStatus('objective'); 
@@ -100,7 +72,7 @@ export default function Skill() {
                     </form>
                 </div>
                 <hr />
-{/************/}{suggestions.map((suggestion, index) => (
+                {suggestions.map((suggestion, index) => (
                     <div className="row animate__animated animate__fadeInLeft" key={index}>
                         <p
                             className="card col suggestion"
@@ -109,7 +81,7 @@ export default function Skill() {
                             {suggestion.question}
                         </p>
                     </div>
-                ))} {/*************************************************************/}
+                ))} 
                 <div className="progress">
                     <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="25"  aria-valuemin="0" aria-valuemax="100">
                      </div>
