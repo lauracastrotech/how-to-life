@@ -3,11 +3,13 @@
 import 'animate.css';
 import React, { useEffect, useState, useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Skill.css'; 
 
 export default function Skill() {
     const { formStatus, setFormStatus, setStep, setPrompt, prompt } = useContext(FormStateContext);
     const [suggestions, setSuggestions] = useState([]);
+    const navigate = useNavigate();
   
 //   return (
 //     <div className="skill">
@@ -57,14 +59,16 @@ export default function Skill() {
         }
     }, [formStatus, prompt]);
 
-    const handleBack = () => {
+    const handleBack = () => { // when you click a category and then click back it doesn't work
         setFormStatus('how-to');
         setStep(1);
+        navigate('/howto/1');
     };
 
     const handleNext = () => {
         setFormStatus('objective');
         setStep(3);
+        navigate('/objective/3');
     };
 
     //handle suggestionsonclick
@@ -72,6 +76,7 @@ export default function Skill() {
       setPrompt(question); 
       setFormStatus('objective'); 
       setStep(3); 
+      navigate('/objective/3');
   };
 
     return (
@@ -81,7 +86,7 @@ export default function Skill() {
                     <h2>Tell us more about the skill that you want to learn.</h2>
                 </div>
                 <hr />
-                {suggestions.map((suggestion, index) => (
+{/************/}{suggestions.map((suggestion, index) => (
                     <div className="row" key={index}>
                         <p
                             className="card col suggestion"
@@ -90,7 +95,7 @@ export default function Skill() {
                             {suggestion.question}
                         </p>
                     </div>
-                ))}
+                ))} {/*************************************************************/}
                 <div className="row">
                 <form>
                         <div className="form-floating">
