@@ -1,12 +1,6 @@
-<<<<<<< HEAD
+
 // Here the user asks a question or selects a suggestion about a specific skill that the user wants to learn
 import 'animate.css';
-||||||| ffb4e3b
-=======
-/* eslint-disable no-unused-vars */
-// Here the user asks a question or selects a suggestion about a specific skill that the user wants to learn
-import 'animate.css';
->>>>>>> cf16d564cf6e02a52ddd84f674bb62526832ab1f
 import React, { useEffect, useState, useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import '../styles/Skill.css'; 

@@ -1,64 +1,6 @@
-<<<<<<< HEAD
 require('dotenv').config();
 const mysql = require('mysql');
-||||||| ffb4e3b
-require("dotenv").config();
-const mysql = require("mysql");
-const fs = require("fs");
-// const path = require("path");
-=======
-// require('dotenv').config();
-// const mysql = require('mysql');
 
-// const pool = mysql.createPool({
-//   connectionLimit: 10, // Adjust this number as per your application's needs
-//   host: process.env.DB_HOST || '127.0.0.1',
-//   user: process.env.DB_USER || 'root',
-//   password: process.env.DB_PASS || '',
-//   database: process.env.DB_NAME || 'how_to_life',
-//   port: process.env.DB_PORT || 3306, // Assuming default MySQL port
-//   multipleStatements: true
-// });
-
-// module.exports = function db(query, params) {
-//   return new Promise((resolve, reject) => {
-//     pool.getConnection((err, connection) => {
-//       if (err) {
-//         console.error('Error getting MySQL connection:', err);
-//         reject(err);
-//         return;
-//       }
-
-//       connection.query(query, params, (error, results) => {
-//         connection.release(); // Release the connection back to the pool
-
-//         if (error) {
-//           console.error('Error executing query:', error.message);
-//           reject(error);
-//           return;
-//         }
-
-//         resolve({
-//           data: results,
-//           affectedRows: results.affectedRows,
-//           changedRows: results.changedRows
-//         });
-//       });
-//     });
-//   });
-// };
-
-
-  //bianca connection
-
-//database.js
-require("dotenv").config();
-const mysql = require("mysql");
-const fs = require("fs");
-// const path = require("path");
->>>>>>> cf16d564cf6e02a52ddd84f674bb62526832ab1f
-
-<<<<<<< HEAD
 const pool = mysql.createPool({
   connectionLimit: 10, // Adjust this number as per your application's needs
   host: process.env.DB_HOST || '127.0.0.1',
@@ -68,20 +10,6 @@ const pool = mysql.createPool({
   port: process.env.DB_PORT || 3306, // Assuming default MySQL port
   multipleStatements: true
 });
-||||||| ffb4e3b
-// Load environment variables
-const DB_HOST = process.env.DB_HOST;
-const DB_USER = process.env.DB_USER;
-const DB_PASS = process.env.DB_PASS;
-const DB_NAME = process.env.DB_NAME;
-=======
-// Load environment variables
-const DB_HOST = process.env.DB_HOST;
-const DB_USER = process.env.DB_USER;
-const DB_PASS = process.env.DB_PASS;
-const DB_NAME = process.env.DB_NAME;
-//const DB_PORT = process.env.DB_PORT;
->>>>>>> cf16d564cf6e02a52ddd84f674bb62526832ab1f
 
 module.exports = function db(query, params) {
   return new Promise((resolve, reject) => {
@@ -108,17 +36,7 @@ module.exports = function db(query, params) {
         });
       });
     });
-<<<<<<< HEAD
-||||||| ffb4e3b
-  
-    con.end();
-  //});
-=======
-  
-    con.end();
->>>>>>> cf16d564cf6e02a52ddd84f674bb62526832ab1f
   });
-<<<<<<< HEAD
 };
 
 //sylwia
@@ -205,7 +123,7 @@ module.exports = function db(query, params) {
   
 //     con.end();
 //   });
-||||||| ffb4e3b
+
 
 
   //bianca connection
@@ -250,5 +168,4 @@ module.exports = function db(query, params) {
   
 //     con.end();
 //   });
-=======
->>>>>>> cf16d564cf6e02a52ddd84f674bb62526832ab1f
+
