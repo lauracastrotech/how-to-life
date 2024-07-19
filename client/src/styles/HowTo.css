@@ -1,0 +1,79 @@
+/*Icon styles*/
+.icon {
+    height: 50px;
+    width: 50px;
+}
+
+.card {
+    border: solid 1px;
+}
+
+.card-title {
+    font-size: 14px; 
+    font-weight: 500;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Heading styles */
+#howTo {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    font-weight: 400;
+}
+
+/* Background */
+.how-to {
+    background-color: rgba(229,237,255,255);
+    color: rgba(62,71,114,255);
+}
+
+/*Button styles*/
+.btn {
+    color: rgba(229,237,255,255);
+    background-color: rgba(62,71,114,255);
+    font-weight: 400;
+    border: none;
+    margin: 15px 10px;
+    font-size: 15px;
+}
+
+#step1 {
+    margin: 15px 10px;
+}
+
+/*Animation*/
+.slide-in {
+    opacity: 0; /* Start with invisible */
+    transform: translateY(-20px); /* Start position is slightly up */
+    animation: slide-in 1s forwards; /* Call the slide-in animation */
+}
+
+/* Define the keyframes for the sliding effect */
+@keyframes slide-in {
+    to {
+        opacity: 1; /* Final opacity */
+        transform: translateY(0); /* End position is normal */
+    }
+}
+
+/* Add a delay for each card for staggered effect */
+.slide-in:nth-child(1) { animation-delay: 0.1s; }
+.slide-in:nth-child(2) { animation-delay: 0.2s; }
+.slide-in:nth-child(3) { animation-delay: 0.3s; }
+.slide-in:nth-child(4) { animation-delay: 0.4s; }
+.slide-in:nth-child(5) { animation-delay: 0.5s; }
+.slide-in:nth-child(6) { animation-delay: 0.6s; }
+
+/*Progress bar*/
+.progress {
+    height: 2px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background-color: rgba(62,71,114,255);
+}

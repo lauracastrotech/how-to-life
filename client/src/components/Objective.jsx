@@ -1,8 +1,13 @@
 /* eslint-disable no-unused-vars */
+
+//Objectitve > This section of the form collects more context and has the submit button to send the prompt to the API
+
+import 'animate.css';
 import React from 'react';
 import { useContext, useState } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import axios from 'axios';
+import '../styles/Objective.css'; 
 
 export default function Objective () {
   const {setFormStatus, setStep, prompt, setPrompt, answer, setAnswer} = useContext(FormStateContext);
@@ -57,11 +62,10 @@ function handleChange(event) {
   return (
     <div className="objective">
       <div className="container col">
-        <div className="row">
-            <h2>Objective </h2>
+        <div className="row animate__animated animate__fadeInLeft">
+            <h2>How do you best learn, why do you need to learn this skill now, what outcome do you hope that you will have, when do you need to do this by.</h2>
         </div>
-        <hr />
-        <div className="row">
+        <div className="row animate__animated animate__fadeInLeft">
             <form>
               <div className="form-floating">
                 <textarea
@@ -69,17 +73,19 @@ function handleChange(event) {
                 name="prompt" 
                 value={prompt} 
                 onChange={handleChange}
-                placeholder="In your own words, describe the skill that you want to learn about today" 
                 id="custom-skill"
                 ></textarea>
-              <label htmlFor="custom-skill">Comments</label>
+             
               </div>
             </form>
         </div>
+        <div className="progress">
+          <div className="progress-bar" role="progressbar" style={{width: '75%'}} aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
         <div className="row">
-            <button className='col-4' onClick={handleBack}>Back</button>
-            <p className='col-4'>3</p>
-            <button className='col-4' onClick={handleSubmit}>Submit</button>
+            <button className='col btn btn-sm' onClick={handleBack}>Back</button>
+            <p className='col d-flex justify-content-center align-items-center' id='step2'>3</p>
+            <button className='col btn btn-sm' onClick={handleSubmit}>Submit</button>
         </div>
       </div>
     </div>

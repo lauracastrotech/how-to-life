@@ -39,6 +39,7 @@ module.exports = function db(query, params) {
   });
 };
 
+//sylwia
 // require("dotenv").config();
 // const mysql = require("mysql");
 // const fs = require("fs");
