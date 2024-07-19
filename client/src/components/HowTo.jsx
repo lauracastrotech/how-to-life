@@ -16,7 +16,6 @@ export default function HowTo () {
   }
   
   const handleNext = () => {
-
     setFormStatus('skill');
     setStep(2);
     navigate("/skill/2");
@@ -26,6 +25,7 @@ export default function HowTo () {
     setPrompt(category); 
     setFormStatus('skill'); 
     setStep(2); 
+    navigate("/skill/2");
 };
 
 
@@ -68,20 +68,8 @@ export default function HowTo () {
             </div>
         </div>
         <div className="progress">
-          <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-{/* <div className="row bg-success m-2">
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Health')}>Health</button>
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Career')}>Career</button>
-</div>
-<div className="row bg-success m-2">
- <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Technology')}>Technology</button>
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Relationships')}>Relationships</button>
-</div>
-<div className="row bg-success m-2">
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Finance')}>Finance</button>
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Education')}>Education</button> */}
-
+          <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          </div>
        </div>
         <div className="row">
             <button className='col btn btn-sm' onClick={handleBack}>Back</button>

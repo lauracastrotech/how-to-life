@@ -85,6 +85,20 @@ export default function Skill() {
                 <div className="row">
                     <h2>Tell us more about the skill that you want to learn.</h2>
                 </div>
+                <div className="row">
+                <form>
+                        <div className="form-floating">
+                            <textarea
+                                className="form-control"
+                                placeholder="Describe the skill you want to learn"
+                                id="custom-skill"
+                                value={prompt}
+                                onChange={(e) => setPrompt(e.target.value)}
+                            ></textarea>
+                            <label htmlFor="custom-skill">Ask me a question about...</label>
+                        </div>
+                    </form>
+                </div>
                 <hr />
 {/************/}{suggestions.map((suggestion, index) => (
                     <div className="row" key={index}>
@@ -96,26 +110,14 @@ export default function Skill() {
                         </p>
                     </div>
                 ))} {/*************************************************************/}
-                <div className="row">
-                <form>
-                        <div className="form-floating">
-                            <textarea
-                                className="form-control"
-                                placeholder="Describe the skill you want to learn"
-                                id="custom-skill"
-                                value={prompt}
-                                onChange={(e) => setPrompt(e.target.value)}
-                            ></textarea>
-                            <label htmlFor="custom-skill">Comments</label>
-                        </div>
-                    </form>
+                <div className="progress">
+                    <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="25"  aria-valuemin="0" aria-valuemax="100">
+                     </div>
                 </div>
                 <div className="row">
-                    <button className='col-4' onClick={handleBack}>Back</button>
-                    <p className='col-4'>2</p>
-                    {formStatus === 'skill' && (
-                        <button className='col-4' onClick={handleNext}>Next</button>
-                    )}
+                    <button className='col btn btn-sm' onClick={handleBack}>Back</button>
+                    <p className='col d-flex justify-content-center align-items-center' id='step1'>2</p>
+                    <button className='col btn btn-sm' onClick={handleNext}>Next</button>
                 </div>
             </div>
         </div>
