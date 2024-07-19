@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Here the user asks a question or selects a suggestion about a specific skill that the user wants to learn
 import 'animate.css';
 import React, { useEffect, useState, useContext } from 'react';
