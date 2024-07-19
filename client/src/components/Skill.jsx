@@ -82,10 +82,10 @@ export default function Skill() {
     return (
         <div className="skill">
             <div className="container col">
-                <div className="row">
+                <div className="row animate__animated animate__fadeInLeft">
                     <h2>Tell us more about the skill that you want to learn.</h2>
                 </div>
-                <div className="row">
+                <div className="row animate__animated animate__fadeInLeft">
                 <form>
                         <div className="form-floating">
                             <textarea
@@ -101,7 +101,7 @@ export default function Skill() {
                 </div>
                 <hr />
 {/************/}{suggestions.map((suggestion, index) => (
-                    <div className="row" key={index}>
+                    <div className="row animate__animated animate__fadeInLeft" key={index}>
                         <p
                             className="card col suggestion"
                             onClick={() => handleSuggestionClick(suggestion.question)}
