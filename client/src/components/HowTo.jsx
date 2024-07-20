@@ -32,7 +32,7 @@ export default function HowTo () {
   return (
     <div className="how-to container">
         <div>
-            <h1 id="howTo">How to...</h1>
+            <h2 id="howTo">Choose a category</h2>
         </div>
 
         <div className="col">
@@ -86,7 +86,7 @@ export default function HowTo () {
         <div className="row">
             <button className='col btn btn-sm' onClick={handleBack}>Back</button>
             <p className='col d-flex justify-content-center align-items-center' id='step1'>1</p>
-            <button className='col btn btn-sm' onClick={handleNext}>Next</button>
+            <button className='col btn btn-sm' onClick={handleNext} disabled>Next</button>
         </div>
       </div>
     </div>
