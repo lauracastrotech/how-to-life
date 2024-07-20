@@ -17,6 +17,8 @@ const LoginForm = () => {
         } catch (error) {
             console.error('Login error:', error);
             console.log('Login error response:', error.response); 
+            setEmail('');
+            setPassword('');
             setError('Oops, invalid email or password. Try again.');
         }
     };
