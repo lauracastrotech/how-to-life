@@ -8,14 +8,18 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     useEffect(() => {
         // This manually shows modal
         $('#loginModalCenter').modal('show');
-        // navigate('/'); this is causing the form to be uncentered
       return () => {
       }
     }, [])
+
+    const handleClose = () => {
+        $('#loginModalCenter').modal('hide');
+        navigate('/');
+    }
     
     return (
         
@@ -24,12 +28,12 @@ const Login = () => {
             <div className="modal fade" id="loginModalCenter" tabIndex="-1" role="dialog" aria-labelledby="loginModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header d-flex justify-content-between">
                             <h1 className="modal-title" id="loginModalLongTitle">Login</h1>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+                            
+                            <img id='close' src='/close.png' onClick={handleClose}/>
                         </div>
+
                         <div className="modal-body">
                             <LoginForm />
                         </div>

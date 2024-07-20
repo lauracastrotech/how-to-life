@@ -14,3 +14,9 @@
 #signup-link a{
     color: rgba(62,71,114,255);
 }
+
+#close {
+    cursor: pointer;
+    height: 30px;
+    margin-right: 10px;
+}
