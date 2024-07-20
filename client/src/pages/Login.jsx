@@ -11,7 +11,7 @@ const Login = () => {
     // const navigate = useNavigate();
     useEffect(() => {
         // This manually shows modal
-        $('#exampleModalCenter').modal('show');
+        $('#loginModalCenter').modal('show');
         // navigate('/'); this is causing the form to be uncentered
       return () => {
       }
@@ -21,11 +21,11 @@ const Login = () => {
         
         <div>
             {/* <!-- Modal Demo--> */}
-            <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div className="modal fade" id="loginModalCenter" tabIndex="-1" role="dialog" aria-labelledby="loginModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLongTitle">Login</h5>
+                            <h1 className="modal-title" id="loginModalLongTitle">Login</h1>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -35,7 +35,7 @@ const Login = () => {
                         </div>
                         <div className="modal-footer d-flex justify-content-center">
                             {/* Need to link to signup form */}
-                            <div className="signup-link">Not a member? <a href="#">Sign up now</a></div>
+                            <div id="signup-link">Not a member? <a href="#">Sign up now</a></div>
                         </div>
                     </div>
                 </div>
