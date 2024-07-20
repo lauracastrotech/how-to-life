@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LoginForm from './LoginForm';
 
+
 const LoginModal = ({ onLoginSuccess }) => {
+  
   return (
-    <div className="modal fade" id="loginModal" tabIndex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div className="modal-dialog">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title" id="loginModalLabel">Login</h5>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+        
+    <div classNameName="modal fade" id="loginModal" tabIndex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div classNameName="modal-dialog">
+        <div classNameName="modal-content">
+          <div classNameName="modal-header">
+            <h5 classNameName="modal-title" id="loginModalLabel">Login</h5>
+            <button type="button" classNameName="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div className="modal-body">
+          <div classNameName="modal-body">
             <LoginForm onLoginSuccess={onLoginSuccess} />
           </div>
         </div>

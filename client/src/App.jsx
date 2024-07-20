@@ -63,8 +63,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
-        <LoginModal/>
-        <SignUpModal/>
+        {/* <LoginModal/>
+        <SignUpModal/> */}
     </FormStateContext.Provider>
   );
 }
