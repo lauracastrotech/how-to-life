@@ -97,6 +97,9 @@ export default function Skill() {
                         </div>
                     </form>
                 </div>
+                <div className="row animate__animated animate__fadeInLeft">
+                    <h5>Not sure? Try out one of these.</h5>
+                </div>
                 {suggestions.map((suggestion, index) => (
                     <div className="row animate__animated animate__fadeInLeft" key={index}>
                         <p
