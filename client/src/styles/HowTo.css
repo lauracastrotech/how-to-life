@@ -1,4 +1,4 @@
-/*Icon styles*/
+/*Category Icon styles*/
 .icon {
     height: 50px;
     width: 50px;
@@ -9,12 +9,19 @@
 }
 
 .card-title {
-    font-size: 14px; 
-    font-weight: 500;
     margin: 0px;
     padding: 0px;
 }
 
+#health, 
+#career, 
+#technology, 
+#relationships,
+#finance,
+#education {
+    font-size: 16px;
+    font-weight: 400;
+}
 /* Heading styles */
 #howTo {
     padding-top: 10px;
