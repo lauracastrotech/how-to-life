@@ -6,6 +6,7 @@
 
 .card {
     border: solid 1px;
+    cursor: pointer;
 }
 
 .card-title {

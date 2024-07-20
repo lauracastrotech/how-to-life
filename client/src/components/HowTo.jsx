@@ -37,33 +37,33 @@ export default function HowTo () {
 
         <div className="col">
         <div className="row">
-            <div className='col card slide-in'>
-              <img className="icon d-flex justify-content-start" src="/health_icon.png" alt="health symbol" onClick={() => handleCategorySelect('Health')}/>
+            <div className='col card slide-in' onClick={() => handleCategorySelect('Health')}>
+              <img className="icon d-flex justify-content-start" src="/health_icon.png" alt="health symbol"/>
               <h6 className="card-title" id='health'>Health</h6>
             </div>
-            <div className='col card slide-in'>
-              <img className="icon d-flex justify-content-start" src="/work.png" alt="career symbol" onClick={() => handleCategorySelect('Career')}/>
+            <div className='col card slide-in' onClick={() => handleCategorySelect('Career')}>
+              <img className="icon d-flex justify-content-start" src="/work.png" alt="career symbol"/>
               <h6 className="card-title" id='career'>Career</h6>
             </div>
         </div>
 
         <div className="row">
-          <div className='col card slide-in'>
-            <img className="icon d-flex justify-content-start" src="/technology.png" alt="technology symbol" onClick={() => handleCategorySelect('Technology')}/>
+          <div className='col card slide-in' onClick={() => handleCategorySelect('Technology')}>
+            <img className="icon d-flex justify-content-start" src="/technology.png" alt="technology symbol"/>
             <h6 className="card-title" id='technology'>Technology</h6>
           </div>
-          <div className='col card slide-in'>
-            <img className="icon d-flex justify-content-start" src="/relationships.png" alt="relationships symbol" onClick={() => handleCategorySelect('Relationships')}/>
+          <div className='col card slide-in' onClick={() => handleCategorySelect('Relationships')}>
+            <img className="icon d-flex justify-content-start" src="/relationships.png" alt="relationships symbol" />
             <h6 className="card-title" id='relationships'>Relationships</h6>
           </div>
         </div>
         <div className="row">
-          <div className='col card slide-in'>
-              <img className="icon d-flex justify-content-start" src="/finance.png" alt="finance symbol" onClick={() => handleCategorySelect('Finance')}/>
+          <div className='col card slide-in' onClick={() => handleCategorySelect('Finance')}>
+              <img className="icon d-flex justify-content-start" src="/finance.png" alt="finance symbol" />
               <h6 className="card-title" id='finance'>Finance</h6>
             </div>
-            <div className='col card slide-in'>
-              <img className="icon d-flex justify-content-start" src="/education.png" alt="education symbol" onClick={() => handleCategorySelect('Education')}/>
+            <div className='col card slide-in' onClick={() => handleCategorySelect('Education')}>
+              <img className="icon d-flex justify-content-start" src="/education.png" alt="education symbol" />
               <h6 className="card-title" id='education'>Education</h6>
             </div>
         </div>
