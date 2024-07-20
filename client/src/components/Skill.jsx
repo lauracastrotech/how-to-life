@@ -107,13 +107,13 @@ export default function Skill() {
                         </p>
                     </div>
                 ))}
-                
+                <div className="progress">
+                    <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
                 <div className="row">
-                    <button className='col-4' onClick={handleBack}>Back</button>
-                    <p className='col-4'>2</p>
-                    {formStatus === 'skill' && (
-                        <button className='col-4' onClick={handleNext}>Next</button>
-                    )}
+                    <button className='col btn btn-sm' onClick={handleBack}>Back</button>
+                    <p className='col d-flex justify-content-center align-items-center' id='step2'>2</p>
+                    <button className='col btn btn-sm' onClick={handleNext}>Next</button>
                 </div>
             </div>
         </div>
