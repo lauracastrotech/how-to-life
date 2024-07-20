@@ -42,6 +42,7 @@ function handleChange(event) {
 
       setFormStatus('answer');
       setStep(4);
+      navigate("/answer/4");
     } catch (error) {
       console.log(`That didn't work \n${error}`);
     }
