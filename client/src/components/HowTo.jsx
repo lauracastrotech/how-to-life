@@ -26,6 +26,7 @@ export default function HowTo () {
     setPrompt(category); 
     setFormStatus('skill'); 
     setStep(2); 
+    navigate("/skill/2");
 };
 
 
