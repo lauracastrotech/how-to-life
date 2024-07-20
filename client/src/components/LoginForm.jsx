@@ -25,7 +25,7 @@ const LoginForm = () => {
 
     return (
         <div className='container form-group'>
-            <form id="login" onSubmit={handleSubmit} autoComplete="off">
+            <form id="login" onSubmit={handleSubmit}>
                 <div className="field form-floating">
                     <input 
                         type="email" 
