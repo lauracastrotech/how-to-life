@@ -48,7 +48,7 @@ const LoginForm = () => {
                     <div className="btn-layer"></div>
                     <input type="submit" value="Login" />
                 </div>
-                <div className="signup-link">Not a member? <a href="#">Signup now</a></div>
+                {/* Added this to the centered modal <div className="signup-link">Not a member? <a href="#">Signup now</a></div> */}
             </form>
         </div>
     );
