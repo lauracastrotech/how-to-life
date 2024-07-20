@@ -7,7 +7,6 @@ import '../styles/HowTo.css';
 export default function HowTo () {
   const {setFormStatus, setStep,setPrompt} = useContext(FormStateContext);
   const navigate = useNavigate();
-  console.log("anything");
 
   const handleBack = () => {
     setFormStatus('home');

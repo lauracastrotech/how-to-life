@@ -6,28 +6,27 @@ import 'animate.css';
 import React from 'react';
 import { useContext, useState } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/Objective.css'; 
 
 export default function Objective () {
   const {setFormStatus, setStep, prompt, setPrompt, answer, setAnswer} = useContext(FormStateContext);
-
+  const navigate = useNavigate();
   // Create temporary user id variable to test axios post, once login authentication complete you will need to update
    
 function handleChange(event) {
     const value = event.target.value;
-    console.log('New value:', value)
-    // const name = event.target.name; => is this one needed?
     setPrompt(value);
   }
 
   const handleBack = () => {
     setFormStatus('skill');
     setStep(2);
+    navigate("/skill/2");
   }
   
   // Send prompt to api
-
   const handleSubmit = async () => {
     console.log("Submitting prompt:", prompt);
 

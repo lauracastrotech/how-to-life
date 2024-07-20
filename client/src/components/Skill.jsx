@@ -2,12 +2,13 @@
 import 'animate.css';
 import React, { useEffect, useState, useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Skill.css'; 
 
 export default function Skill() {
     const { formStatus, setFormStatus, setStep, setPrompt, prompt } = useContext(FormStateContext);
     const [suggestions, setSuggestions] = useState([]);
-  
+    const navigate = useNavigate();
 //   return (
 //     <div className="skill">
 //       <div className="container col">
@@ -59,11 +60,13 @@ export default function Skill() {
     const handleBack = () => {
         setFormStatus('how-to');
         setStep(1);
+        navigate("/howto/1");
     };
 
     const handleNext = () => {
         setFormStatus('objective');
         setStep(3);
+        navigate("/objective/3");
     };
 
     //handle suggestionsonclick
