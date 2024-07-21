@@ -11,8 +11,6 @@ import Profile from './pages/Profile';
 import Home from './pages/Home';
 // import NavBar from './components/NavBar';
 import { Navbar, Nav, Image} from 'react-bootstrap';
-import LoginModal from './components/LoginModal';
-import SignUpModal from './components/SignUpModal';
 
 function App() {
 
@@ -63,8 +61,6 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
-        {/* <LoginModal/>
-        <SignUpModal/> */}
     </FormStateContext.Provider>
   );
 }
