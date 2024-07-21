@@ -39,7 +39,7 @@ const Login = () => {
                         </div>
                         <div className="modal-footer d-flex justify-content-center">
                             {/* Need to link to signup form */}
-                            <div id="signup-link">Not a member? <a href="#">Sign up now</a></div>
+                            <div id="signup-link">Not a member? <a href="/signup">Sign up now</a></div>
                         </div>
                     </div>
                 </div>

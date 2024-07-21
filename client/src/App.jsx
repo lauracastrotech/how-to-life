@@ -9,10 +9,12 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
 import Home from './pages/Home';
-// import NavBar from './components/NavBar';
 import { Navbar, Nav, Image} from 'react-bootstrap';
 
 function App() {
+
+  // Initialize login state
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Initialize states for progressive form
   const [formStatus, setFormStatus] = useState("home");
@@ -34,22 +36,24 @@ function App() {
    };
 
   return (
-      <FormStateContext.Provider value={{ formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer}}>
+      <FormStateContext.Provider value={{ isLoggedIn, setIsLoggedIn, formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer}}>
       <div>
         <Navbar id="NavBar" expand="lg" expanded={navToggle}>
             <Navbar.Brand as={Link} to="/" className='nav-custom'>
               <Image id="logo" src="/howtolifeb&w.png" alt="how to life logo" style={{ height: '50px' }}/> 
             </Navbar.Brand>
-            {/* <Nav.Link as={Link} to="/profile" className='nav-custom'>
+            {isLoggedIn && <Nav.Link as={Link} to="/profile" className='nav-custom'>
                           <Image src="/assets/profileIcon.png" width="30" height="30" alt="profile icon"/>
-                          </Nav.Link> */}
+                          </Nav.Link> }
             <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle}/>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                 <Nav.Link as={Link} to="/" className='nav-custom' onClick={handleSelect}>Home</Nav.Link>
-                <Nav.Link as={Link} to="/login"  className='nav-custom' onClick={handleSelect}>Login</Nav.Link>
-                <Nav.Link as={Link} to="/signup"  className='nav-custom' onClick={handleSelect}>Sign Up</Nav.Link>
-                {/* <Nav.Link as={Link} to="/profile"  className='nav-custom' onClick={handleSelect}>Profile</Nav.Link> */}
+                
+                {!isLoggedIn && <><Nav.Link as={Link} to="/login"  className='nav-custom' onClick={handleSelect}>Login</Nav.Link>
+                <Nav.Link as={Link} to="/signup"  className='nav-custom' onClick={handleSelect}>Sign Up</Nav.Link></>}
+
+                {isLoggedIn && <Nav.Link as={Link} to="/profile"  className='nav-custom' onClick={handleSelect}>Profile</Nav.Link>}
                 </Nav>
               </Navbar.Collapse>
         </Navbar>
