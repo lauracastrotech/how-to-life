@@ -43,7 +43,7 @@ function App() {
               <Image id="logo" src="/howtolifeb&w.png" alt="how to life logo" style={{ height: '50px' }}/> 
             </Navbar.Brand>
             {isLoggedIn && <Nav.Link as={Link} to="/profile" className='nav-custom'>
-                          <Image src="/assets/profileIcon.png" width="30" height="30" alt="profile icon"/>
+                          <Image src="/profileIcon.png" width="30" height="30" alt="profile icon"/>
                           </Nav.Link> }
             <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle}/>
               <Navbar.Collapse id="basic-navbar-nav">
