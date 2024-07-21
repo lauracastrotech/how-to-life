@@ -7,7 +7,7 @@ const pool = mysql.createPool({
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASS || '',
   database: process.env.DB_NAME || 'how_to_life',
-  // port: process.env.DB_PORT || '3307',
+  port: process.env.DB_PORT || '3307',
   multipleStatements: true
 });
 
@@ -21,8 +21,7 @@ module.exports = function db(query, params) {
       }
 
       connection.query(query, params, (error, results) => {
-        connection.release(); // Release the connection back to the pool
-
+        connection.release(); 
         if (error) {
           console.error('Error executing query:', error.message);
           reject(error);
