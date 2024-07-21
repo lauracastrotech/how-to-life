@@ -8,6 +8,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const {setIsLoggedIn} = useContext(FormStateContext);
   const handleLogout = () => {
+    localStorage.removeItem("token");
     setIsLoggedIn(false);
     navigate('/');
   }

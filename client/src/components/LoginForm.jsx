@@ -3,7 +3,7 @@ import { FormStateContext } from '../helpers/FormContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/LoginForm.css'
-const LoginForm = ({onLogin}) => {
+const LoginForm = ({hideModal}) => {
     
     const {setIsLoggedIn} = useContext(FormStateContext);
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ const LoginForm = ({onLogin}) => {
             console.log('Login response:', response.data); 
             localStorage.setItem('token', response.data.token);
             setIsLoggedIn(true);
-            onLogin();
+            hideModal();
             navigate('/profile')
         } catch (error) {
             console.error('Login error:', error);
