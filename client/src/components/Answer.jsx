@@ -47,6 +47,7 @@ export default function Answer() {
         <div className="row">
           <h2 className="subtitle">Your question: <i>{prompt}</i> </h2>
         </div>
+        {/* Sylwia working on formatting answer */}
         <div className="row">
           <h3 className="answer">{answer}</h3>
         </div>
