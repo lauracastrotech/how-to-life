@@ -19,9 +19,6 @@ CREATE TABLE users (
     password VARCHAR(255)
 );
 
--- Add sample users for testing
-INSERT INTO users (first_name, email, password) VALUES ('Laura', 'lauracastro@gmail.com', 123);
-
 -- Step 4: Create history table
 CREATE TABLE history (
     history_id INT AUTO_INCREMENT PRIMARY KEY,
