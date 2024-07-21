@@ -1,4 +1,3 @@
-database.js
 require("dotenv").config();
 const mysql = require("mysql");
 const fs = require("fs");
