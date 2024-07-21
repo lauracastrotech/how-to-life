@@ -7,7 +7,6 @@ import '../styles/HowTo.css';
 export default function HowTo () {
   const {setFormStatus, setStep,setPrompt} = useContext(FormStateContext);
   const navigate = useNavigate();
-  console.log("anything");
 
   const handleBack = () => {
     setFormStatus('home');
@@ -16,7 +15,6 @@ export default function HowTo () {
   }
   
   const handleNext = () => {
-
     setFormStatus('skill');
     setStep(2);
     navigate("/skill/2");
@@ -26,67 +24,56 @@ export default function HowTo () {
     setPrompt(category); 
     setFormStatus('skill'); 
     setStep(2); 
+    navigate("/skill/2");
 };
 
 
   return (
     <div className="how-to container">
         <div>
-            <h1 id="howTo">How to...</h1>
+            <h2 id="howTo">Choose a category</h2>
         </div>
 
         <div className="col">
         <div className="row">
-            <div className='col card slide-in'>
-              <img className="icon d-flex justify-content-start" src="/health_icon.png" alt="health symbol" onClick={() => handleCategorySelect('Health')}/>
-              <p className="card-title">Health</p>
+            <div className='col card slide-in' onClick={() => handleCategorySelect('Health')}>
+              <img className="icon d-flex justify-content-start" src="/health_icon.png" alt="health symbol"/>
+              <h6 className="card-title" id='health'>Health</h6>
             </div>
-            <div className='col card slide-in'>
-              <img className="icon d-flex justify-content-start" src="/work.png" alt="career symbol" onClick={() => handleCategorySelect('Career')}/>
-              <p className="card-title">Career</p>
+            <div className='col card slide-in' onClick={() => handleCategorySelect('Career')}>
+              <img className="icon d-flex justify-content-start" src="/work.png" alt="career symbol"/>
+              <h6 className="card-title" id='career'>Career</h6>
             </div>
         </div>
 
         <div className="row">
-          <div className='col card slide-in'>
-            <img className="icon d-flex justify-content-start" src="/technology.png" alt="technology symbol" onClick={() => handleCategorySelect('Technology')}/>
-            <p className="card-title">Technology</p>
+          <div className='col card slide-in' onClick={() => handleCategorySelect('Technology')}>
+            <img className="icon d-flex justify-content-start" src="/technology.png" alt="technology symbol"/>
+            <h6 className="card-title" id='technology'>Technology</h6>
           </div>
-          <div className='col card slide-in'>
-            <img className="icon d-flex justify-content-start" src="/relationships.png" alt="relationships symbol" onClick={() => handleCategorySelect('Relationships')}/>
-            <p className="card-title">Relationships</p>
+          <div className='col card slide-in' onClick={() => handleCategorySelect('Relationships')}>
+            <img className="icon d-flex justify-content-start" src="/relationships.png" alt="relationships symbol" />
+            <h6 className="card-title" id='relationships'>Relationships</h6>
           </div>
         </div>
         <div className="row">
-          <div className='col card slide-in'>
-              <img className="icon d-flex justify-content-start" src="/finance.png" alt="finance symbol" onClick={() => handleCategorySelect('Finance')}/>
-              <p className="card-title">Finance</p>
+          <div className='col card slide-in' onClick={() => handleCategorySelect('Finance')}>
+              <img className="icon d-flex justify-content-start" src="/finance.png" alt="finance symbol" />
+              <h6 className="card-title" id='finance'>Finance</h6>
             </div>
-            <div className='col card slide-in'>
-              <img className="icon d-flex justify-content-start" src="/education.png" alt="education symbol" onClick={() => handleCategorySelect('Education')}/>
-              <p className="card-title">Education</p>
+            <div className='col card slide-in' onClick={() => handleCategorySelect('Education')}>
+              <img className="icon d-flex justify-content-start" src="/education.png" alt="education symbol" />
+              <h6 className="card-title" id='education'>Education</h6>
             </div>
         </div>
         <div className="progress">
-          <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-
-{/* <div className="row bg-success m-2">
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Health')}>Health</button>
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Career')}>Career</button>
-</div>
-<div className="row bg-success m-2">
- <button className="btn-group btn col-6" onClick={() => handleCategorySelect('Technology')}>Technology</button>
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Relationships')}>Relationships</button>
-</div>
-<div className="row bg-success m-2">
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Finance')}>Finance</button>
-<button className="btn-group btn col-6" onClick={() => handleCategorySelect('Education')}>Education</button> */}
-
+          <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          </div>
        </div>
         <div className="row">
             <button className='col btn btn-sm' onClick={handleBack}>Back</button>
             <p className='col d-flex justify-content-center align-items-center' id='step1'>1</p>
-            <button className='col btn btn-sm' onClick={handleNext}>Next</button>
+            <button className='col btn btn-sm' onClick={handleNext} disabled>Next</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,22 @@
+.modal-header {
+    background-color: rgba(183,198,231,255);
+}
+
+.modal-footer {
+    background-color: rgba(229,237,255,255);
+}
+
+#loginModalLongTitle {
+    color: rgba(62,71,114,255);
+    font-weight: 100;
+}
+
+#signup-link a{
+    color: rgba(62,71,114,255);
+}
+
+#close {
+    cursor: pointer;
+    height: 30px;
+    margin-right: 10px;
+}

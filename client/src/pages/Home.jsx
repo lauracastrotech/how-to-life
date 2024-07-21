@@ -12,7 +12,6 @@ import '../styles/Home.css';
 export default function Home() {
   const { formStatus, setFormStatus, step, setStep } = useContext(FormStateContext);
   const {formView, stepView} = useParams();
-  console.log(formView, stepView);
   
   useEffect(() => {
     if(formView && stepView){
@@ -29,8 +28,6 @@ export default function Home() {
   
   const handleGetStarted = () => {
     navigate('/howto/1');
-    // setFormStatus('how-to');
-    // setStep(1);
   };
 
   return (

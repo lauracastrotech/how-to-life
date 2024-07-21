@@ -1,0 +1,30 @@
+/*Form Styles*/
+#login {
+    border: 1px solid rgba(141,150,169,255);
+    border-radius: 3%;
+    margin: 15px 0px;
+}
+
+/*Field styles*/
+.field{
+    color: rgba(62,71,114,255);
+    margin: 15px;
+    border-radius: 3%;
+}
+
+/*Forgot Password styles*/
+.pass-link a {
+    color: rgba(62,71,114,255);
+    font-weight: 400;
+}
+
+.pass-link a:hover {
+    color: rgba(141,150,169,255);
+}
+
+/*Error styles*/
+.error{
+    color: red;
+    font-weight: 400;
+    margin: 25px;
+}
