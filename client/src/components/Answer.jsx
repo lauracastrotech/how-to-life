@@ -1,11 +1,10 @@
-import React from 'react';
-import { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import axios from 'axios';
 import './Answer.css';
 
 export default function Answer() {
-  const { formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer } = useContext(FormStateContext);
+  const { prompt, answer, setAnswer } = useContext(FormStateContext);
   const [audioUrl, setAudioUrl] = useState('');
 
   const handleTextToSpeech = async (text) => {
@@ -17,7 +16,7 @@ export default function Answer() {
       console.error('Error generating text to speech:', error);
     }
   };
-  // generate text-to-speech when the answer changes
+
   useEffect(() => {
     if (answer) {
       handleTextToSpeech(answer);
@@ -33,6 +32,24 @@ export default function Answer() {
     }
   };
 
+  
+  const formatAnswer = (answer) => {
+    const cleanText = answer.replace(/^\d+\.\s+/gm, ''); // Remove existing numbering from each line.
+    const lines = cleanText.split('\n').filter(line => line.trim() !== '');  // Split the answer into lines and remove empty lines.
+    //clean text removes any existing numbering 
+    // line is used in the contect to split the answer into individual lines using the split('\n')
+    //empty lines filtered out with the filter function
+    //return maps the lines into an ordered list (in <li> element)
+    
+    return (
+      <ol>
+        {lines.map((line, index) => (
+          <li key={index}>{line}</li>
+        ))}
+      </ol>
+    );
+  };
+
   return (
     <div className="container">
       <div className="container col">
@@ -41,14 +58,14 @@ export default function Answer() {
         </div>
         <div className="row">
           <h2 className="subtitle">
-            You step-by-step guide for mastering [value of category state goes here]
+            Your step-by-step guide for mastering [value of category state goes here]
           </h2>
         </div>
         <div className="row">
-          <h2 className="subtitle">Your question: <i>{prompt}</i> </h2>
+          <h2 className="subtitle">Your question: <i>{prompt}</i></h2>
         </div>
         <div className="row">
-          <h3 className="answer">{answer}</h3>
+          <h3 className="answer">{formatAnswer(answer)}</h3> {/* displays the formatted answer before was just answer */}
         </div>
         <div className="row m-2">
           <button className="col-4" onClick={handleRegenerate}>

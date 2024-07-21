@@ -50,25 +50,25 @@ router.post("/ai-answer", async function(req, res) { // this api send prompt fro
     }
 ];
 
-  try {
-    const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: messages,
-    });
-
-    const answer = response.choices[0].message.content;
-    // This is the response from OpenAI api/chatGPT
-    console.log('AI Answer:', answer)
-
-    await db(`INSERT INTO history (question, answer) VALUES ("${prompt}", "${answer}")`);
-
-    res.status(200).send({ answer });
-  } catch (e) {
-    console.log(e);
-    res.status(500).send({ error: e.message })
-  }
+try {
+  const response = await openai.chat.completions.create({
+    model: 'gpt-3.5-turbo',
+    messages: messages,
   });
 
+  let answer = response.choices[0].message.content;
+
+ const lines = answer.split('\n').filter(line => line.trim() !== ''); //Split the answer into lines and remove empty lines.
+    const formattedAnswer = lines.map((line, index) => `${index + 1}. ${line}`).join('\n'); //Add numbering to each line.
+
+  await db(`INSERT INTO history (question, answer) VALUES (?, ?)`, [prompt, formattedAnswer]); //// Send the formatted answer back to the client
+
+  res.status(200).send({ answer });
+} catch (e) {
+  console.log(e);
+  res.status(500).send({ error: e.message });
+}
+});
 
 // * POST text-to-speech */
 router.post('/text-to-speech', async (req, res) => {

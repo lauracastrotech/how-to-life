@@ -28,3 +28,13 @@
     width: 30px;
     height: 30px;
   }
+  
+  .answer ol {
+    padding-left: 20px; /* Adjust based on your design */
+    margin: 0;
+  }
+  
+  .answer li {
+    margin-bottom: 10px; /* Space between list items */
+    font-size: 16px; /* Adjust based on your design */
+  }
