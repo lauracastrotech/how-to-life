@@ -45,17 +45,17 @@ function App() {
             {isLoggedIn && <Nav.Link as={Link} to="/profile" className='nav-custom'>
                           <Image src="/profileIcon.png" width="30" height="30" alt="profile icon"/>
                           </Nav.Link> }
-            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle}/>
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
-                <Nav.Link as={Link} to="/" className='nav-custom' onClick={handleSelect}>Home</Nav.Link>
-                
-                {!isLoggedIn && <><Nav.Link as={Link} to="/login"  className='nav-custom' onClick={handleSelect}>Login</Nav.Link>
-                <Nav.Link as={Link} to="/signup"  className='nav-custom' onClick={handleSelect}>Sign Up</Nav.Link></>}
+              <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle}/>
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="me-auto">
+                  <Nav.Link as={Link} to="/" className='nav-custom' onClick={handleSelect}>Home</Nav.Link>
+                  
+                  {!isLoggedIn && <><Nav.Link as={Link} to="/login"  className='nav-custom' onClick={handleSelect}>Login</Nav.Link>
+                  <Nav.Link as={Link} to="/signup"  className='nav-custom' onClick={handleSelect}>Sign Up</Nav.Link></>}
 
-                {isLoggedIn && <Nav.Link as={Link} to="/profile"  className='nav-custom' onClick={handleSelect}>Profile</Nav.Link>}
-                </Nav>
-              </Navbar.Collapse>
+                  {isLoggedIn && <Nav.Link as={Link} to="/profile"  className='nav-custom' onClick={handleSelect}>Profile</Nav.Link>}
+                  </Nav>
+              </Navbar.Collapse> 
         </Navbar>
         <Routes>
           <Route exact path="/" element={<Home />} />

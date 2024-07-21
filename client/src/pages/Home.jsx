@@ -36,7 +36,7 @@ export default function Home() {
         <div className="home">
           <div className='row'>
             <div className='col-md-6'>
-              <h1 id='welcome'>Welcome!</h1>
+              <h1 id='welcome'>Welcome friend,</h1>
               <p id="description">How to life is a tool that helps you create a prompt for all those life skills that they didn&apos;t teach you in high school. Here&apos;s how it works.</p>
             </div>
             <div className='col-md-6'>
