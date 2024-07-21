@@ -35,13 +35,14 @@ export default function Skill() {
     const handleBack = () => { 
         setFormStatus('how-to');
         setStep(1);
-        navigate('/howto/1');
+        navigate("/howto/1");
     };
 
     const handleNext = () => {
         setFormStatus('objective');
         setStep(3);
-        navigate('/objective/3');
+        navigate("/objective/3");
+
     };
 
     const handleSuggestionClick = (question) => {
@@ -67,11 +68,15 @@ export default function Skill() {
                                 value={prompt}
                                 onChange={(e) => setPrompt(e.target.value)}
                             ></textarea>
-                            <label htmlFor="custom-skill">Ask me a question about...</label>
+
+                            <label htmlFor="custom-skill">Write your own question</label>
                         </div>
                     </form>
                 </div>
-                <hr />
+                <div className="row animate__animated animate__fadeInLeft">
+                    <h5>Not sure? Try out one of these.</h5>
+                </div>
+                    
                 {suggestions.map((suggestion, index) => (
                     <div className="row animate__animated animate__fadeInLeft" key={index}>
                         <p
@@ -81,14 +86,14 @@ export default function Skill() {
                             {suggestion.question}
                         </p>
                     </div>
-                ))} 
+                ))}
                 <div className="progress">
-                    <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="25"  aria-valuemin="0" aria-valuemax="100">
-                     </div>
+                    <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <div className="row">
                     <button className='col btn btn-sm' onClick={handleBack}>Back</button>
-                    <p className='col d-flex justify-content-center align-items-center' id='step1'>2</p>
+                    <p className='col d-flex justify-content-center align-items-center' id='step2'>2</p>
+
                     <button className='col btn btn-sm' onClick={handleNext}>Next</button>
                 </div>
             </div>
