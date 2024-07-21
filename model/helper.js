@@ -71,7 +71,7 @@ con.connect(function(err) {
 //   user: process.env.DB_USER || 'root',
 //   password: process.env.DB_PASS || '',
 //   database: process.env.DB_NAME || 'how_to_life',
-//   // port: process.env.DB_PORT || '3307',
+//   port: process.env.DB_PORT || '3307',
 //   multipleStatements: true
 // });
 
