@@ -9,20 +9,26 @@ const saltRounds = 10;
 const jwtSecret = process.env.JWT_SECRET;
 
 router.post('/register', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-      const hash = await bcrypt.hash(password, saltRounds);
-
-      await db(
-          `INSERT INTO users (email, password) VALUES ("${email}", "${hash}")`
-      );
-
-      res.send({ message: "Register successful" });
-  } catch (err) {
-      res.status(400).send({ message: err.message });
-  }
-});
+    const { email, password, firstName } = req.body;
+  
+    if (!email || !password || !firstName) {
+      return res.status(400).send({ message: "Please provide all required fields" });
+    }
+  
+    try {
+        const hash = await bcrypt.hash(password, saltRounds);
+  
+        await db(
+            `INSERT INTO users (email, password, first_name) VALUES (?, ?, ?)`,
+            [email, hash, firstName]
+        );
+  
+        res.send({ message: "Register successful" });
+    } catch (err) {
+        res.status(400).send({ message: err.message });
+    }
+  });
+  
 
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;

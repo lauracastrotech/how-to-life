@@ -21,8 +21,7 @@ module.exports = function db(query, params) {
       }
 
       connection.query(query, params, (error, results) => {
-        connection.release(); // Release the connection back to the pool
-
+        connection.release(); 
         if (error) {
           console.error('Error executing query:', error.message);
           reject(error);
