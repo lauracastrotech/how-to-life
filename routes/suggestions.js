@@ -10,7 +10,7 @@ router.get('/:category', async function(req, res) {
         FROM suggestions
         WHERE category = ?
         ORDER BY click_count DESC
-        LIMIT 5;`;
+        LIMIT 5`;
 
     try {
         console.log('Category:', category);

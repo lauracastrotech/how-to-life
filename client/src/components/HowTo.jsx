@@ -15,7 +15,6 @@ export default function HowTo () {
   }
   
   const handleNext = () => {
-
     setFormStatus('skill');
     setStep(2);
     navigate("/skill/2");

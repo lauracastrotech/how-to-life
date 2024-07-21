@@ -1,4 +1,4 @@
-// IF YOU NEED LOGIN STATE, YOU CAN ADD THE PROVIDER HERE
+
 /* eslint-disable no-unused-vars */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';

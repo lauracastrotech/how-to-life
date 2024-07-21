@@ -1,17 +1,15 @@
+
 /* eslint-disable no-unused-vars */
 // This is the component where chatGpt response renders
 import React from 'react';
 import { useContext, useState, useEffect } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import axios from 'axios';
+import './Answer.css';
 
-export default function Answer (){
-
-  // Need a use affect cb that will display the answer to a section/tag to
-
-  const {formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer} = useContext(FormStateContext); 
+export default function Answer() {
+  const { formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer } = useContext(FormStateContext);
   const [audioUrl, setAudioUrl] = useState('');
-
 
   const handleTextToSpeech = async (text) => {
     try {
@@ -29,33 +27,42 @@ export default function Answer (){
     }
   }, [answer]);
 
-
-  // const handleRegenerate ()
-  // Resend prompt to api
+  const handleRegenerate = async () => {
+    try {
+      const { data } = await axios.post('/api/index/ai-answer', { prompt });
+      setAnswer(data.answer);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   return (
-    <div className="objective">
+    <div className="container">
       <div className="container col">
+        <div className="row m-2">
+          <h1 className="title">Ready to learn? Here's your answer</h1>
+        </div>
         {/* This div will be boiler plate */}
         <div className="row">
-            <h2>[What do we put here]</h2>
+          <h2 className="subtitle">Your question: <i>{prompt}</i> </h2>
         </div>
-        {/* This div is where to render renspone */}
         <div className="row">
-            <h2>To be added later</h2>
+          <h3 className="answer">{answer}</h3>
+        </div>
+        <div className="row m-2">
+          <button className="col-4" onClick={handleRegenerate}>
+            <img className="icon-group" src="/regenerate.png" alt="regenerate button" />
+          </button>
         </div>
         <div className='row m-2'>
-          <button className='col-4'>
-            <img className = "icon-group" src="/regenerate.png" alt="regenrate button" />
-          </button>
-          <button className='col-4' onClick={() => handleTextToSpeech(answer)}>
-            <img className = "icon-group" src="/text_to_speech.png" alt="text to speech button" />
+          <button className="col-4" onClick={() => handleTextToSpeech(answer)}>
+            <img className="icon-group" src="/text_to_speech.png" alt="text to speech button" />
           </button>
         </div>
         {audioUrl && (
-                    <div className="row">
-                        <audio controls src={audioUrl} />
-                    </div>
+          <div className="row">
+            <audio controls src={audioUrl} />
+          </div>
         )}
       </div>
     </div>
