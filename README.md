@@ -2,7 +2,7 @@
 
 How to Life offers a simple interface that helps you get guides to learn things. It's integrated with ChatGPT OpenAI api that gurantees results that will be most helpful to you.We're here to simplify the learning process with clear, step-by-step guides and expert advice. Our mission is to empower you with practical knowledge, helping you tackle everyday challenges with confidence. Whether you're starting out on your own or looking to refine existing skills, our platform provides the tools and community support you need to thrive.
 
-:sparkles: ## Features 
+## :sparkles: Features 
 
 ![How to Life](https://github.com/lauracastrotech/how-to-life/blob/documentation/assets/demo_thumbnail.jpg)
 
@@ -14,7 +14,7 @@ How to Life offers a simple interface that helps you get guides to learn things.
 - Text-to-speech
 - Answer regeneration
 
-:wrench: ## Setup  
+## :wrench: Setup  
 
 ### Dependencies
 This application is built with an Express server, MySQL database, and React front end framework. Below is a list of other dependencies that you will need to run the application.
@@ -45,20 +45,20 @@ This application is built with an Express server, MySQL database, and React fron
 :rocket: ## Collaborators 
 
 #### Bianca Harris
-:email: biancaharris150808@gmail.com 
-:octocat: [GitHub Profile](https://github.com/biancajayharris) 
-:linkedin: [LinkedIn Profile](https://www.linkedin.com/in/bianca-harris-551758166/) 
+:email: biancaharris150808@gmail.com<br> 
+:octocat: [GitHub Profile](https://github.com/biancajayharris)<br> 
+:linkedin: [LinkedIn Profile](https://www.linkedin.com/in/bianca-harris-551758166/)<br> 
 
 
-Sylwia Orczyk
+#### Sylwia Orczyk
 :email: orczyksylwia@gmail.com
 :octocat: [GitHub Profile](https://github.com/sylwiao31) 
 :linkedin: [LinkedIn Profile](https://www.linkedin.com/in/sylwia-orczyk-41a6074a/) 
 
-Laura Castro
+#### Laura Castro
 :email: lauracastrotech@gmail.com 
 :octocat: [GitHub Profile](https://github.com/lauracastrotech) 
-:linkedin: [LinkedIn Profile](https://www.linkedin.com/in/lccastro/) 
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/lccastro/) 
 
 #### CodeOp Fullstack Development Bootcamp
 This application was a collaborative effort for the final project in CodeOp bootcamp. The project was managed using Agile Scrum and Jira platform.
