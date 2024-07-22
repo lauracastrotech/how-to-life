@@ -37,7 +37,7 @@ export default function Home() {
           <div className='row'>
             <div className='col-md-6'>
               <h1 id='welcome'>Welcome friend,</h1>
-              <p id="description">How to life is a tool that helps you create a prompt for all those life skills that they didn&apos;t teach you in high school. Here&apos;s how it works.</p>
+              <p id="description">How to life isyour go-to resource for mastering essential skills you may not have learned in school or just in general. We understand that navigating adulthood can be daunting, whether it&apos;s managing finances, cooking nutritious meals, or understanding complex paperwork. It&apos;s a tool that helps you create a prompt that we'll send to some fancy AI that will give you the best guide. <br/><hr/> Here&apos;s how it works.</p>
             </div>
             <div className='col-md-6'>
               <div className="card">
@@ -52,7 +52,7 @@ export default function Home() {
                 <p className='card-title'>3 | Objective</p>
                 <p className='card-body'>Give us some context. The more details the better.</p>
               </div>
-              <hr />
+              {/* <hr /> */}
               <button className="btn btn-sm" id='get-started' onClick={handleGetStarted}>Get started</button> 
             </div>
           </div> 
