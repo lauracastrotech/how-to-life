@@ -4,9 +4,6 @@ How to Life offers a simple interface that helps you get guides to learn things.
 
 ## :sparkles: Features 
 
-![How to Life](https://github.com/lauracastrotech/how-to-life/blob/documentation/assets/demo_thumbnail.jpg)
-
-
 - Mobile responsive progressive form
 - Login Authentication
 - Profile page 
