@@ -60,7 +60,7 @@ function handleChange(event) {
             </div> }
       {!loading && <div className="container col">
         <div className="row animate__animated animate__fadeInLeft">
-              <h2>Almost there, we need some more information. The more information you give me the better the response.</h2>
+              <h2>Almost there, we need some context. The more information you give me the better the response.</h2>
           </div>
           <div className="row animate__animated animate__fadeInLeft">
               <form>
@@ -70,9 +70,9 @@ function handleChange(event) {
                   name="prompt" 
                   value={prompt} 
                   onChange={handleChange}
-                  id="custom-skill"
+                  id="custom-objective"
                   ></textarea>
-              
+                  <label htmlFor="custom-objective">Give us all the details...</label>
                 </div>
               </form>
           </div>
