@@ -60,7 +60,7 @@ function handleChange(event) {
             </div> }
       {!loading && <div className="container col">
         <div className="row animate__animated animate__fadeInLeft">
-              <h2>How do you best learn, why do you need to learn this skill now, what outcome do you hope that you will have, when do you need to do this by.</h2>
+              <h2>Almost there, we need some more information. The more information you give me the better the response.</h2>
           </div>
           <div className="row animate__animated animate__fadeInLeft">
               <form>
