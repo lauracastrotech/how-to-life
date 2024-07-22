@@ -34,7 +34,7 @@ export default function Answer() {
 
   
   const formatAnswer = (answer) => {
-    const cleanText = answer.replace(/^\d+\.\s+/gm, ''); // Remove existing numbering from each line.
+    const cleanText = answer.replace(/^\d+\.\s+/gm, '').replace(/\*\*/g, ''); // Remove existing numbering from each line and remove any astrix.
     const lines = cleanText.split('\n').filter(line => line.trim() !== '');  // Split the answer into lines and remove empty lines.
     //clean text removes any existing numbering 
     // line is used in the contect to split the answer into individual lines using the split('\n')

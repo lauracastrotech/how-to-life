@@ -8,7 +8,7 @@ const DB_HOST = process.env.DB_HOST;
 const DB_USER = process.env.DB_USER;
 const DB_PASS = process.env.DB_PASS;
 const DB_NAME = process.env.DB_NAME;
-const DB_PORT = process.env.DB_PORT;
+// const DB_PORT = process.env.DB_PORT;
 
 // Create a connection to run the init_db.sql
 const con = mysql.createConnection(
@@ -17,7 +17,7 @@ const con = mysql.createConnection(
       user: DB_USER || "root",
       password: DB_PASS,
       database: DB_NAME || "how_to_life",
-      port: DB_PORT || "3307",
+      // port: DB_PORT || "3307",
       multipleStatements: true
   }
 );
