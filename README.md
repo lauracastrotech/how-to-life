@@ -4,14 +4,13 @@ How to Life offers a simple interface that helps you get guides to learn things.
 
 ## Features
 
-<video width="600" controls autoplay>
-  <source src="https://raw.githubusercontent.com/lauracastrotech/how-to-life/documentation/public/demo.mp4" type="video/mp4">
-  Demo of How to Life application
-</video>
+```html
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/9ak351FG6oE?si=bjowy0fA4HMH2HtC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;
 
 - Mobile responsive progressive form
 - Login Authentication
-- Profile page
+- Profile page 
+- History saved for registered users
 - Text-to-speech
 
 ## Setup
@@ -25,7 +24,7 @@ This application is built with an Express server, MySQL database, and React fron
 ### Database Prep
 
 - Access the MySQL interface in your terminal by running `mysql -u root -p`
-- Create a new database called how_to_life `how_to_life`
+- Create a new database called `how_to_life`
 - Add a `.env` file to the project folder of this repository containing the MySQL authentication information for MySQL user. For example:
 
 ```bash
@@ -41,4 +40,16 @@ This application is built with an Express server, MySQL database, and React fron
 
 - In another terminal, do `cd client` and run `npm run dev` to start the client in development mode with hot reloading in port 5173.
 
-### Database schema
+## Collaborators
+Bianca Harris
+Github
+LinkedIn
+
+Sylwia Orczyk
+Github
+LinkedIn
+
+Laura Castro
+Github
+LinkedIn
+
