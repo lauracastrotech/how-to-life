@@ -1,30 +1,61 @@
-/* .container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-  } */
+.container {
+  background-color: rgba(229,237,255,255);
+  border-radius:5px;
+  padding:15px;
+  /* max-width: 800px; */
+  /* margin: auto; */
+}
 
-.title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
+h1 {
+  font-size: 2.5rem;
+  color: #343a40;
+  margin-bottom: 10px;
+}
 
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #555;
-  }
+.lead {
+  font-size: 1.25rem;
+  color: rgba(62,71,114,255);
+  font-weight:bold;
+}
 
-.answer {
-    font-size: 16px;
-    color: #333;
-  }
+.card {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
 
-.icon-group {
-    width: 30px;
-    height: 30px;
-  }
+.card-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color:rgba(183,198,231,255);
+  color: rgba(62,71,114,255);
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.prompt-text {
+  font-style: italic;
+  text-align: center;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  width:fit-content;
+
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.audio-player {
+  width: 300px;
+}

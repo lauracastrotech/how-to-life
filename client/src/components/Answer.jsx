@@ -3,6 +3,8 @@ import { useContext, useState, useEffect } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import axios from 'axios';
 import './Answer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSyncAlt, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 
 export default function Answer() {
   const { formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer } = useContext(FormStateContext);
@@ -34,34 +36,45 @@ export default function Answer() {
   };
 
   return (
-    <div className="container">
-      <div className="container col">
-        <div className="row m-2">
-          <h1 className="title">Ready to learn? Here's your answer</h1>
+    <div className="answer-container d-flex align-items-center justify-content-center">
+      <div className="container mt-5 animate__animated animate__fadeIn">
+        <div className="row mb-4">
+          <div className="col text-center">
+            <h1 className="title animate__animated animate__bounceIn">Ready to learn?</h1>
+            <p className="lead animate__animated animate__fadeIn">Your journey to mastering adulting just got easier. Check out the answer we've prepared for you.</p>
+          </div>
         </div>
-        <div className="row">
-          <h2 className="subtitle">
-            You step-by-step guide for mastering [value of category state goes here]
-          </h2>
+        <div className="row mb-4">
+          <div className="col-md-10 mx-auto">
+            <div className="card border-primary mb-3 animate__animated animate__fadeInLeft">
+              <div className="card-header">Your Question:</div>
+              <div className="card-body text-center">
+                <p className="card-text prompt-text">{prompt}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="row">
-          <h2 className="subtitle">Your question: <i>{prompt}</i> </h2>
+        <div className="row mb-4">
+          <div className="col-md-10 mx-auto">
+            <div className="card border-success mb-3 animate__animated animate__fadeInLeft">
+              <div className="card-header">Your step-by-step guide:</div>
+              <div className="card-body">
+                <p className="card-text">{answer}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* Sylwia working on formatting answer */}
-        <div className="row">
-          <h3 className="answer">{answer}</h3>
-        </div>
-        <div className="row m-2">
-          <button className="col-4" onClick={handleRegenerate}>
-            <img className="icon-group" src="/regenerate.png" alt="regenerate button" />
+        <div className="row justify-content-center mb-4">
+          <button className="btn btn-outline-secondary mx-2" onClick={handleRegenerate}>
+            <FontAwesomeIcon icon={faSyncAlt} className="icon" /> Regenerate
           </button>
-          <button className="col-4" onClick={() => handleTextToSpeech(answer)}>
-            <img className="icon-group" src="/text_to_speech.png" alt="text to speech button" />
+          <button className="btn btn-outline-secondary mx-2 same-size-btn" onClick={() => handleTextToSpeech(answer)}>
+            <FontAwesomeIcon icon={faVolumeUp} className="icon" /> Text to Speech
           </button>
         </div>
         {audioUrl && (
-          <div className="row">
-            <audio controls src={audioUrl} />
+          <div className="row justify-content-center">
+            <audio className="audio-player" controls src={audioUrl} />
           </div>
         )}
       </div>
