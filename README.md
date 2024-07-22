@@ -4,7 +4,10 @@ How to Life offers a simple interface that helps you get guides to learn things.
 
 ## Features
 
-[![Watch the video](https://cdn.loom.com/sessions/thumbnails/bd0780ded354442e82b066f5f1e27064?sid=8c5c8959-2543-4661-9139-575a7df4796d)](https://www.loom.com/share/bd0780ded354442e82b066f5f1e27064?sid=8c5c8959-2543-4661-9139-575a7df4796d)
+<video width="600" controls autoplay>
+  <source src="/demo.mp4" type="video/mp4">
+  Demo of How to Life application
+</video>
 
 - Mobile responsive progressive form
 - Login Authentication
