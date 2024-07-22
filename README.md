@@ -4,7 +4,8 @@ How to Life offers a simple interface that helps you get guides to learn things.
 
 ## Features
 
-[![Watch the video](https://img.youtube.com/vi/9ak351FG6oE/0.jpg)](https://www.youtube.com/watch?v=9ak351FG6oE)
+![Alt text](https://raw.githubusercontent.com/lauracastrotech/how-to-life/documentation/assets/demo_thumbnail.jpg)
+
 
 - Mobile responsive progressive form
 - Login Authentication
