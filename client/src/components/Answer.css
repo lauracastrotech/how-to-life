@@ -1,16 +1,10 @@
 .container {
   background-color: rgba(229,237,255,255);
   border-radius:5px;
-  padding:15px;
+  padding:5px;
   /* max-width: 800px; */
-}
 
-.title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
+}
 
 h1 {
   font-size: 2.5rem;
@@ -18,29 +12,11 @@ h1 {
   margin-bottom: 10px;
 }
 
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #555;
-  }
-
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #555;
-    text-align: left;
-  }
-
 .lead {
   font-size: 1.25rem;
   color: rgba(62,71,114,255);
   font-weight:bold;
 }
-
-.answer {
-    font-size: 16px;
-    color: #333;
-  }
 
 .card {
   border-radius: 10px;
@@ -59,6 +35,7 @@ h1 {
 .card-text {
   font-size: 1rem;
   font-weight: bold;
+
 }
 
 .btn {
@@ -82,31 +59,18 @@ h1 {
 
 ol {
   list-style-type: decimal; 
+  margin: 0 auto;
+  padding: 0;
+  
 }
 
 li {
-  position: inside;
+  list-style-position: inside;
   margin: 0.9rem 0;
-  padding: 15px; 
+  padding: 5px; 
   border: 1px solid rgba(183, 198, 231, 1);
   border-radius: 5px; 
   /* background-color: rgba(229, 237, 255, 1);  */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   font-size: 1rem; 
 }
-
-.icon-group {
-    width: 30px;
-    height: 30px;
-  }
-
-  .answer ol {
-    padding-left: 20px; 
-    margin: 0;
-  }
-  
-  .answer li {
-    margin-bottom: 10px; 
-    font-size: 16px; 
-  }
-
