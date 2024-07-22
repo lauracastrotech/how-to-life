@@ -4,7 +4,7 @@ How to Life offers a simple interface that helps you get guides to learn things.
 
 ## Features
 
-![Alt text](https://raw.githubusercontent.com/lauracastrotech/how-to-life/documentation/assets/demo_thumbnail.jpg)
+![How to Life](https://github.com/lauracastrotech/how-to-life/blob/documentation/assets/demo_thumbnail.jpg)
 
 
 - Mobile responsive progressive form
