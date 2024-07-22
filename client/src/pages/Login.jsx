@@ -4,11 +4,14 @@
 import React from 'react';
 import LoginForm from '../components/LoginForm';
 import '../styles/Login.css'; 
+import { FormStateContext } from '../helpers/FormContext';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
+    // const {isLoggedIn} = useContext(FormStateContext);
+
     useEffect(() => {
         // This manually shows modal
         $('#loginModalCenter').modal('show');
@@ -35,11 +38,11 @@ const Login = () => {
                         </div>
 
                         <div className="modal-body">
-                            <LoginForm />
+                            <LoginForm hideModal = {handleClose}/>
                         </div>
                         <div className="modal-footer d-flex justify-content-center">
                             {/* Need to link to signup form */}
-                            <div id="signup-link">Not a member? <a href="#">Sign up now</a></div>
+                            <div id="signup-link">Not a member? <a href="/signup">Sign up now</a></div>
                         </div>
                     </div>
                 </div>

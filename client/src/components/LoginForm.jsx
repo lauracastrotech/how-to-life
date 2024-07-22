@@ -1,12 +1,16 @@
-import React, { useState, useHistory } from 'react';
+import React, { useState, useHistory, useContext } from 'react';
+import { FormStateContext } from '../helpers/FormContext';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/LoginForm.css'
-const LoginForm = () => {
+const LoginForm = ({hideModal}) => {
+    
+    const {setIsLoggedIn} = useContext(FormStateContext);
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -14,6 +18,9 @@ const LoginForm = () => {
             const response = await axios.post('/api/auth/login', { email, password });
             console.log('Login response:', response.data); 
             localStorage.setItem('token', response.data.token);
+            setIsLoggedIn(true);
+            hideModal();
+            navigate('/profile')
         } catch (error) {
             console.error('Login error:', error);
             console.log('Login error response:', error.response); 
