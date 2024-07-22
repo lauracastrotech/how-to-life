@@ -4,7 +4,7 @@ How to Life offers a simple interface that helps you get guides to learn things.
 
 ## Features
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9ak351FG6oE?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/9ak351FG6oE/0.jpg)](https://www.youtube.com/watch?v=9ak351FG6oE)
 
 - Mobile responsive progressive form
 - Login Authentication
