@@ -42,22 +42,22 @@ This application is built with an Express server, MySQL database, and React fron
 
 - In another terminal, do `cd client` and run `npm run dev` to start the client in development mode with hot reloading in port 5173.
 
-:rocket: ## Collaborators 
+## :rocket: Collaborators 
 
 #### Bianca Harris
 :email: biancaharris150808@gmail.com<br> 
 :octocat: [GitHub Profile](https://github.com/biancajayharris)<br> 
-:linkedin: [LinkedIn Profile](https://www.linkedin.com/in/bianca-harris-551758166/)<br> 
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/bianca-harris-551758166/) 
 
 
 #### Sylwia Orczyk
-:email: orczyksylwia@gmail.com
-:octocat: [GitHub Profile](https://github.com/sylwiao31) 
-:linkedin: [LinkedIn Profile](https://www.linkedin.com/in/sylwia-orczyk-41a6074a/) 
+:email: orczyksylwia@gmail.com<br>
+:octocat:  [GitHub Profile](https://github.com/sylwiao31)<br> 
+🔗  [LinkedIn Profile](https://www.linkedin.com/in/sylwia-orczyk-41a6074a/) 
 
 #### Laura Castro
-:email: lauracastrotech@gmail.com 
-:octocat: [GitHub Profile](https://github.com/lauracastrotech) 
+:email: lauracastrotech@gmail.com<br> 
+:octocat: [GitHub Profile](https://github.com/lauracastrotech)<br> 
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/lccastro/) 
 
 #### CodeOp Fullstack Development Bootcamp
