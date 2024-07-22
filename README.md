@@ -12,7 +12,7 @@ How to Life offers a simple interface that helps you get guides to learn things.
 - Profile page 
 - History saved for registered users
 - Text-to-speech
-- Answer regeneration
+- Answer regeneration<br>
 
 ## :wrench: Setup  
 
@@ -40,7 +40,7 @@ This application is built with an Express server, MySQL database, and React fron
 
 - Run `npm start` in project directory to start the Express server on port 3000.
 
-- In another terminal, do `cd client` and run `npm run dev` to start the client in development mode with hot reloading in port 5173.
+- In another terminal, do `cd client` and run `npm run dev` to start the client in development mode with hot reloading in port 5173.<br>
 
 ## :rocket: Collaborators 
 
