@@ -3,7 +3,7 @@
   border-radius:5px;
   padding:15px;
   /* max-width: 800px; */
-  /* margin: auto; */
+
 }
 
 h1 {
@@ -22,7 +22,7 @@ h1 {
   border-radius: 10px;
   border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .card-header {
@@ -34,11 +34,7 @@ h1 {
 
 .card-text {
   font-size: 1rem;
-}
-
-.prompt-text {
-  font-style: italic;
-  text-align: center;
+  font-weight: bold;
 }
 
 .btn {
@@ -58,4 +54,19 @@ h1 {
 
 .audio-player {
   width: 300px;
+}
+
+ol {
+  list-style-type: decimal; 
+}
+
+li {
+  position: inside;
+  margin: 0.9rem 0;
+  padding: 15px; 
+  border: 1px solid rgba(183, 198, 231, 1);
+  border-radius: 5px; 
+  /* background-color: rgba(229, 237, 255, 1);  */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  font-size: 1rem; 
 }

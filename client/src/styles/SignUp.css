@@ -1,3 +1,8 @@
 #login-link a{
     color: rgba(62,71,114,255);
 }
+
+#signupModalLongTitle {
+    color: rgba(62,71,114,255);
+    font-weight: 100;
+}

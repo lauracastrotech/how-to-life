@@ -10,8 +10,9 @@
     text-align: left;
     margin-bottom: 10px;
     margin-top: 10px;
-    
+    font-weight: 700;
 }
+
 #description {
     padding-left: 15px;
     padding-right: 15px;
@@ -49,4 +50,18 @@
     font-weight: 500;
     font-size: 15px;
 }
+
+/*Animation*/
+.animate__animated.animate__fadeInLeft{
+    --animate-duration: 1.75s;
+}
+.animate__animated.animate__fadeInRight{
+    --animate-duration: 1.75s;
+}
+
+/*Desktop Styles*/
+.col-md-6{
+    padding: 15px 20px 5px;
+}
+
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import axios from 'axios';
 import './Answer.css';
@@ -7,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSyncAlt, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 
 export default function Answer() {
-  const { formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer } = useContext(FormStateContext);
+  const { prompt, answer, setAnswer } = useContext(FormStateContext);
   const [audioUrl, setAudioUrl] = useState('');
 
   const handleTextToSpeech = async (text) => {
@@ -19,7 +18,7 @@ export default function Answer() {
       console.error('Error generating text to speech:', error);
     }
   };
-  // generate text-to-speech when the answer changes
+
   useEffect(() => {
     if (answer) {
       handleTextToSpeech(answer);
@@ -35,35 +34,55 @@ export default function Answer() {
     }
   };
 
+  
+  const formatAnswer = (answer) => {
+    const cleanText = answer.replace(/^\d+\.\s+/gm, '').replace(/\*\*/g, ''); // Remove existing numbering from each line and remove any astrix.
+    const lines = cleanText.split('\n').filter(line => line.trim() !== '');
+      // Split the answer into lines and remove empty lines.
+    //clean text removes any existing numbering 
+    // line is used in the contect to split the answer into individual lines using the split('\n')
+    //empty lines filtered out with the filter function
+    //return maps the lines into an ordered list (in <li> element)
+   
+    return (
+      <ol>
+        {lines.map((line, index) => (
+          <li key={index}>{line}</li>
+        ))}
+      </ol>
+    );
+  };
+
   return (
-    <div className="answer-container d-flex align-items-center justify-content-center">
+    <div className="answer-container d-flex align-items-center">
       <div className="container mt-5 animate__animated animate__fadeIn">
         <div className="row mb-4">
           <div className="col text-center">
-            <h1 className="title animate__animated animate__bounceIn">Ready to learn?</h1>
-            <p className="lead animate__animated animate__fadeIn">Your journey to mastering adulting just got easier. Check out the answer we've prepared for you.</p>
+            <h1 className="title animate__animated animate__heartBeat">Ready to learn?</h1>
+            <p className="lead animate__animated animate__fadeInUp">Your journey to mastering adulting just got easier. Check out the guide we've prepared for you.</p>
           </div>
         </div>
-        <div className="row mb-4">
+        {/* <div className="row mb-4">
           <div className="col-md-10 mx-auto">
-            <div className="card border-primary mb-3 animate__animated animate__fadeInLeft">
+            <div className="card border-primary mb-3 animate__animated animate__fadeIn">
               <div className="card-header">Your Question:</div>
               <div className="card-body text-center">
                 <p className="card-text prompt-text">{prompt}</p>
               </div>
             </div>
           </div>
-        </div>
-        <div className="row mb-4">
+        </div> */}
+        {/* <div className="row mb-2"> */}
           <div className="col-md-10 mx-auto">
-            <div className="card border-success mb-3 animate__animated animate__fadeInLeft">
-              <div className="card-header">Your step-by-step guide:</div>
+            <div className="card mb-3 animate__animated animate__fadeInUp">
+              {/* <div className="card-header">Your Step-By-Step Guide:</div> */}
+              <div className="card-header">{prompt}</div>
               <div className="card-body">
-                <p className="card-text">{answer}</p>
+                <p className="card-text">{formatAnswer(answer)}</p>
               </div>
             </div>
           </div>
-        </div>
+        {/* </div> */}
         <div className="row justify-content-center mb-4">
           <button className="btn btn-outline-secondary mx-2" onClick={handleRegenerate}>
             <FontAwesomeIcon icon={faSyncAlt} className="icon" /> Regenerate

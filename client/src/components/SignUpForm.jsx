@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpForm = () => {
+    
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -19,6 +23,7 @@ const SignUpForm = () => {
         try {
             const response = await axios.post('/api/auth/register', { email, password, firstName });
             console.log(response.data);
+            navigate('/login');
             setSuccessMessage('You have signed up successfully');
         } catch (error) {
             setError('Registration failed');

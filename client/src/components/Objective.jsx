@@ -55,9 +55,9 @@ function handleChange(event) {
 
   return (
     <div className="objective">
-      {loading && <div className='justify-content-center'>
-                      <DotLoader color='#b7c6e7' size={150}/>
-                    </div>}
+      {loading && <div className='d-flex flex-column justify-content-center align-items-center'>
+                <DotLoader color='#b7c6e7' size={150}/>
+            </div> }
       {!loading && <div className="container col">
         <div className="row animate__animated animate__fadeInLeft">
               <h2>How do you best learn, why do you need to learn this skill now, what outcome do you hope that you will have, when do you need to do this by.</h2>
