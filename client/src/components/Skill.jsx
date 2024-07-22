@@ -54,7 +54,7 @@ export default function Skill() {
 
     return (
         <div className="skill">
-            <div className="container col">
+            <div className="container col col-md-6">
                 <div className="row animate__animated animate__fadeInLeft">
                     <h2>Tell us more about the skill that you want to learn.</h2>
                 </div>
