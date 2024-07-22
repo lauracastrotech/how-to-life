@@ -60,3 +60,5 @@ Laura Castro
 :octocat: [GitHub Profile](https://github.com/lauracastrotech) 
 :linkedin: [LinkedIn Profile](https://www.linkedin.com/in/lccastro/) 
 
+#### CodeOp Fullstack Development Bootcamp
+This application was a collaborative effort for the final project in CodeOp bootcamp. The project was managed using Agile Scrum and Jira platform.
