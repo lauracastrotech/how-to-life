@@ -5,7 +5,7 @@ How to Life offers a simple interface that helps you get guides to learn things.
 ## Features
 
 <video width="600" controls autoplay>
-  <source src="/demo.mp4" type="video/mp4">
+  <source src="https://raw.githubusercontent.com/lauracastrotech/how-to-life/documentation/public/demo.mp4" type="video/mp4">
   Demo of How to Life application
 </video>
 
