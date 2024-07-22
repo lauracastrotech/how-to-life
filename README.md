@@ -1,12 +1,18 @@
-# fspt27-final project - Inroduction
+# How to Life
 
-- This project is called How to life. It is your go-to resource for mastering essential adult skills you may not have learned in school or just in general. We understand that navigating adulthood can be daunting, whether it's managing finances, cooking nutritious meals, or understanding complex paperwork.
-
-At How to Life, we're here to simplify the learning process with clear, step-by-step guides and expert advice. Our mission is to empower you with practical knowledge and skills, helping you tackle everyday challenges with confidence. Whether you're starting out on your own or looking to refine existing skills, our platform provides the tools and community support you need to thrive.
+How to Life offers a simple interface that helps you get guides to learn things. It's integrated with ChatGPT OpenAI api that gurantees results that will be most helpful to you.We're here to simplify the learning process with clear, step-by-step guides and expert advice. Our mission is to empower you with practical knowledge, helping you tackle everyday challenges with confidence. Whether you're starting out on your own or looking to refine existing skills, our platform provides the tools and community support you need to thrive.
 
 It is an application built with Express for the backend server, MySQL as the database and REACT for the front-end.
 
-## Database Prep
+## Setup
+
+### Dependencies
+This application is built with an Express server, MySQL database, and React front end framework. Below is a list of other dependencies that you will need to run the application.
+
+- Run `npm install` in project directory to install server-related dependencies
+- `cd client` and run `npm install` to install client dependencies
+- Other libraries include animate.css jquery popper react-spinners
+### Database Prep
 
 - Access the MySQL interface in your terminal by running `mysql -u root -p`
 - Create a new database called how_to_life `how_to_life`
