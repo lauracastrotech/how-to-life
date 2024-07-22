@@ -31,7 +31,7 @@ const SignUp = () => {
                         </div>
 
                         <div className="modal-body">
-                            <SignUpForm />
+                            <SignUpForm hideModal = {handleClose}/>
                         </div>
                         <div className="modal-footer d-flex justify-content-center">
                             {/* Need to link to login form */}
