@@ -2,7 +2,14 @@
 
 How to Life offers a simple interface that helps you get guides to learn things. It's integrated with ChatGPT OpenAI api that gurantees results that will be most helpful to you.We're here to simplify the learning process with clear, step-by-step guides and expert advice. Our mission is to empower you with practical knowledge, helping you tackle everyday challenges with confidence. Whether you're starting out on your own or looking to refine existing skills, our platform provides the tools and community support you need to thrive.
 
-It is an application built with Express for the backend server, MySQL as the database and REACT for the front-end.
+## Features
+
+[![Watch the video](https://cdn.loom.com/sessions/thumbnails/bd0780ded354442e82b066f5f1e27064?sid=8c5c8959-2543-4661-9139-575a7df4796d)](https://www.loom.com/share/bd0780ded354442e82b066f5f1e27064?sid=8c5c8959-2543-4661-9139-575a7df4796d)
+
+- Mobile responsive progressive form
+- Login Authentication
+- Profile page
+- Text-to-speech
 
 ## Setup
 
@@ -11,7 +18,7 @@ This application is built with an Express server, MySQL database, and React fron
 
 - Run `npm install` in project directory to install server-related dependencies
 - `cd client` and run `npm install` to install client dependencies
-- Other libraries include animate.css jquery popper react-spinners
+- Other libraries include `npm install --save animate.css jquery popper react-spinners`
 ### Database Prep
 
 - Access the MySQL interface in your terminal by running `mysql -u root -p`
