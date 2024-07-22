@@ -60,6 +60,6 @@ This application is built with an Express server, MySQL database, and React fron
 :octocat: [GitHub Profile](https://github.com/lauracastrotech)<br> 
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/lccastro/) 
 
-#### [CodeOp](https://lesbianswhotech.org/wp-content/uploads/2022/02/ExternalLink_CodeOp_logo_blue-2-2.jpg) <img src="https://lesbianswhotech.org/wp-content/uploads/2022/02/ExternalLink_CodeOp_logo_blue-2-2.jpg" alt="Description of Image" width="600"/>
+<img src="https://lesbianswhotech.org/wp-content/uploads/2022/02/ExternalLink_CodeOp_logo_blue-2-2.jpg" alt="Description of Image" width="200"/>
 
 This application was a collaborative effort built during CodeOp's Fullstack Development Bootcamp. The final project culminated the final phase of the bootcamp and was managed using Agile Scrum and Jira platform.
