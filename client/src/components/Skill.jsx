@@ -69,7 +69,7 @@ export default function Skill() {
                                 onChange={(e) => setPrompt(e.target.value)}
                             ></textarea>
 
-                            <label htmlFor="custom-skill">Write your own question</label>
+                            <label htmlFor="custom-skill">Write your own question about...</label>
                         </div>
                     </form>
                 </div>
