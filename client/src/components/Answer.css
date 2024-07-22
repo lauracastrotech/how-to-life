@@ -4,16 +4,6 @@
   padding:15px;
   /* max-width: 800px; */
 
-<<<<<<< HEAD
-}
-||||||| 89fab6f
-.title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-  }
-=======
 .title {
     font-size: 24px;
     font-weight: bold;
@@ -21,107 +11,20 @@
     color: #333;
     text-align: left;
   }
->>>>>>> 9353c7fe5265f19e2a393e0ac78f7dc1e04fad93
 
-<<<<<<< HEAD
-h1 {
-  font-size: 2.5rem;
-  color: #343a40;
-  margin-bottom: 10px;
-}
-||||||| 89fab6f
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #555;
-  }
-=======
 .subtitle {
     font-size: 18px;
     margin-bottom: 20px;
     color: #555;
     text-align: left;
   }
->>>>>>> 9353c7fe5265f19e2a393e0ac78f7dc1e04fad93
 
-<<<<<<< HEAD
-.lead {
-  font-size: 1.25rem;
-  color: rgba(62,71,114,255);
-  font-weight:bold;
-}
-||||||| 89fab6f
-.answer {
-    font-size: 16px;
-    color: #333;
-  }
-=======
 .answer {
     font-size: 16px;
     color: #333;
     text-align: left;
   }
->>>>>>> 9353c7fe5265f19e2a393e0ac78f7dc1e04fad93
 
-<<<<<<< HEAD
-.card {
-  border-radius: 10px;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-.card-header {
-  font-size: 1.25rem;
-  font-weight: bold;
-  background-color:rgba(183,198,231,255);
-  color: rgba(62,71,114,255);
-}
-
-.card-text {
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.btn {
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  width:fit-content;
-
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-}
-
-.audio-player {
-  width: 300px;
-}
-
-ol {
-  list-style-type: decimal; 
-}
-
-li {
-  position: inside;
-  margin: 0.9rem 0;
-  padding: 15px; 
-  border: 1px solid rgba(183, 198, 231, 1);
-  border-radius: 5px; 
-  /* background-color: rgba(229, 237, 255, 1);  */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-  font-size: 1rem; 
-}
-||||||| 89fab6f
-.icon-group {
-    width: 30px;
-    height: 30px;
-  }
-=======
 .icon-group {
     width: 30px;
     height: 30px;
@@ -136,4 +39,3 @@ li {
     margin-bottom: 10px; 
     font-size: 16px; 
   }
->>>>>>> 9353c7fe5265f19e2a393e0ac78f7dc1e04fad93

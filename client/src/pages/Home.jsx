@@ -37,21 +37,10 @@ export default function Home() {
       {(formStatus === "home" && step === 0) && (
         <div className="home">
           <div className='row'>
-<<<<<<< HEAD
-            <div className='col-md-6 col-lg-6 animate__animated  animate__fadeInLeft'>
-              <h1 id='welcome'>Welcome friend,</h1>
-              <p id="description">How to life isyour go-to resource for mastering essential skills you may not have learned in school or just in general. We understand that navigating adulthood can be daunting, whether it&apos;s managing finances, cooking nutritious meals, or understanding complex paperwork. It&apos;s a tool that helps you create a prompt that we'll send to some fancy AI that will give you the best guide. <br/><hr/></p>
-              <h5 className='d-flex justify-content-end'>Here&apos;s how it works.</h5>
-||||||| 89fab6f
-            <div className='col-md-6'>
-              <h1 id='welcome'>Welcome!</h1>
-              <p id="description">How to life is a tool that helps you create a prompt for all those life skills that they didn&apos;t teach you in high school. Here&apos;s how it works.</p>
-=======
             <div className='col-md-6 col-lg-6 animate__animated  animate__fadeInLeft'>
               <h1 id='welcome'>Welcome friend,</h1>
               <p id="description">How to life is your go-to resource for mastering essential skills you may not have learned in school or just in general. We understand that navigating adulthood can be daunting, whether it&apos;s managing finances, cooking nutritious meals, or understanding complex paperwork. It&apos;s a tool that helps you create a prompt that we'll send to some fancy AI that will give you the best guide. <br/><hr/></p>
               <h5 className='d-flex justify-content-end'>Here&apos;s how it works.</h5>
->>>>>>> 9353c7fe5265f19e2a393e0ac78f7dc1e04fad93
             </div>
             <div className='col-md-6 col-lg-6 animate__animated  animate__fadeInRight'>
               <div id="one" className="card">
