@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import SignUpForm from '../components/SignUpForm';
@@ -20,7 +19,6 @@ const SignUp = () => {
     }
     return (
         <div>
-            {/* <!-- Modal Demo--> */}
             <div className="modal fade" id="signupModalCenter" tabIndex="-1" role="dialog" aria-labelledby="signupModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
@@ -34,7 +32,6 @@ const SignUp = () => {
                             <SignUpForm hideModal = {handleClose}/>
                         </div>
                         <div className="modal-footer d-flex justify-content-center">
-                            {/* Need to link to login form */}
                             <div id="login-link">Already a member? <a href="/login">Login</a></div>
                         </div>
                     </div>
@@ -45,23 +42,3 @@ const SignUp = () => {
 }
 
 export default SignUp;
-
-// Bianca's code
-{/* <div className="wrapper">
-            <div className="title-text">
-                <div className="title login">Login Form</div>
-                <div className="title signup">Signup Form</div>
-            </div>
-            <div className="form-container">
-                <div className="slide-controls">
-                    <input type="radio" name="slide" id="login" />
-                    <input type="radio" name="slide" id="signup" defaultChecked />
-                    <label htmlFor="login" className="slide login">Login</label>
-                    <label htmlFor="signup" className="slide signup">Signup</label>
-                    <div className="slider-tab"></div>
-                </div>
-                <div className="form-inner">
-                    <SignUpForm />
-                </div>
-            </div>
-        </div> */}

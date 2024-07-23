@@ -1,31 +1,15 @@
-// middleware/userLoggedIn.js
-
-const jwt = require("jsonwebtoken");
-require("dotenv").config();
-const supersecret = process.env.SUPER_SECRET;
+const jwt = require('jsonwebtoken');
+const jwtSecret = process.env.JWT_SECRET;
 
 function userLoggedIn(req, res, next) {
-  const token = req.headers["authorization"]?.replace(/^Bearer\s/, "");
+  const token = req.headers['authorization']?.split(' ')[1];
+  if (!token) return res.status(401).send({ error: "No token provided" });
 
-  if (!token) {
-    req.user_id = null; 
+  jwt.verify(token, jwtSecret, (err, decoded) => {
+    if (err) return res.status(403).send({ error: "Failed to authenticate token" });
+    req.userId = decoded.user_id;
     next();
-  } else {
-    jwt.verify(token, supersecret, function (err, decoded) {
-      if (err) {
-        req.user_id = null; 
-        next();
-      } else {
-        req.user_id = decoded.user_id;
-        next();
-      }
-    });
-  }
+  });
 }
 
 module.exports = userLoggedIn;
-
-/*
-- Extracts the JWT from authorisation header 
-- Checks if token found. If yes sets to user_id and if not sets to null 
-*/

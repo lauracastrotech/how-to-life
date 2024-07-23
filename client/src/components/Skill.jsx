@@ -1,7 +1,7 @@
 
 // Here the user asks a question or selects a suggestion about a specific skill that the user wants to learn
 import 'animate.css';
-import React, { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Skill.css'; 

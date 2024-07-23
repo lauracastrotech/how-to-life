@@ -1,5 +1,4 @@
-// THIS COMPONENT IS WHERE THE USER CAN SELECT A CATEGORY
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import { useNavigate } from 'react-router-dom';
 import '../styles/HowTo.css'; 
