@@ -76,7 +76,7 @@ const SignUpForm = ({hideModal}) => {
                 </div>
                 {error && <div className="error">{error}</div>}
                 <div className="field">
-                    <button type="submit" className="btn btn-sm"> Register
+                    <button type="submit" className="form-btn"> Register
                     </button>
                 </div>
             </form>
