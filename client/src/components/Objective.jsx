@@ -80,9 +80,9 @@ function handleChange(event) {
             <div className="progress-bar" role="progressbar" style={{width: '75%'}} aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div className="row">
-              <button className='col btn btn-sm' onClick={handleBack}>Back</button>
+              <button className='col form-btn' onClick={handleBack}>Back</button>
               <p className='col d-flex justify-content-center align-items-center' id='step2'>3</p>
-              <button className='col btn btn-sm' onClick={handleSubmit}>Submit</button>
+              <button className='col form-btn' onClick={handleSubmit}>Submit</button>
           </div> 
       </div>
       }

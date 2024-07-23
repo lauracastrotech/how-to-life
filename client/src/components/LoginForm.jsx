@@ -62,7 +62,7 @@ const LoginForm = ({hideModal}) => {
                     <a href="#">Forgot password?</a>
                 </div>
                 <div className='field'>   
-                    <button type='submit' className='btn btn-sm'>Login</button>
+                    <button type='submit' className='form-btn'>Login</button>
                 </div>
                 {/* Added this to the centered modal <div className="signup-link">Not a member? <a href="#">Signup now</a></div> */}
             </form>

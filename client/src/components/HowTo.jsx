@@ -71,9 +71,9 @@ export default function HowTo () {
           </div>
        </div>
         <div className="row">
-            <button className='col btn btn-sm' onClick={handleBack}>Back</button>
+            <button className='col form-btn' onClick={handleBack}>Back</button>
             <p className='col d-flex justify-content-center align-items-center' id='step1'>1</p>
-            <button className='col btn btn-sm' onClick={handleNext} disabled>Next</button>
+            <button id="next-btn" className='col form-btn' onClick={handleNext} disabled>Next</button>
         </div>
       </div>
     </div>
