@@ -28,7 +28,7 @@ router.get('/user', verifyToken, async (req, res) => {
         const user = results.data[0];
         if (!user) return res.status(404).send({ message: "User not found" });
 
-        // Return the user object with proper naming
+// Return the user object with proper naming
         res.send({ user: { user_id: user.user_id, email: user.email, first_name: user.first_name } });
     } catch (err) {
         res.status(500).send({ message: err.message });
@@ -44,7 +44,7 @@ router.post('/register', async (req, res) => {
     }
 
     try {
-        // Check if the user already exists
+// Check if the user already exists
         const results = await db(`SELECT * FROM users WHERE email = ?`, [email]);
         if (results.data.length > 0) {
             return res.status(400).send({ message: "Email already in use" });

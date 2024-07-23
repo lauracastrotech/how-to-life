@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import axios from 'axios';
 import './Answer.css';
@@ -36,18 +36,13 @@ export default function Answer() {
 
   
   const formatAnswer = (answer) => {
-    const cleanText = answer.replace(/^\d+\.\s+/gm, '').replace(/\*\*/g, ''); // Remove existing numbering from each line and remove any astrix.
+    const cleanText = answer.replace(/^\d+\.\s+/gm, '').replace(/\*\*/g, ''); 
     const lines = cleanText.split('\n').filter(line => line.trim() !== '');
-      // Split the answer into lines and remove empty lines.
-    //clean text removes any existing numbering 
-    // line is used in the contect to split the answer into individual lines using the split('\n')
-    //empty lines filtered out with the filter function
-    //return maps the lines into an ordered list (in <li> element)
    
     return (
       <ol>
         {lines.map((line, index) => (
-          <li key={index}>{line}</li>
+          <li key={index} className='card-text'>{line}</li>
         ))}
       </ol>
     );
@@ -62,27 +57,14 @@ export default function Answer() {
             <p className="lead animate__animated animate__fadeInUp">Your journey to mastering adulting just got easier. Check out the guide we've prepared for you.</p>
           </div>
         </div>
-        {/* <div className="row mb-4">
-          <div className="col-md-10 mx-auto">
-            <div className="card border-primary mb-3 animate__animated animate__fadeIn">
-              <div className="card-header">Your Question:</div>
-              <div className="card-body text-center">
-                <p className="card-text prompt-text">{prompt}</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        {/* <div className="row mb-2"> */}
           <div className="col-md-10 mx-auto">
             <div className="card mb-3 animate__animated animate__fadeInUp">
-              {/* <div className="card-header">Your Step-By-Step Guide:</div> */}
               <div className="card-header">{prompt}</div>
               <div className="card-body">
-                <p className="card-text">{formatAnswer(answer)}</p>
+                {formatAnswer(answer)}
               </div>
             </div>
           </div>
-        {/* </div> */}
         <div className="row justify-content-center mb-4">
           <button className="btn btn-outline-secondary mx-2" onClick={handleRegenerate}>
             <FontAwesomeIcon icon={faSyncAlt} className="icon" /> Regenerate

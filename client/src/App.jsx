@@ -23,7 +23,6 @@ function App() {
   const [answer, setAnswer] = useState("");
 
   const [navToggle, setNavToggle] = useState(false);
-  // const {isLoggedIn, setIsLoggedIn} = useAuthContext(false);
  
    const navigate = useNavigate();
  

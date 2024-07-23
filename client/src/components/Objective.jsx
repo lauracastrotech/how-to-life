@@ -26,7 +26,6 @@ export default function Objective() {
     console.log('prompt:', prompt);
 
     try {
-      // Send the prompt value to the API
       const { data } = await axios.post('http://localhost:3000/api/index/ai-answer', 
         { userId, prompt }, 
         { headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` } }
@@ -45,7 +44,7 @@ export default function Objective() {
     }
   };
 
-  // Handle changes in the prompt textarea
+  // Handle changes in the prompt text-area
   const handleChange = (event) => {
     setPrompt(event.target.value);
   };

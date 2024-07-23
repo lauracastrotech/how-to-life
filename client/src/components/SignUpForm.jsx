@@ -11,7 +11,7 @@ const SignUpForm = ({hideModal}) => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [firstName, setFirstName] = useState('');
     const [error, setError] = useState('');
-    const [successMessage, setSuccessMessage] = useState('');
+    const [setSuccessMessage] = useState('');
 
 
     const handleSubmit = async (e) => {

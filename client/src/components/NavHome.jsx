@@ -1,11 +1,11 @@
 // THIS COMPONENT PROVIDES A BRIEF DESCRIPTION OF THE FORM
 
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import '../styles/Home.css'; 
 
 export default function Home() {
-  const { formStatus, setFormStatus, step, setStep } = useContext(FormStateContext);
+  const { setFormStatus, setStep } = useContext(FormStateContext);
 
   const handleGetStarted = () => {
     setFormStatus('how-to');
