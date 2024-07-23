@@ -13,8 +13,9 @@ export default function Objective() {
   const { setFormStatus, setStep, prompt, setPrompt, answer, setAnswer } = useContext(FormStateContext);
   const navigate = useNavigate();
 
-  const userId = localStorage.getItem('userId') || ''; 
   const token = localStorage.getItem('token') || ''; 
+  const userId = localStorage.getItem('user_id') || '';
+  console.log(userId);
 
   const handleSubmit = async (event) => {
     event.preventDefault(); 
