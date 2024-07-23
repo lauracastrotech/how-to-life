@@ -4,6 +4,7 @@ const db = require("../model/helper");
 const { OpenAI } = require('openai');
 const { TextToSpeechClient } = require('@google-cloud/text-to-speech');
 const axios = require('axios');
+const userLoggedIn = require('../guards/userLoggedIn');
 
 
 const openai = new OpenAI ({
@@ -19,18 +20,21 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET history entries */
-router.get("/history", async function(req, res) {
+router.get('/history', userLoggedIn, async function (req, res) {
+  if (!req.user_id) {
+    return res.status(401).send({ error: 'Unauthorized' });
+  }
+
   try {
-    const results = await db("SELECT * FROM history"); 
+    const results = await db(`SELECT * FROM history WHERE user_id = ${req.user_id}`);
     res.status(200).send(results.data);
   } catch (e) {
     res.status(500).send({ error: e.message });
   }
-})
+});
 
 /*POST ai answers*/
 router.post("/ai-answer", async function(req, res) { // this api send prompt from frontend - prompt should be string datatype that includes category name, custom skill or popular question, objective with more context, this string will be stored in history table
-  // console.log('beginning of backend api');
   console.log(req.body);
 
   // Removed user_id destructure for testing purposes
@@ -42,7 +46,7 @@ router.post("/ai-answer", async function(req, res) { // this api send prompt fro
   const messages = [
     {
         role: 'system',
-        content: 'You are assisting users with practical and helpful life advice. Max 200 words. Give step by step instructions/guidance.'
+        content: 'You are assisting users with practical life advice. Provide clear, step-by-step instructions. Keep responses concise and under 200 words. '
     },
     {
         role: 'user',

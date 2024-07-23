@@ -22,10 +22,10 @@ CREATE TABLE users (
 -- Step 4: Create history table
 CREATE TABLE history (
     history_id INT AUTO_INCREMENT PRIMARY KEY,
-    -- user_id INT,
+    user_id INT,
     question TEXT NOT NULL,
-    answer TEXT NOT NULL
-    -- FOREIGN KEY (user_id) REFERENCES users(user_id)
+    answer TEXT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 -- Step 5 : Create questions table

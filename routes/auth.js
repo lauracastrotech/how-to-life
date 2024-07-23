@@ -8,6 +8,38 @@ require('dotenv').config();
 const saltRounds = 10;
 const jwtSecret = process.env.JWT_SECRET;
 
+
+// router.get("/users/:id", async function(req, res) {
+//     try {
+//       const results = await db(`SELECT * FROM users WHERE user_id= ${+req.params.id}`); 
+//     if(results.data.length === 1) {
+//       res.status(200).send(results.data[0]);
+//     } else {
+//         res.status(404).send("Error! User not found");
+//     }
+//     } catch (e) {
+//       res.status(500).send({ error: e.message });
+//     }
+//   });
+
+// Get user
+router.get("/users/:userId", async function(req, res) {
+  const { userId } = req.params;
+  if (!userId) {
+    return res.status(400).send({ error: "User ID is required!" });
+  }
+  try {
+    const results = await db(`SELECT * FROM users WHERE user_id = ?`, [userId]);
+    console.log(results)
+    res.status(200).send( {data: results});
+  } catch (e) {
+    res.status(500).send({ error: e.message });
+  }
+});
+
+
+
+  
 router.post('/register', async (req, res) => {
     const { email, password, firstName } = req.body;
   
