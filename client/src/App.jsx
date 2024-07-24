@@ -21,6 +21,8 @@ function App() {
   const [step, setStep] = useState(0);
   const [prompt, setPrompt] = useState("");
   const [answer, setAnswer] = useState("");
+  const [userId, setUserId] = useState(null);
+  const [token, setToken] = useState(null);
 
   const [navToggle, setNavToggle] = useState(false);
  
@@ -35,7 +37,7 @@ function App() {
    };
 
   return (
-      <FormStateContext.Provider value={{ isLoggedIn, setIsLoggedIn, formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer}}>
+      <FormStateContext.Provider value={{ isLoggedIn, setIsLoggedIn, formStatus, setFormStatus, step, setStep, prompt, setPrompt, answer, setAnswer, userId, setUserId, token, setToken}}>
       <div>
         <Navbar id="NavBar" expand="lg" expanded={navToggle}>
             <Navbar.Brand as={Link} to="/" className='nav-custom'>

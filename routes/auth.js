@@ -4,25 +4,31 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../model/helper');
 require('dotenv').config();
+const userLoggedIn = require('../guards/userLoggedIn');
 
 const saltRounds = 10;
 const jwtSecret = process.env.JWT_SECRET;
 
 
+
 // Get user
-router.get("/users/:userId", async function(req, res) {
+router.get("/users/:userId", userLoggedIn, async function(req, res) {
   const { userId } = req.params;
   if (!userId) {
     return res.status(400).send({ error: "User ID is required!" });
   }
   try {
     const results = await db(`SELECT * FROM users WHERE user_id = ?`, [userId]);
-    console.log(results)
-    res.status(200).send( {data: results});
+    if (results.length === 0) {
+      return res.status(404).send({ error: "User not found!" });
+    }
+    res.status(200).send(results.data);
+    console.log(results.data)
   } catch (e) {
     res.status(500).send({ error: e.message });
   }
 });
+
 
 // Route to register a new user
 router.post('/register', async (req, res) => {
