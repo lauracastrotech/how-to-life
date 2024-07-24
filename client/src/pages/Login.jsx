@@ -1,16 +1,10 @@
-/* eslint-disable no-undef */
-// Login.jsx
-
-import React from 'react';
 import LoginForm from '../components/LoginForm';
 import '../styles/Login.css'; 
-import { FormStateContext } from '../helpers/FormContext';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
-    // const {isLoggedIn} = useContext(FormStateContext);
 
     useEffect(() => {
         // This manually shows modal
@@ -41,7 +35,6 @@ const Login = () => {
                             <LoginForm hideModal = {handleClose}/>
                         </div>
                         <div className="modal-footer d-flex justify-content-center">
-                            {/* Need to link to signup form */}
                             <div id="signup-link">Not a member? <a href="/signup">Sign up now</a></div>
                         </div>
                     </div>
@@ -53,23 +46,3 @@ const Login = () => {
 
 export default Login;
 
-
-  // Bianca's code
-        // <div className="wrapper">
-        //     <div className="title-text">
-        //         <div className="title login">Login Form</div>
-        //         <div className="title signup">Signup Form</div>
-        //     </div>
-        //     <div className="form-container">
-        //         <div className="slide-controls">
-        //             <input type="radio" name="slide" id="login" defaultChecked />
-        //             <input type="radio" name="slide" id="signup" />
-        //             <label htmlFor="login" className="slide login">Login</label>
-        //             <label htmlFor="signup" className="slide signup">Signup</label>
-        //             <div className="slider-tab"></div>
-        //         </div>
-        //         <div className="form-inner">
-        //             <LoginForm />
-        //         </div>
-        //     </div>
-        // </div> 

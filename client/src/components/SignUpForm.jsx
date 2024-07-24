@@ -11,7 +11,7 @@ const SignUpForm = ({hideModal}) => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [firstName, setFirstName] = useState('');
     const [error, setError] = useState('');
-    const [successMessage, setSuccessMessage] = useState('');
+    const [setSuccessMessage] = useState('');
 
 
     const handleSubmit = async (e) => {
@@ -76,7 +76,7 @@ const SignUpForm = ({hideModal}) => {
                 </div>
                 {error && <div className="error">{error}</div>}
                 <div className="field">
-                    <button type="submit" className="btn btn-sm"> Register
+                    <button type="submit" className="form-btn"> Register
                     </button>
                 </div>
             </form>

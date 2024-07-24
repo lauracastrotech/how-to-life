@@ -18,6 +18,22 @@ router.get('/', function(req, res, next) {
   res.send({ title: 'Express' });
 });
 
+//Get user history page
+router.get("/user-history/:userId", async function(req, res) {
+  const { userId } = req.params;
+
+  if (!userId) {
+    return res.status(400).send({ error: "User ID is required!" });
+  }
+
+  try {
+    const results = await db(`SELECT * FROM history WHERE user_id = ?`, [userId]);
+    res.status(200).send(results.data);
+  } catch (e) {
+    res.status(500).send({ error: e.message });
+  }
+});
+
 /* GET history entries */
 router.get("/history", async function(req, res) {
   try {
@@ -29,16 +45,15 @@ router.get("/history", async function(req, res) {
 })
 
 /*POST ai answers*/
-router.post("/ai-answer", async function(req, res) { // this api send prompt from frontend - prompt should be string datatype that includes category name, custom skill or popular question, objective with more context, this string will be stored in history table
-  // console.log('beginning of backend api');
-  console.log(req.body);
+router.post("/ai-answer", async function(req, res) {
+  const { userId, prompt } = req.body;
 
-  // Removed user_id destructure for testing purposes
-  const {prompt} = req.body;
-  console.log(req.body);
-  if(!prompt) {
+  console.log('Request body:', req.body);
+
+  if (!prompt) {
     return res.status(400).send({ error: "Prompt is required!" });
   }
+
   const messages = [
     {
         role: 'system',
@@ -48,26 +63,30 @@ router.post("/ai-answer", async function(req, res) { // this api send prompt fro
         role: 'user',
         content: prompt,
     }
-];
+  ];
 
-try {
-  const response = await openai.chat.completions.create({
-    model: 'gpt-3.5-turbo',
-    messages: messages,
-  });
+  try {
+    const response = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: messages,
+    });
 
-  let answer = response.choices[0].message.content;
+    let answer = response.choices[0].message.content;
 
- const lines = answer.split('\n').filter(line => line.trim() !== ''); //Split the answer into lines and remove empty lines.
-    const formattedAnswer = lines.map((line, index) => `${index + 1}. ${line}`).join('\n'); //Add numbering to each line.
+    const lines = answer.split('\n').filter(line => line.trim() !== '');
+    const formattedAnswer = lines.map((line, index) => `${index + 1}. ${line}`).join('\n');
 
-  await db(`INSERT INTO history (question, answer) VALUES (?, ?)`, [prompt, formattedAnswer]); //// Send the formatted answer back to the client
+    if (userId) {
+      await db(`INSERT INTO history (user_id, question, answer) VALUES (?, ?, ?)`, [userId, prompt, formattedAnswer]);
+    } else {
+      await db(`INSERT INTO history (question, answer) VALUES (?, ?)`, [prompt, formattedAnswer]);
+    }
 
-  res.status(200).send({ answer });
-} catch (e) {
-  console.log(e);
-  res.status(500).send({ error: e.message });
-}
+    res.status(200).send({ answer });
+  } catch (e) {
+    console.error('Error:', e.message);
+    res.status(500).send({ error: e.message });
+  }
 });
 
 // * POST text-to-speech */

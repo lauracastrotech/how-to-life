@@ -1,10 +1,10 @@
-import React, { useState, useHistory, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/LoginForm.css'
-const LoginForm = ({hideModal}) => {
-    
+
+const LoginForm = ({hideModal}) => {    
     const {setIsLoggedIn} = useContext(FormStateContext);
     const navigate = useNavigate();
 
@@ -16,14 +16,28 @@ const LoginForm = ({hideModal}) => {
         e.preventDefault();
         try {
             const response = await axios.post('/api/auth/login', { email, password });
-            console.log('Login response:', response.data); 
-            localStorage.setItem('token', response.data.token);
-            setIsLoggedIn(true);
-            hideModal();
-            navigate('/profile')
+
+            console.log('Login response:', response.data);
+
+            const { token, user_id } = response.data;
+
+            if (user_id === undefined) {
+                console.error('user_id is undefined');
+            } else {
+                localStorage.setItem('token', token);
+                localStorage.setItem('user_id', user_id);
+
+                console.log('Stored token:', token);
+                console.log('Stored user_id:', user_id);
+
+                setIsLoggedIn(true);
+                hideModal();
+                navigate('/profile');
+            }
         } catch (error) {
             console.error('Login error:', error);
-            console.log('Login error response:', error.response); 
+            console.log('Login error response:', error.response);
+
             setEmail('');
             setPassword('');
             setError('Oops, invalid email or password. Try again.');
@@ -62,9 +76,8 @@ const LoginForm = ({hideModal}) => {
                     <a href="#">Forgot password?</a>
                 </div>
                 <div className='field'>   
-                    <button type='submit' className='btn btn-sm'>Login</button>
+                    <button type='submit' className='form-btn'>Login</button>
                 </div>
-                {/* Added this to the centered modal <div className="signup-link">Not a member? <a href="#">Signup now</a></div> */}
             </form>
         </div>
     );

@@ -1,7 +1,7 @@
 
 // Here the user asks a question or selects a suggestion about a specific skill that the user wants to learn
 import 'animate.css';
-import React, { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Skill.css'; 
@@ -91,10 +91,10 @@ export default function Skill() {
                     <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <div className="row">
-                    <button className='col btn btn-sm' onClick={handleBack}>Back</button>
+                    <button className='col form-btn' onClick={handleBack}>Back</button>
                     <p className='col d-flex justify-content-center align-items-center' id='step2'>2</p>
 
-                    <button className='col btn btn-sm' onClick={handleNext}>Next</button>
+                    <button className='col form-btn' onClick={handleNext}>Next</button>
                 </div>
             </div>
         </div>

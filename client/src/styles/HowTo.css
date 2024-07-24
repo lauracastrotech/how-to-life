@@ -40,13 +40,29 @@
 }
 
 /*Button styles*/
-.btn {
-    color: rgba(229,237,255,255);
-    background-color: rgba(62,71,114,255);
-    font-weight: 400;
-    border: none;
-    margin: 15px 10px;
+.form-btn { 
+    border-radius: 5px;
+    color: rgba(62,71,114,255);
+    background-color: rgba(183,198,231,255);
+    border: solid 0.5px;
+    margin: 10px;
+    font-weight: 500;
     font-size: 15px;
+}
+
+.form-btn:hover {
+    border-radius: 5px;
+    color: rgba(62,71,114,255);
+    background-color: rgba(230,237,255,255);
+    border: solid 0.5px;
+    margin: 10px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#next-btn {
+    background-color: rgba(230,237,255,255);
+    opacity: .6;
 }
 
 #step1 {
