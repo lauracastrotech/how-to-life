@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { FormStateContext } from '../helpers/FormContext';
 import axios from 'axios';
-import './Answer.css';
+import '../styles/Answer.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSyncAlt, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 
@@ -49,8 +49,7 @@ export default function Answer() {
   };
 
   return (
-    <div className="answer-container d-flex align-items-center">
-      <div className="container mt-5 animate__animated animate__fadeIn">
+      <div className="custom-container mt-5 animate__animated animate__fadeIn">
         <div className="row mb-4">
           <div className="col text-center">
             <h1 className="title animate__animated animate__heartBeat">Ready to learn?</h1>
@@ -59,8 +58,8 @@ export default function Answer() {
         </div>
           <div className="col-md-10 mx-auto">
             <div className="card mb-3 animate__animated animate__fadeInUp">
-              <div className="card-header">{prompt}</div>
-              <div className="card-body">
+              <div className="card-header full-width">{prompt}</div>
+              <div className="custom-card-body full-width">
                 {formatAnswer(answer)}
               </div>
             </div>
@@ -79,6 +78,6 @@ export default function Answer() {
           </div>
         )}
       </div>
-    </div>
+   
   );
 }

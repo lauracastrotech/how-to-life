@@ -1,0 +1,16 @@
+.info-container {
+    margin:5px;
+    margin-bottom:5px;
+    text-align: left;
+    padding: 10px;
+}
+
+.mb-4-custom {
+    margin-bottom: 0.75rem;
+    margin-top:0.75rem;
+  }
+
+.welcome-msg {
+    margin-bottom: 2rem;;
+
+}

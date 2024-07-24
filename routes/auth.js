@@ -4,36 +4,31 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../model/helper');
 require('dotenv').config();
+const userLoggedIn = require('../guards/userLoggedIn');
 
 const saltRounds = 10;
 const jwtSecret = process.env.JWT_SECRET;
 
-// Middleware to verify JWT token
-const verifyToken = (req, res, next) => {
-    const token = req.headers['authorization']?.split(' ')[1];
-    if (!token) return res.status(403).send({ message: "No token provided" });
 
-    jwt.verify(token, jwtSecret, (err, decoded) => {
-        if (err) return res.status(401).send({ message: "Unauthorized" });
-        req.userId = decoded.user_id;
-        next();
-    });
-};
 
-// Route to get user details
-router.get('/user', verifyToken, async (req, res) => {
-    try {
-        const userId = req.userId;
-        const results = await db(`SELECT * FROM users WHERE user_id = ?`, [userId]);
-        const user = results.data[0];
-        if (!user) return res.status(404).send({ message: "User not found" });
-
-// Return the user object with proper naming
-        res.send({ user: { user_id: user.user_id, email: user.email, first_name: user.first_name } });
-    } catch (err) {
-        res.status(500).send({ message: err.message });
+// Get user
+router.get("/users/:userId", userLoggedIn, async function(req, res) {
+  const { userId } = req.params;
+  if (!userId) {
+    return res.status(400).send({ error: "User ID is required!" });
+  }
+  try {
+    const results = await db(`SELECT * FROM users WHERE user_id = ?`, [userId]);
+    if (results.length === 0) {
+      return res.status(404).send({ error: "User not found!" });
     }
+    res.status(200).send(results.data);
+    console.log(results.data)
+  } catch (e) {
+    res.status(500).send({ error: e.message });
+  }
 });
+
 
 // Route to register a new user
 router.post('/register', async (req, res) => {

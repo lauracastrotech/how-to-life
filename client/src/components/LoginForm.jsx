@@ -5,7 +5,7 @@ import axios from 'axios';
 import '../styles/LoginForm.css'
 
 const LoginForm = ({hideModal}) => {    
-    const {setIsLoggedIn} = useContext(FormStateContext);
+    const {setIsLoggedIn, setUserId, setToken} = useContext(FormStateContext);
     const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
@@ -31,6 +31,8 @@ const LoginForm = ({hideModal}) => {
                 console.log('Stored user_id:', user_id);
 
                 setIsLoggedIn(true);
+                setUserId(user_id);
+                setToken(token)
                 hideModal();
                 navigate('/profile');
             }
