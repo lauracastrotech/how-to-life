@@ -1,6 +1,6 @@
 /*Form Styles*/
 #login {
-    border: 1px solid rgba(141,150,169,255);
+    border: rgba(141,150,169,255);
     border-radius: 3%;
     margin: 15px 0px;
 }
