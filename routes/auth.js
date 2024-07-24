@@ -8,31 +8,20 @@ require('dotenv').config();
 const saltRounds = 10;
 const jwtSecret = process.env.JWT_SECRET;
 
-// Middleware to verify JWT token
-const verifyToken = (req, res, next) => {
-    const token = req.headers['authorization']?.split(' ')[1];
-    if (!token) return res.status(403).send({ message: "No token provided" });
 
-    jwt.verify(token, jwtSecret, (err, decoded) => {
-        if (err) return res.status(401).send({ message: "Unauthorized" });
-        req.userId = decoded.user_id;
-        next();
-    });
-};
-
-// Route to get user details
-router.get('/user', verifyToken, async (req, res) => {
-    try {
-        const userId = req.userId;
-        const results = await db(`SELECT * FROM users WHERE user_id = ?`, [userId]);
-        const user = results.data[0];
-        if (!user) return res.status(404).send({ message: "User not found" });
-
-// Return the user object with proper naming
-        res.send({ user: { user_id: user.user_id, email: user.email, first_name: user.first_name } });
-    } catch (err) {
-        res.status(500).send({ message: err.message });
-    }
+// Get user
+router.get("/users/:userId", async function(req, res) {
+  const { userId } = req.params;
+  if (!userId) {
+    return res.status(400).send({ error: "User ID is required!" });
+  }
+  try {
+    const results = await db(`SELECT * FROM users WHERE user_id = ?`, [userId]);
+    console.log(results)
+    res.status(200).send( {data: results});
+  } catch (e) {
+    res.status(500).send({ error: e.message });
+  }
 });
 
 // Route to register a new user
