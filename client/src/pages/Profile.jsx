@@ -4,7 +4,9 @@ import { FormStateContext } from '../helpers/FormContext';
 import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
-  
+  /*useEffect to get history when user isLoggedIn
+
+  */
   const navigate = useNavigate();
   const {setIsLoggedIn} = useContext(FormStateContext);
   const handleLogout = () => {
