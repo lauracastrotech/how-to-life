@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import '../styles/Profile.css';
 import { FormStateContext } from '../helpers/FormContext';
 import { useNavigate } from 'react-router-dom';
@@ -76,7 +76,7 @@ const Profile = () => {
     return (
       <ol>
         {lines.map((line, index) => (
-          <li key={index} className='card-text'>{line}</li>
+          <li key={index}>{line}</li>
         ))}
       </ol>
     );
@@ -96,10 +96,11 @@ const Profile = () => {
         </div>
       </div>
       <div className="welcome-msg">
-      <p>
-      Here you can review your search history and revisit our guides to help you master new skills. 🚀
-      </p>
-    </div>
+        <p>
+        Here you can review your search history and revisit our guides to help you master new skills. 🚀
+        </p>
+      </div>
+      {/* Your Information */}
       <div className="row mb-4">
         <div className="col-md-10 mx-auto">
           <div className="card border-primary mb-3 animate__animated animate__fadeIn">
@@ -111,9 +112,10 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      {/* History */}
       <div className="row mb-4">
         <div className="col-md-10 mx-auto">
-          <div className="row animate__animated animate__fadeIn">
+          <div className="animate__animated animate__fadeIn">
             <h2 className='d-flex justify-content-center'>History</h2>
           </div>
           <div className="accordion" id="accordionExample">
@@ -132,6 +134,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      {/* Logout */}
       <div className="row justify-content-center mb-4">
         <button className="btn btn-outline-secondary mx-2" onClick={handleLogout}>Logout</button>
       </div>
