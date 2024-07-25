@@ -15,6 +15,26 @@ const Profile = () => {
   console.log(`Loggedin user id: ${userId}`)
   console.log(`Loggedin user token: ${token}`)
 
+    /*
+    const userId = localStorage.setItem('user_id',user_id);
+
+    useEffect to get history when user isLoggedIn
+    const loadHistory = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios(`/user-history/{userId}`){
+              data: ????
+            }
+            console.log(response.data[0]);
+
+        } catch (error) {
+            console.error('Profile history error:', error);
+        }
+    };
+  */
+
+  
+  
   useEffect(() => {
     const fetchUserData = async () => {
       if (!userId || !token) {
