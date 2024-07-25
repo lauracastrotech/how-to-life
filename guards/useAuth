@@ -1,0 +1,40 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+export const useAuth = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userFirstName, setUserFirstName] = useState('');
+    const navigate = useNavigate();
+
+    const login = (token, user_id, first_name) => {
+        localStorage.setItem('token', token);
+        localStorage.setItem('user_id', user_id);
+        localStorage.setItem('first_name', first_name);
+        setIsLoggedIn(true);
+        setUserFirstName(first_name);
+    };
+
+    const logout = () => {
+        localStorage.clear();
+        setIsLoggedIn(false);
+        setUserFirstName('');
+        navigate('/login');
+    };
+
+    const checkAuth = () => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            setIsLoggedIn(true);
+            setUserFirstName(localStorage.getItem('first_name'));
+        } else {
+            setIsLoggedIn(false);
+            setUserFirstName('');
+        }
+    };
+
+    useEffect(() => {
+        checkAuth();
+    }, []);
+
+    return { isLoggedIn, setIsLoggedIn, userFirstName, setUserFirstName, checkAuth };
+};
