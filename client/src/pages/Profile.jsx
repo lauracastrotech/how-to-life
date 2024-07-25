@@ -9,31 +9,27 @@ const Profile = () => {
   const { setIsLoggedIn } = useContext(FormStateContext);
   const [user, setUser] = useState({});
   const [greeting, setGreeting] = useState('');
+  const [userHistory, setUserHistory] = useState([])
 
   const userId = localStorage.getItem('user_id');
   const token = localStorage.getItem('token');
   console.log(`Loggedin user id: ${userId}`)
   console.log(`Loggedin user token: ${token}`)
 
-    /*
-    const userId = localStorage.setItem('user_id',user_id);
-
-    useEffect to get history when user isLoggedIn
-    const loadHistory = async (e) => {
-        e.preventDefault();
+    useEffect(() => {
+      const loadHistory = async () => {
         try {
-            const response = await axios(`/user-history/{userId}`){
-              data: ????
-            }
-            console.log(response.data[0]);
-
+            const response = await axios(`api/index/user-history/${userId}`);
+            console.log(response.data);
+            setUserHistory(response.data);
         } catch (error) {
             console.error('Profile history error:', error);
         }
     };
-  */
+    
+    loadHistory();
 
-  
+    }, [userId])
   
   useEffect(() => {
     const fetchUserData = async () => {
@@ -83,7 +79,7 @@ const Profile = () => {
     <div className="container mt-4 animate__animated animate__fadeIn">
       <div className="row mb-4-custom">
         <div className="col text-center">
-          <h1 className="title animate__animated animate__heartBeat">{greeting}, {user.first_name} ! <i class="fa-regular fa-face-smile"></i></h1>
+          <h1 className="title animate__animated animate__heartBeat">{greeting}, {user.first_name} ! <i className="fa-regular fa-face-smile"></i></h1>
         </div>
       </div>
       <div className="welcome-msg">
