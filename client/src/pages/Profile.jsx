@@ -69,6 +69,19 @@ const Profile = () => {
     }
   };
 
+  const formatAnswer = (answer) => {
+    const cleanText = answer.replace(/^\d+\.\s+/gm, '').replace(/\*\*/g, ''); 
+    const lines = cleanText.split('\n').filter(line => line.trim() !== '');
+   
+    return (
+      <ol>
+        {lines.map((line, index) => (
+          <li key={index} className='card-text'>{line}</li>
+        ))}
+      </ol>
+    );
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLoggedIn(false);
@@ -100,10 +113,21 @@ const Profile = () => {
       </div>
       <div className="row mb-4">
         <div className="col-md-10 mx-auto">
-          <div className="card border-success mb-3 animate__animated animate__fadeIn">
-            <div className="card-header">History:</div>
-            <div className="card-body">
-              <p className="card-text">history</p>
+          <div className="row animate__animated animate__fadeIn">
+            <h2 className='d-flex justify-content-center'>History</h2>
+          </div>
+          <div className="accordion" id="accordionExample">
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  {formatAnswer(userHistory[0].question)}
+                </button>
+              </h2>
+              <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div className="accordion-body">
+                  {formatAnswer(userHistory[0].answer)}
+                </div>
+              </div>
             </div>
           </div>
         </div>
