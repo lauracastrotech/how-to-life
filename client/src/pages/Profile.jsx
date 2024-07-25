@@ -9,28 +9,29 @@ const Profile = () => {
   const { setIsLoggedIn } = useContext(FormStateContext);
   const [user, setUser] = useState({});
   const [greeting, setGreeting] = useState('');
-  const [userHistory, setUserHistory] = useState([])
+  const [userHistory, setUserHistory] = useState([]);
 
   const userId = localStorage.getItem('user_id');
   const token = localStorage.getItem('token');
-  console.log(`Loggedin user id: ${userId}`)
-  console.log(`Loggedin user token: ${token}`)
+  console.log(`Loggedin user id: ${userId}`);
+  console.log(`Loggedin user token: ${token}`);
 
-    useEffect(() => {
-      const loadHistory = async () => {
-        try {
-            const response = await axios(`api/index/user-history/${userId}`);
-            console.log(response.data);
-            setUserHistory(response.data);
-        } catch (error) {
-            console.error('Profile history error:', error);
-        }
+  useEffect(() => {
+    const loadHistory = async () => {
+      try {
+        const response = await axios.get(`/api/index/user-history/${userId}`);
+        console.log(response.data);
+        setUserHistory(response.data);
+      } catch (error) {
+        console.error('Profile history error:', error);
+      }
     };
-    
-    loadHistory();
 
-    }, [userId])
-  
+    if (userId) {
+      loadHistory();
+    }
+  }, [userId]);
+
   useEffect(() => {
     const fetchUserData = async () => {
       if (!userId || !token) {
@@ -57,7 +58,6 @@ const Profile = () => {
     fetchUserData();
   }, [userId, token]);
 
-
   const setUserGreeting = () => {
     const currentHour = new Date().getHours();
     if (currentHour < 12) {
@@ -72,7 +72,7 @@ const Profile = () => {
   const formatAnswer = (answer) => {
     const cleanText = answer.replace(/^\d+\.\s+/gm, '').replace(/\*\*/g, ''); 
     const lines = cleanText.split('\n').filter(line => line.trim() !== '');
-   
+
     return (
       <ol>
         {lines.map((line, index) => (
@@ -83,11 +83,11 @@ const Profile = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem('token');
     setIsLoggedIn(false);
     navigate('/');
   };
- 
+
   return (
     <div className="container mt-4 animate__animated animate__fadeIn">
       <div className="row mb-4-custom">
@@ -97,7 +97,7 @@ const Profile = () => {
       </div>
       <div className="welcome-msg">
         <p>
-        Here you can review your search history and revisit our guides to help you master new skills. 🚀
+          Here you can review your search history and revisit our guides to help you master new skills. 🚀
         </p>
       </div>
       {/* Your Information */}
@@ -106,8 +106,8 @@ const Profile = () => {
           <div className="card border-primary mb-3 animate__animated animate__fadeIn">
             <div className="card-header">Your Information:</div>
             <div className="card-body text-center">
-            <p className="info-container"><i className="fas fa-user"></i> {user.first_name}</p>
-            <p className="info-container"><i className="fas fa-envelope"></i> {user.email}</p>
+              <p className="info-container"><i className="fas fa-user"></i> {user.first_name}</p>
+              <p className="info-container"><i className="fas fa-envelope"></i> {user.email}</p>
             </div>
           </div>
         </div>
@@ -119,18 +119,24 @@ const Profile = () => {
             <h2 className='d-flex justify-content-center'>History</h2>
           </div>
           <div className="accordion" id="accordionExample">
-            <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  {formatAnswer(userHistory[0].question)}
-                </button>
-              </h2>
-              <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                <div className="accordion-body">
-                  {formatAnswer(userHistory[0].answer)}
+            {userHistory.length > 0 ? (
+              userHistory.map((historyItem, index) => (
+                <div className="accordion-item" key={index}>
+                  <h2 className="accordion-header">
+                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="true" aria-controls={`collapse${index}`}>
+                      {historyItem.question}
+                    </button>
+                  </h2>
+                  <div id={`collapse${index}`} className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div className="accordion-body">
+                      {formatAnswer(historyItem.answer)}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              ))
+            ) : (
+              <p>No history found.</p>
+            )}
           </div>
         </div>
       </div>
