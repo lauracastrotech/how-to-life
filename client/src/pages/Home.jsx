@@ -1,5 +1,4 @@
 // THIS COMPONENT PROVIDES A BRIEF DESCRIPTION OF THE FORM
-
 import { useContext, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FormStateContext } from '../helpers/FormContext';
@@ -14,15 +13,18 @@ import 'animate.css';
 export default function Home() {
   const { formStatus, setFormStatus, step, setStep } = useContext(FormStateContext);
   const {formView, stepView} = useParams();
-  
+
+
   useEffect(() => {
     if(formView && stepView){
       setFormStatus(formView);
       setStep(Number(stepView));
+      console.log(formStatus);
     }
     else{
       setFormStatus("home");
       setStep(0);
+      console.log(formStatus);
     }
   }, [formView, stepView])
   
@@ -39,7 +41,7 @@ export default function Home() {
           <div className='row'>
             <div className='col-md-6 col-lg-6 animate__animated  animate__fadeInLeft'>
               <h1 id='welcome'>Welcome friend,</h1>
-              <p id="description">How to life is your go-to resource for mastering essential skills you may not have learned in school or just in general. We understand that navigating adulthood can be daunting, whether it&apos;s managing finances, cooking nutritious meals, or understanding complex paperwork. It&apos;s a tool that helps you create a prompt that we'll send to some fancy AI that will give you the best guide. <br/></p><hr/>
+              <p id="description">How to life is your go-to resource for mastering essential skills you may not have learned in school or just in general. We understand that navigating adulthood can be daunting, whether it&apos;s managing finances, cooking nutritious meals, or understanding complex paperwork. It&apos;s a tool that helps you create a prompt that we&apos;ll send to some fancy AI that will give you the best guide. <br/></p><hr/>
               <h5 className='d-flex justify-content-end'>Here&apos;s how it works.</h5>
             </div>
             <div className='col-md-6 col-lg-6 animate__animated  animate__fadeInRight'>
