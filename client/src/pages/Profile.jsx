@@ -92,7 +92,7 @@ const Profile = () => {
     <div className="container mt-4 animate__animated animate__fadeIn">
       <div className="row mb-4-custom">
         <div className="col text-center">
-          <h1 className="title animate__animated animate__heartBeat">{greeting}, {user.first_name} ! <i className="fa-regular fa-face-smile"></i></h1>
+          <h1 id="greeting" className="title animate__animated animate__heartBeat">{greeting}, {user.first_name} ! <i className="fa-regular fa-face-smile"></i></h1>
         </div>
       </div>
       <div className="welcome-msg">
@@ -127,7 +127,7 @@ const Profile = () => {
                       {historyItem.question}
                     </button>
                   </h2>
-                  <div id={`collapse${index}`} className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div id={`collapse${index}`} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
                       {formatAnswer(historyItem.answer)}
                     </div>

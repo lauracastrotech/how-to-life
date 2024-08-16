@@ -15,3 +15,8 @@
 
 }
 
+#greeting {
+  display: inline-block;
+  margin: 0 0.5rem;
+  animation-duration: 5s; /* don't forget to set a duration! */
+}
