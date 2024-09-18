@@ -5,11 +5,13 @@ const { OpenAI } = require('openai');
 const { TextToSpeechClient } = require('@google-cloud/text-to-speech');
 const axios = require('axios');
 
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
-const openai = new OpenAI ({
-  apiKey:"sk-proj-0QmeEPXo2fy0186I8kj0T3BlbkFJEYY3Z3X8GaQ6Wxgsa7GG",
-  // dangerouslyAllowBrowser: true 
-})
+// const openai = new OpenAI ({
+//   apiKey:"sk-proj-0QmeEPXo2fy0186I8kj0T3BlbkFJEYY3Z3X8GaQ6Wxgsa7GG",
+// })
 
 const textToSpeechClient = new TextToSpeechClient();
 
@@ -92,7 +94,7 @@ router.post("/ai-answer", async function(req, res) {
 // * POST text-to-speech */
 router.post('/text-to-speech', async (req, res) => {
   const { text } = req.body;
-  const apiKey = 'AIzaSyAr-IGSv9UKP9-aLu-WXO50E-uZVKmE8gM';
+  const apiKey = process.env.GOOGLE_API_KEY;
   const endpoint = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
 
   const payload = 
@@ -110,6 +112,5 @@ router.post('/text-to-speech', async (req, res) => {
     res.status(500).send('Error');
   }
 });
-
 
 module.exports = router;
